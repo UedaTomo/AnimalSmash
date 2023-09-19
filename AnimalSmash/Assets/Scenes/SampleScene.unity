@@ -582,7 +582,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23932
+  m_Name: pb_Mesh24130
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -809,7 +809,7 @@ MonoBehaviour:
   - {fileID: 1247919022}
   - {fileID: 196042527}
   - {fileID: 1200086106}
-  interval: 5
+  interval: 10
   spawnPointNum: 6
   spawnPointWork: 3
 --- !u!43 &483916677
