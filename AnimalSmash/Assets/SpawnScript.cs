@@ -20,7 +20,7 @@ public class SpawnScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 9.0f;
+        time = 5.0f;
     }
 
     // Update is called once per frame
