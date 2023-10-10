@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bombScript : MonoBehaviour
 {
+    public GameObject RedZone;
     public Transform[] BossAttackPoint;
     public Transform BossPoint;
     public float speed = 1.0f;
@@ -21,8 +22,8 @@ public class bombScript : MonoBehaviour
     }
     void Throw()
     {
-        int randomIndex = Random.Range(0, BossAttackPoint.Length);                    //
-        Transform ThrowBomb = BossAttackPoint[randomIndex];                           //爆弾を落とす位置をランダムに選択
+        int randomIndex = Random.Range(0, BossAttackPoint.Length);
+        Transform ThrowBomb = BossAttackPoint[randomIndex];//爆弾を落とす位置をランダムに選択
         distance = Vector3.Distance(BossPoint.position, ThrowBomb.position);
         float interpolatedValue = (Time.time * speed) / distance;                     //二点の距離
         transform.position = Vector3.Slerp(BossPoint.position, ThrowBomb.position, interpolatedValue);  //

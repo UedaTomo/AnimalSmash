@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402e2db43ab6f34ca5aeacf4bc22688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RedZone: {fileID: 0}
   BossAttackPoint:
   - {fileID: 2516930164836476358, guid: 36be0b703d34a0d47a57480f44642843, type: 3}
   - {fileID: 5768359598401087099, guid: 64b239eaa8924724fb8a36ae5684b28d, type: 3}
