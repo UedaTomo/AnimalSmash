@@ -1,34 +1,31 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BackEnemy : MonoBehaviour
 {
-    public GameObject Enemy;
-    public Transform[] points;
+    public Transform[] Targets;
+    public float speed = 5.0f;
     private int destPoint = 0;
-    private float Scale = 0.0003f;
-    private NavMeshAgent agent;
-    private Vector3 pos;
+    private float Scale = 0.0002f;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
 
-        pos = Enemy.transform.position;
     }
 
     void Update()
-    {
-        if (pos.x < 0)
+    { 
+        if (transform.position.x < 0)
         {
             destPoint = 0;
-            agent.destination = points[destPoint].position;
+            transform.position = Vector3.MoveTowards(transform.position, Targets[destPoint].position, speed * Time.deltaTime);
         }
         else
         {
             destPoint = 1;
-            agent.destination = points[destPoint].position;
+            transform.position = Vector3.MoveTowards(transform.position, Targets[destPoint].position, speed * Time.deltaTime);
         }
 
         this.transform.localScale -= new Vector3(Scale, Scale, Scale);
