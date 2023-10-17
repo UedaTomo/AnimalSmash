@@ -11,8 +11,9 @@ public enum BossState
 }
 public class BossScript : MonoBehaviour
 {
-    public GameObject bombPrefab;
-    public Transform BossPoint;
+    public GameObject _bombPrefab;
+    public Transform _bossPoint;
+    public int _bossHp = 25;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +23,21 @@ public class BossScript : MonoBehaviour
     {
 
     }
+    public void HP(int damage,int damageLevel)
+    {
+        _bossHp -= damage+damageLevel;
+    }
     // Update is called once per frame
     void Update()
     {
+        if(_bossHp <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
     void Attack()
     {
-        bombPrefab = Instantiate(bombPrefab, BossPoint.position, BossPoint.rotation); //”š’e¶¬
+        _bombPrefab = Instantiate(_bombPrefab, _bossPoint.position, _bossPoint.rotation); //”š’e¶¬
     }
 }
