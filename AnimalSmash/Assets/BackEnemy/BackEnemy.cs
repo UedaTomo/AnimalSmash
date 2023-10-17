@@ -8,16 +8,17 @@ public class BackEnemy : MonoBehaviour
     public Transform[] Targets;
     public float speed = 5.0f;
     private int destPoint = 0;
-    private float Scale = 0.0002f;
+    private float StartPos;
+    //private float Scale = 0.0002f;
 
     void Start()
     {
-
+        StartPos = transform.position.z;
     }
 
     void Update()
     { 
-        if (transform.position.x < 0)
+        if (StartPos >= 0)
         {
             destPoint = 0;
             transform.position = Vector3.MoveTowards(transform.position, Targets[destPoint].position, speed * Time.deltaTime);
@@ -28,7 +29,7 @@ public class BackEnemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, Targets[destPoint].position, speed * Time.deltaTime);
         }
 
-        transform.localScale -= new Vector3(Scale, Scale, Scale);
+        //transform.localScale -= new Vector3(Scale, Scale, Scale);
     }
     void OnTriggerEnter(Collider other)
     {
