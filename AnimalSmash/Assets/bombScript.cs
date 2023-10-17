@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class bombScript : MonoBehaviour
 {
-    public Transform[] BossAttackPoint;
-    public Transform BossPoint;
-    public float speed = 1.0f;
+    [SerializeField] private GameObject _redZone;
+    [SerializeField] private Transform _redPoint;
+    [SerializeField] private Transform _bossAttackPoint;
+    [SerializeField] private Transform _center;
+    [SerializeField] private Transform _bossPoint;
+    public float speed = 6.0f;
     private float distance;
     // Start is called before the first frame update
     void Start()
     {
-        Throw();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        _redZone = Instantiate(_redZone, _redPoint.position, _redPoint.rotation);
+        distance = Vector3.Distance(_bossPoint.position, _bossAttackPoint.position);
+        float interpolatedValue = (Time.time * speed) / distance;
+        transform.position = Vector3.Slerp(_bossPoint.position, _bossAttackPoint.position, interpolatedValue);
         
-    }
-    void Throw()
-    {
-        int randomIndex = Random.Range(0, BossAttackPoint.Length);                    //
-        Transform ThrowBomb = BossAttackPoint[randomIndex];                           //爆弾を落とす位置をランダムに選択
-        distance = Vector3.Distance(BossPoint.position, ThrowBomb.position);
-        float interpolatedValue = (Time.time * speed) / distance;                     //二点の距離
-        transform.position = Vector3.Slerp(BossPoint.position, ThrowBomb.position, interpolatedValue);  //
     }
 }
