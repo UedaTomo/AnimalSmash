@@ -12,7 +12,6 @@ public class BackSpawnScript : MonoBehaviour
     public float interval = 5f;
     public int spawnPointNum = 6;
     public int spawnPointWork = 3;
-    public int[] Target = new int[6];
     private int[] numbers = new int[6];
     private float time = 0f;
     private int[] randomPosition = new int[3];
