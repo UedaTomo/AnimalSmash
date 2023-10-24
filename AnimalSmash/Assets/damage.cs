@@ -27,6 +27,10 @@ public class damage : MonoBehaviour
             Destroy(gameObject);
         }
         if (other.CompareTag("enemy"))
+        {
             _damageLevel *= 2;
+            Destroy(other);
+        }
+
     }
 }
