@@ -31,6 +31,7 @@ public class BackEnemy : MonoBehaviour
 
         //transform.localScale -= new Vector3(Scale, Scale, Scale);
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("destroy"))
