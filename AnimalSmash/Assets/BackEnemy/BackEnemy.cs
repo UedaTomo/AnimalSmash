@@ -30,6 +30,7 @@ public class BackEnemy : MonoBehaviour
         }
 
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("destroy"))
