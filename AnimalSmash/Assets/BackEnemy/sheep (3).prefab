@@ -652,8 +652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7183611660619616261}
-  - component: {fileID: -1239429124244358036}
-  - component: {fileID: 7148709183335819213}
+  - component: {fileID: 1298634738893566577}
   m_Layer: 0
   m_Name: sheep (3)
   m_TagString: enemy
@@ -668,8 +667,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564499339610311359}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -18.720234, y: 1.5249637, z: -5.395936}
+  m_LocalRotation: {x: -0, y: -0.7175433, z: -0, w: 0.6965139}
+  m_LocalPosition: {x: -18.720192, y: 1.5249637, z: -5.397674}
   m_LocalScale: {x: 0.44414693, y: 0.40376168, z: 0.43192267}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -679,8 +678,8 @@ Transform:
   - {fileID: 3322837597086401791}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &-1239429124244358036
+  m_LocalEulerAnglesHint: {x: 0, y: -91.704, z: 0}
+--- !u!114 &1298634738893566577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -689,29 +688,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7564499339610311359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f884edcb7c2bc548bffaab7c9745819, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c0803c513ab0c04d88732e067c00d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets:
-  - {fileID: 5248649076320054678, guid: 077e42c5a96d95246b5cf5b6f782d207, type: 3}
-  - {fileID: 3459760065178656612, guid: 9e9fe53b538bfc340b0bd78695cc4fda, type: 3}
-  speed: 5
---- !u!54 &7148709183335819213
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7564499339610311359}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
+  move: 0.005
 --- !u!1 &7821135722177550521
 GameObject:
   m_ObjectHideFlags: 0
