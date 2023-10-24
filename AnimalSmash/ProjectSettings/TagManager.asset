@@ -8,6 +8,7 @@ TagManager:
   - destroy
   - Center
   - Boss
+  - damage
   layers:
   - Default
   - TransparentFX
