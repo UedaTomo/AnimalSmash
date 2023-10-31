@@ -654,6 +654,7 @@ GameObject:
   - component: {fileID: 7183611660619616261}
   - component: {fileID: -1239429124244358036}
   - component: {fileID: 7148709183335819213}
+  - component: {fileID: -4497282605250516894}
   m_Layer: 0
   m_Name: sheep (3)
   m_TagString: enemy
@@ -710,8 +711,22 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!136 &-4497282605250516894
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564499339610311359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1464254
+  m_Height: 2.522188
+  m_Direction: 1
+  m_Center: {x: -1.6114887e-16, y: 0, z: 0.66472137}
 --- !u!1 &7821135722177550521
 GameObject:
   m_ObjectHideFlags: 0
