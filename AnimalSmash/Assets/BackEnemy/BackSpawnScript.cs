@@ -57,12 +57,14 @@ public class BackSpawnScript : MonoBehaviour
 
                 newEnemy.transform.position = spawnPoint[randomPosition[i]].position;
 
-                pos.x = spawnPoint[randomPosition[i]].position.x - 2.0f;
-                pos.z = spawnPoint[randomPosition[i]].position.z - 2.0f;
-                newEnemy1.transform.position = pos;
+                Vector3 left = new Vector3(1.0f, 0, -0.7f);
+                //pos.z = spawnPoint[randomPosition[i]].position.z - 1.0f; //x,z‚ð•Ï‚¦‚æ‚¤
+                //pos.x = spawnPoint[randomPosition[i]].position.x + 1.0f;
+                newEnemy1.transform.position = pos + left;
 
-                pos.x = spawnPoint[randomPosition[i]].position.x + 4.0f;
-                newEnemy2.transform.position = pos;
+                Vector3 right = new Vector3(1.0f, 0, 0.7f);
+                //pos.z = spawnPoint[randomPosition[i]].position.z + 2.0f;
+                newEnemy2.transform.position = pos + right;
             }
 
             //Debug.Log(randomPosition[0]);
