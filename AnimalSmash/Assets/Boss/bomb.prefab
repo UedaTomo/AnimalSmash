@@ -111,14 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402e2db43ab6f34ca5aeacf4bc22688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _redZone: {fileID: 0}
-  _redPoint: {fileID: 0}
-  _bossAttackPoint: {fileID: 0}
+  _redZone: {fileID: 9098408227865685847, guid: d818016f8efb26c44a6f6c8078668b0e, type: 3}
+  _redPoint: {fileID: 5191454374414078792, guid: 9d7ebeca1e6c4ce40a8f0a1c6c7c2dba, type: 3}
+  _bossAttackPoint: {fileID: 5191454374414078792, guid: 9d7ebeca1e6c4ce40a8f0a1c6c7c2dba, type: 3}
   _center: {fileID: 2423545524089590351, guid: 620648905727ab442ba9a4dd92894d0d, type: 3}
   _bossPoint: {fileID: 5040559627147210185, guid: a7aab1f3a52637942a9f8ada1b2091bc, type: 3}
   speed: 10
-  arcAngle: 60
-  baseHeight: 1
 --- !u!54 &-3876175198690892517
 Rigidbody:
   m_ObjectHideFlags: 0
