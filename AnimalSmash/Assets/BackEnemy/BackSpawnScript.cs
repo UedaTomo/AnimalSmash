@@ -67,9 +67,9 @@ public class BackSpawnScript : MonoBehaviour
                 newEnemy2.transform.position = pos + right;
             }
 
-            Debug.Log(randomPosition[0]);
-            Debug.Log(randomPosition[1]);
-            Debug.Log(randomPosition[2]);
+            //Debug.Log(randomPosition[0]);
+            //Debug.Log(randomPosition[1]);
+            //Debug.Log(randomPosition[2]);
 
 
             time = 0f;
