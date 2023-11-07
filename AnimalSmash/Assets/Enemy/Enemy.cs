@@ -5,19 +5,19 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform target;        // ƒ^[ƒQƒbƒg
-    public float shrinkRate = 1.0f; // k¬—¦
+    public Transform target;        // ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
+    //public float shrinkRate = 1.0f; // ç¸®å°ç‡
     public float Speed = 3.0f;
     //private NavMeshAgent myAgent;
-    private Vector3 initialScale;
-    private float initialDistance;
+    //private Vector3 initialScale;
+    //private float initialDistance;
 
 
     private void Start()
     {
         //myAgent = GetComponent<NavMeshAgent>();
-        initialScale = transform.localScale;
-        initialDistance = Vector3.Distance(transform.position, target.position);
+        //initialScale = transform.localScale;
+        //initialDistance = Vector3.Distance(transform.position, target.position);
     }
 
     private void Update()
@@ -25,14 +25,16 @@ public class Enemy : MonoBehaviour
         transform.Translate(0, 0, Speed * -Time.deltaTime);
 
         //myAgent.SetDestination(target.position);
-        // ƒ^[ƒQƒbƒg‚ÉˆÚ“®
+        // ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«ç§»å‹•
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
-        // ƒIƒuƒWƒFƒNƒg‚Æƒ^[ƒQƒbƒg‚Ì‹——£‚ğæ“¾
-        float scale = Mathf.Lerp(1.0f, initialScale.x * shrinkRate, distanceToTarget / initialDistance);
-        // ‹——£‚ª‹ß‚Ã‚­‚É‚Â‚ê‚ÄƒIƒuƒWƒFƒNƒg‚ğk¬
-        transform.localScale = new Vector3(scale, scale, scale);
+        // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®è·é›¢ã‚’å–å¾—
+        //float scale = Mathf.Lerp(1.0f, initialScale.x * shrinkRate, distanceToTarget / initialDistance);
+        // è·é›¢ãŒè¿‘ã¥ãã«ã¤ã‚Œã¦ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç¸®å°
+        //transform.localScale = new Vector3(scale, scale, scale);
 
     }
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("destroy"))

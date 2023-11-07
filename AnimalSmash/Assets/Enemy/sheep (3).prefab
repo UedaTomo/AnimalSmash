@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4321939921463252664}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8464489488262220507}
   m_Layer: 0
   m_Name: transform38
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8474837704127404958}
   m_Layer: 0
   m_Name: mofu36
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 3254961794072487960}
   m_Layer: 0
   m_Name: Left_hind_Legs
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 2208345778381913362}
   m_Layer: 0
   m_Name: Left_Front_Legs
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1720190523768550391}
   m_Layer: 0
   m_Name: Right_Front_Legs
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 8926551876915531051}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 5164361911300208211}
   m_Layer: 0
   m_Name: transform36
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 2380854933318513030}
   m_Layer: 0
   m_Name: Right_hind_Legs
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +681,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -91.704, z: 0}
---- !u!114 &1298634738893566577
+--- !u!135 &7604351501826899758
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564499339610311359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0057815
+  m_Center: {x: -4.682423e-11, y: -0.17837858, z: -0.009690871}
+--- !u!114 &-5055147058418778783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -739,7 +752,7 @@ GameObject:
   - component: {fileID: 8800728188376899687}
   m_Layer: 0
   m_Name: Teil
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -820,7 +833,7 @@ GameObject:
   - component: {fileID: 3322837597086401791}
   m_Layer: 0
   m_Name: transform39
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,7 +874,7 @@ GameObject:
   - component: {fileID: 1595641531429779020}
   m_Layer: 0
   m_Name: pCube2
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -943,7 +956,7 @@ GameObject:
   - component: {fileID: 4924739652996984428}
   m_Layer: 0
   m_Name: transform37
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

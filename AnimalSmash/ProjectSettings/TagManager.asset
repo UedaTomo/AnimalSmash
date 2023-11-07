@@ -8,6 +8,9 @@ TagManager:
   - destroy
   - Center
   - Boss
+  - attackzone
+  - wall
+  - Bullet
   layers:
   - Default
   - TransparentFX

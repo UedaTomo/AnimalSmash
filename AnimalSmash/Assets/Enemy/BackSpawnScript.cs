@@ -45,7 +45,7 @@ public class BackSpawnScript : MonoBehaviour
             newEnemy.transform.position = spawnPoint[randomPosition[i]].position;
 
             Vector3 left = new Vector3(1.0f, 0, -0.7f);
-            //pos.z = spawnPoint[randomPosition[i]].position.z - 1.0f; //x,z‚ð•Ï‚¦‚æ‚¤
+            //pos.z = spawnPoint[randomPosition[i]].position.z - 1.0f; //x,zï¿½ï¿½Ï‚ï¿½ï¿½æ‚¤
             //pos.x = spawnPoint[randomPosition[i]].position.x + 1.0f;
             newEnemy1.transform.position = pos + left;
 
@@ -88,7 +88,7 @@ public class BackSpawnScript : MonoBehaviour
                 newEnemy.transform.position = spawnPoint[randomPosition[i]].position;
 
                 Vector3 left = new Vector3(1.0f, 0, -0.7f);
-                //pos.z = spawnPoint[randomPosition[i]].position.z - 1.0f; //x,z‚ð•Ï‚¦‚æ‚¤
+                //pos.z = spawnPoint[randomPosition[i]].position.z - 1.0f; //x,zï¿½ï¿½Ï‚ï¿½ï¿½æ‚¤
                 //pos.x = spawnPoint[randomPosition[i]].position.x + 1.0f;
                 newEnemy1.transform.position = pos + left;
 
