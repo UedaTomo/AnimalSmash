@@ -33,7 +33,7 @@ public class SpawnScript : MonoBehaviour
             {
 
             float x = Random.Range(rangeA.position.x, rangeB.position.x);
-            float y = 1.81f;
+            float y = 3.86f;
             float z = Random.Range(rangeA.position.z, rangeB.position.z);
 
             Instantiate(createPrefab, new Vector3(x, y, z), createPrefab.transform.rotation);
