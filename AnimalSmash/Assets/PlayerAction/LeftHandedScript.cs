@@ -2,32 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotScript : MonoBehaviour
+public class LeftHandedScript : MonoBehaviour
 {
     public GameObject shotPoint; // ボール発射ポイント
     public GameObject bulletPrefab; // ボールのプレハブ
     [SerializeField] private float bulletSpeed = 10.0f; // ボールの速度
 
-    private void Start()
-    {
-
-    }
+    private GameObject targetEnemy = null; // 現在のターゲットとなる enemy タグのオブジェクト
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0) && targetEnemy != null)
+        {
+            Destroy(targetEnemy); // 現在のターゲットを破棄する
+            Shooting();
 
+            Debug.Log("L shot");
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("enemy"))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Destroy(other.gameObject); // enemy タグを持つオブジェクトを破棄する
+            targetEnemy = other.gameObject; // enemy タグを持つオブジェクトをターゲットに設定
 
-                Shooting(); // ボールを発射する処理を行う
-            }
+            Debug.Log("L target");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == targetEnemy)
+        {
+            targetEnemy = null; // ターゲットとなる enemy タグのオブジェクトが領域外に出たら null に設定
         }
     }
 
@@ -47,4 +55,3 @@ public class ShotScript : MonoBehaviour
         // 必要に応じてボールの発射音やエフェクトを再生するなどの処理を追加できる
     }
 }
-
