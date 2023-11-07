@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<<< HEAD:AnimalSmash/Assets/Script.meta
 guid: 9a7d7f426335fc84b9b0b4c3189f7be6
 folderAsset: yes
@@ -8,11 +7,6 @@ DefaultImporter:
 guid: 89bb37ddbdf180c418ea1655123dc462
 PrefabImporter:
 >>>>>>>> 26acdb1d751dc20181b50e69215d2c1468846bdd:AnimalSmash/Assets/Enemy/BackSpawnPoint.prefab.meta
-=======
-guid: 42319729dd3ba1c478e74c01899eac0f
-folderAsset: yes
-DefaultImporter:
->>>>>>> 26acdb1d751dc20181b50e69215d2c1468846bdd
   externalObjects: {}
   userData: 
   assetBundleName: 
