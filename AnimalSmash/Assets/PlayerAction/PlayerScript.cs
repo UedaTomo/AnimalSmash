@@ -1,41 +1,85 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Security.Cryptography;
+using System.Linq;
 
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
+    [SerializeField] Material plane;
+    public float stop = 3.0f;
+    private float alpha_sin;
+    private float time = 0f;
+    private bool isTouch; //敵に当たったか当たってないか
+
     // Start is called before the first frame update
     void Start()
     {
-
+        isTouch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Wキー（前方移動）
-        if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
+        if(isTouch)
         {
-            transform.position += speed * transform.forward * Time.deltaTime;
+            time += Time.deltaTime;
+            Debug.Log("足し算");
+
+            //StartCoroutine("blink");
+
+            if (time >= stop)
+            {
+                isTouch = false;
+                time = 0f;
+                Debug.Log("終わり");
+            }
+            
         }
 
-        // Sキー（後方移動）
-        if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
-        {
-            transform.position -= speed * transform.forward * Time.deltaTime;
-        }
+        if (!isTouch)
+        { 
+            // Wキー（前方移動）
+            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
+            {
+                transform.position += speed * transform.forward * Time.deltaTime;
+            }
 
-        // Dキー（右移動）
-        if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
-        {
-            transform.position += speed * transform.right * Time.deltaTime;
-        }
+            // Sキー（後方移動）
+            if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
+            {
+                transform.position -= speed * transform.forward * Time.deltaTime;
+            }
 
-        // Aキー（左移動）
-        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
-        {
-            transform.position -= speed * transform.right * Time.deltaTime;
+            // Dキー（右移動）
+            if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
+            {
+                transform.position += speed * transform.right * Time.deltaTime;
+            }
+
+            // Aキー（左移動）
+            if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
+            {
+                transform.position -= speed * transform.right * Time.deltaTime;
+            }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            isTouch = true;
+        }
+    }
+
+    /*IEnumerator blink()
+    {
+
+            Color color = this.gameObject.material.color;
+
+            color.a = alpha_sin;
+
+            this.gameObject.material.color = color;
+    }*/
 }
