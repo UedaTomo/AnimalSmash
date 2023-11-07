@@ -681,8 +681,9 @@ Transform:
   - {fileID: 3322837597086401791}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!54 &1049952124234807039
+
+  m_LocalEulerAnglesHint: {x: 0, y: -91.704, z: 0}
+
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -707,7 +708,9 @@ BoxCollider:
   m_GameObject: {fileID: 7564499339610311359}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+
+  m_Enabled: 0
+
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.5, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
@@ -736,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0803c513ab0c04d88732e067c00d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 0.1
+  move: 0.002
   Up: -6
   Down: -3
   UpDown: 0.1
