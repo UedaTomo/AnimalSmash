@@ -16,13 +16,43 @@ public class BackSpawnScript : MonoBehaviour
     private float time = 0f;
     private int[] randomPosition = new int[3];
 
-
-    //List<int> numbers = new List<int>();
-
     // Start is called before the first frame update
     void Start()
     {
-       
+        for (int i = 0; i < spawnPointNum; i++)
+        {
+            numbers[i] = i;
+        }
+        for (int i = 0; i < spawnPointNum; i++)
+        {
+            int temp = numbers[i];
+            int randomIndex = Random.Range(0, spawnPointNum);
+            numbers[i] = numbers[randomIndex];
+            numbers[randomIndex] = temp;
+        }
+        for (int i = 0; i < spawnPointWork; i++)
+        {
+            randomPosition[i] = numbers[i];
+        }
+
+        for (int i = 0; i < spawnPointWork; i++)
+        {
+            GameObject newEnemy = Instantiate(Enemy);
+            GameObject newEnemy1 = Instantiate(Enemy);
+            GameObject newEnemy2 = Instantiate(Enemy);
+            Vector3 pos = spawnPoint[randomPosition[i]].position;
+
+            newEnemy.transform.position = spawnPoint[randomPosition[i]].position;
+
+            Vector3 left = new Vector3(1.0f, 0, -0.7f);
+            //pos.z = spawnPoint[randomPosition[i]].position.z - 1.0f; //x,z‚ð•Ï‚¦‚æ‚¤
+            //pos.x = spawnPoint[randomPosition[i]].position.x + 1.0f;
+            newEnemy1.transform.position = pos + left;
+
+            Vector3 right = new Vector3(1.0f, 0, 0.7f);
+            //pos.z = spawnPoint[randomPosition[i]].position.z + 2.0f;
+            newEnemy2.transform.position = pos + right;
+        }
     }
 
     // Update is called once per frame
@@ -66,11 +96,6 @@ public class BackSpawnScript : MonoBehaviour
                 //pos.z = spawnPoint[randomPosition[i]].position.z + 2.0f;
                 newEnemy2.transform.position = pos + right;
             }
-
-            Debug.Log(randomPosition[0]);
-            Debug.Log(randomPosition[1]);
-            Debug.Log(randomPosition[2]);
-
 
             time = 0f;
         }
