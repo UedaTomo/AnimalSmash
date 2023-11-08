@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8537820086353049482}
   - component: {fileID: 5995852525289093108}
   - component: {fileID: 6707491608769516533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rabbit (1)
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0803c513ab0c04d88732e067c00d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 0.003
+  move: 0.05
   Up: -6
   Down: -3
   UpDown: 0.1

@@ -11,7 +11,7 @@ public class BossScript : MonoBehaviour
 {
     public GameObject _bombPrefab;
     public Transform _bossPoint;
-    public int _bossHp = 25;
+    public int _bossHp = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +36,6 @@ public class BossScript : MonoBehaviour
     }
     void Attack()
     {
-        _bombPrefab = Instantiate(_bombPrefab, _bossPoint.position, _bossPoint.rotation); //îöíeê∂ê¨
+        //bombPrefab = Instantiate(_bombPrefab, _bossPoint.position, _bossPoint.rotation); //îöíeê∂ê¨
     }
 }
