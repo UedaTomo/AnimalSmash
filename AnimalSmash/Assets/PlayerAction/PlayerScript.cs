@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
         if(isTouch)
         {
             time += Time.deltaTime;
-            Debug.Log("ë´ÇµéZ");
+            //Debug.Log("ë´ÇµéZ");
 
             //StartCoroutine("blink");
 
@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour
             {
                 isTouch = false;
                 time = 0f;
-                Debug.Log("èIÇÌÇË");
+                //Debug.Log("èIÇÌÇË");
             }
             
         }
@@ -72,14 +72,4 @@ public class PlayerScript : MonoBehaviour
             isTouch = true;
         }
     }
-
-    /*IEnumerator blink()
-    {
-
-            Color color = this.gameObject.material.color;
-
-            color.a = alpha_sin;
-
-            this.gameObject.material.color = color;
-    }*/
 }
