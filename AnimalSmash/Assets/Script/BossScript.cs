@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
 
 public enum BossState
 {
@@ -11,11 +14,15 @@ public class BossScript : MonoBehaviour
 {
     public GameObject _bombPrefab;
     public Transform _bossPoint;
-    public int _bossHp = 500;
+    public int _bossHp = 5;
+    public Slider _bossSlider;
+    int currentHp;
     // Start is called before the first frame update
     void Start()
     {
         Attack();
+        currentHp = _bossHp;
+
     }
     void SetAi()
     {
@@ -23,16 +30,17 @@ public class BossScript : MonoBehaviour
     }
     public void HP(int damage,int damageLevel)
     {
-        _bossHp -= damage+damageLevel;
+        currentHp -= damage+damageLevel;
+        Debug.Log("a");
     }
     // Update is called once per frame
     void Update()
     {
-        if(_bossHp <= 0)
+        if(currentHp <= 0)
         {
             Destroy(gameObject);
         }
-
+        _bossSlider.value = (int)currentHp / (int)_bossHp; ;
     }
     void Attack()
     {
