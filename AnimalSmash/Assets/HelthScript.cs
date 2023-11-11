@@ -51,7 +51,6 @@ public class HelthScript : MonoBehaviour
 
             }
         }
-        
 
         if (playerCount <= 0)
         {
