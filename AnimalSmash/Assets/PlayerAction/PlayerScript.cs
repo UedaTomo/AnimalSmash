@@ -12,9 +12,10 @@ public class PlayerScript : MonoBehaviour
     private float alpha_sin;
     private float touch_time = 0f;
     private float inv_time = 0f;
-    private bool isTouch; //“G‚É“–‚½‚Á‚½‚©“–‚½‚Á‚Ä‚È‚¢‚©
-    private bool Invincible; //–³“GŠÔ
-
+    private bool isTouch; //æ•µã«å½“ãŸã£ãŸã‹å½“ãŸã£ã¦ãªã„ã‹
+    private bool Invincible; //ç„¡æ•µæ™‚é–“
+    public GameObject damy;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,25 +28,25 @@ public class PlayerScript : MonoBehaviour
     {
         if (!isTouch)
         {
-            // WƒL[i‘O•ûˆÚ“®j
+            // Wã‚­ãƒ¼ï¼ˆå‰æ–¹ç§»å‹•ï¼‰
             if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
             {
                 transform.position += speed * transform.forward * Time.deltaTime;
             }
 
-            // SƒL[iŒã•ûˆÚ“®j
+            // Sã‚­ãƒ¼ï¼ˆå¾Œæ–¹ç§»å‹•ï¼‰
             if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
             {
                 transform.position -= speed * transform.forward * Time.deltaTime;
             }
 
-            // DƒL[i‰EˆÚ“®j
+            // Dã‚­ãƒ¼ï¼ˆå³ç§»å‹•ï¼‰
             if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
             {
                 transform.position += speed * transform.right * Time.deltaTime;
             }
 
-            // AƒL[i¶ˆÚ“®j
+            // Aã‚­ãƒ¼ï¼ˆå·¦ç§»å‹•ï¼‰
             if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
             {
                 transform.position -= speed * transform.right * Time.deltaTime;
@@ -89,5 +90,11 @@ public class PlayerScript : MonoBehaviour
                 isTouch = true;
             }
         }
+    }
+    public void GameClear()
+    {
+        damy.gameObject.SetActive(true);
+        Instantiate(damy, gameObject.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
