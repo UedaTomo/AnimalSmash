@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Security.Cryptography;
 using System.Linq;
+using System;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerScript : MonoBehaviour
     private bool isTouch; //敵に当たったか当たってないか
     private bool Invincible; //無敵時間
     public GameObject damy;
+    public GameObject stan;
     
     // Start is called before the first frame update
     void Start()
@@ -88,6 +90,8 @@ public class PlayerScript : MonoBehaviour
             if (!Invincible)
             {
                 isTouch = true;
+                Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 2f, this.transform.position.z);
+                Instantiate(stan, effectPosition, Quaternion.identity);
             }
         }
     }
