@@ -28,7 +28,7 @@ public class BackEnemy : MonoBehaviour
             destPoint = 1;
             this.transform.position = Vector3.MoveTowards(transform.position, Targets[destPoint].position, speed * Time.deltaTime);
         }
-
+        
     }
 
     void OnTriggerEnter(Collider other)

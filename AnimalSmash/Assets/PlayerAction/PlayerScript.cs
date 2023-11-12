@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
     private float alpha_sin;
     private float time = 0f;
     private bool isTouch; //“G‚É“–‚½‚Á‚½‚©“–‚½‚Á‚Ä‚È‚¢‚©
-
+    public GameObject damy;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,5 +71,11 @@ public class PlayerScript : MonoBehaviour
         {
             isTouch = true;
         }
+    }
+    public void GameClear()
+    {
+        damy.gameObject.SetActive(true);
+        Instantiate(damy, gameObject.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
