@@ -17,7 +17,7 @@ public class RightHandedScript : MonoBehaviour
             Destroy(targetEnemy); // 現在のターゲットを破棄する
             Shooting(); 
 
-            Debug.Log("R shot");
+            //Debug.Log("R shot");
         }
     }
 
@@ -27,7 +27,7 @@ public class RightHandedScript : MonoBehaviour
         {
             targetEnemy = other.gameObject; // enemy タグを持つオブジェクトをターゲットに設定
 
-            Debug.Log("R target");
+            //Debug.Log("R target");
         }
     }
 

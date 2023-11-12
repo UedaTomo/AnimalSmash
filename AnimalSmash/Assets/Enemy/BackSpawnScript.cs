@@ -13,11 +13,12 @@ public class BackSpawnScript : MonoBehaviour
     public int levelup = 1;
     public int spawnPointNum = 4;
     public int spawnPointWork = 1;
+    public float midium_time = 20.0f;
+    public float difficult_time = 40.0f;
+    public float levelup_time = 3.0f;
 
     private float TIME = 0f;
     private float spawn_time = 0f;
-    private float midium_time = 20.0f;
-    private float difficult_time = 40.0f;
     private int[] randomPosition = new int[3];
     private int[] numbers = new int[4];
 
@@ -36,10 +37,12 @@ public class BackSpawnScript : MonoBehaviour
         if (spawnPointWork == 1 && TIME >= midium_time)
         {
             spawnPointWork += levelup;
+            interval -= levelup_time;
         }
         if (spawnPointWork == 2 && TIME >= difficult_time)
         {
             spawnPointWork += levelup;
+            //interval -= levelup_time;
         }
 
         if (spawn_time > interval)

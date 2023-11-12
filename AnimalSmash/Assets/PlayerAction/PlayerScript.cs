@@ -7,38 +7,26 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
     [SerializeField] Material plane;
-    public float stop = 3.0f;
+    public float stop = 0.5f;
+    public float invicible_time = 2.0f;
     private float alpha_sin;
-    private float time = 0f;
+    private float touch_time = 0f;
+    private float inv_time = 0f;
     private bool isTouch; //“G‚É“–‚½‚Á‚½‚©“–‚½‚Á‚Ä‚È‚¢‚©
+    private bool Invincible; //–³“GŽžŠÔ
 
     // Start is called before the first frame update
     void Start()
     {
         isTouch = false;
+        Invincible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isTouch)
-        {
-            time += Time.deltaTime;
-            //Debug.Log("‘«‚µŽZ");
-
-            //StartCoroutine("blink");
-
-            if (time >= stop)
-            {
-                isTouch = false;
-                time = 0f;
-                //Debug.Log("I‚í‚è");
-            }
-            
-        }
-
         if (!isTouch)
-        { 
+        {
             // WƒL[i‘O•ûˆÚ“®j
             if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
             {
@@ -62,6 +50,33 @@ public class PlayerScript : MonoBehaviour
             {
                 transform.position -= speed * transform.right * Time.deltaTime;
             }
+
+        }
+
+        if (isTouch)
+        {
+            touch_time += Time.deltaTime;
+
+            //StartCoroutine("blink");
+
+            if (touch_time >= stop)
+            {
+                isTouch = false;
+                Invincible = true;
+                touch_time = 0f;
+            }
+
+        }
+
+        if (Invincible)
+        {
+            inv_time += Time.deltaTime;
+
+            if (inv_time >= invicible_time)
+            {
+                Invincible = false;
+                inv_time = 0f;
+            }
         }
     }
 
@@ -69,7 +84,10 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy"))
         {
-            isTouch = true;
+            if (!Invincible)
+            {
+                isTouch = true;
+            }
         }
     }
 }
