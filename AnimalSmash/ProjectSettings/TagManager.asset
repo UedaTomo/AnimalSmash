@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - enemy
-  - destroy
-  - Center
-  - Boss
-  - attackzone
-  - wall
   - Bullet
+  - destroy
+  - wall
+  - attackzone
+  - Boss
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -18,13 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
-  - Floor
-  - 
-=======
   - rabbit
   - bullet
->>>>>>> c46c9d0e624f2d30a16d5044dd17c443baacb580
   - 
   - 
   - 
