@@ -25,7 +25,7 @@ public class HelthScript : MonoBehaviour
     {
         result = false;
         playerCount = 5;
-        HP.text = "�~" + playerCount;
+        HP.text = " x " + playerCount;
         //VictoryImage = GetComponent<Image>();
         //LoseImage = GetComponent<Image>();
         //GameObject VImage = GameObject.Find("VictoryImage");
@@ -81,7 +81,7 @@ public class HelthScript : MonoBehaviour
             {
 
                 playerCount -= 1;
-                HP.text = "�~" + playerCount;
+                HP.text = " x " + playerCount;
 
             }
         }

@@ -11,9 +11,12 @@ public class result : MonoBehaviour
         // エスケープキーが押されたらゲームを終了する
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
             // 実行中のビルドではアプリケーションを終了する
+#else
             Application.Quit();
+#endif
         }
         else if(Input.anyKey)
         {
