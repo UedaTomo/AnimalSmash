@@ -2,65 +2,83 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Security.Cryptography;
 using System.Linq;
+using System;
 
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
     [SerializeField] Material plane;
-    public float stop = 3.0f;
+    public float stop = 0.5f;
+    public float invicible_time = 2.0f;
     private float alpha_sin;
-    private float time = 0f;
-    private bool isTouch; //ìGÇ…ìñÇΩÇ¡ÇΩÇ©ìñÇΩÇ¡ÇƒÇ»Ç¢Ç©
-
+    private float touch_time = 0f;
+    private float inv_time = 0f;
+    private bool isTouch; //Êïµ„Å´ÂΩì„Åü„Å£„Åü„ÅãÂΩì„Åü„Å£„Å¶„Å™„ÅÑ„Åã
+    private bool Invincible; //ÁÑ°ÊïµÊôÇÈñì
+    public GameObject damy;
+    public GameObject stan;
+    
     // Start is called before the first frame update
     void Start()
     {
         isTouch = false;
+        Invincible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isTouch)
-        {
-            time += Time.deltaTime;
-            Debug.Log("ë´ÇµéZ");
-
-            //StartCoroutine("blink");
-
-            if (time >= stop)
-            {
-                isTouch = false;
-                time = 0f;
-                Debug.Log("èIÇÌÇË");
-            }
-            
-        }
-
         if (!isTouch)
-        { 
-            // WÉLÅ[ÅiëOï˚à⁄ìÆÅj
+        {
+            // W„Ç≠„ÉºÔºàÂâçÊñπÁßªÂãïÔºâ
             if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
             {
                 transform.position += speed * transform.forward * Time.deltaTime;
             }
 
-            // SÉLÅ[Åiå„ï˚à⁄ìÆÅj
+            // S„Ç≠„ÉºÔºàÂæåÊñπÁßªÂãïÔºâ
             if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
             {
                 transform.position -= speed * transform.forward * Time.deltaTime;
             }
 
-            // DÉLÅ[ÅiâEà⁄ìÆÅj
+            // D„Ç≠„ÉºÔºàÂè≥ÁßªÂãïÔºâ
             if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
             {
                 transform.position += speed * transform.right * Time.deltaTime;
             }
 
-            // AÉLÅ[Åiç∂à⁄ìÆÅj
+            // A„Ç≠„ÉºÔºàÂ∑¶ÁßªÂãïÔºâ
             if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
             {
                 transform.position -= speed * transform.right * Time.deltaTime;
+            }
+
+        }
+
+        if (isTouch)
+        {
+            touch_time += Time.deltaTime;
+
+            //StartCoroutine("blink");
+
+            if (touch_time >= stop)
+            {
+                isTouch = false;
+                Invincible = true;
+                touch_time = 0f;
+            }
+
+        }
+
+        if (Invincible)
+        {
+            inv_time += Time.deltaTime;
+
+            if (inv_time >= invicible_time)
+            {
+                Invincible = false;
+                inv_time = 0f;
             }
         }
     }
@@ -69,17 +87,18 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy"))
         {
-            isTouch = true;
+            if (!Invincible)
+            {
+                isTouch = true;
+                Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 2f, this.transform.position.z);
+                Instantiate(stan, effectPosition, Quaternion.identity);
+            }
         }
     }
-
-    /*IEnumerator blink()
+    public void GameClear()
     {
-
-            Color color = this.gameObject.material.color;
-
-            color.a = alpha_sin;
-
-            this.gameObject.material.color = color;
-    }*/
+        damy.gameObject.SetActive(true);
+        Instantiate(damy, gameObject.transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }

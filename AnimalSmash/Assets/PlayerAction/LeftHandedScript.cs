@@ -19,7 +19,7 @@ public class LeftHandedScript : MonoBehaviour
             Destroy(targetEnemy); // 現在のターゲットを破棄する
             Shooting();
 
-            Debug.Log("L shot");
+            //Debug.Log("L shot");
         }
     }
 
@@ -29,7 +29,7 @@ public class LeftHandedScript : MonoBehaviour
         {
             targetEnemy = other.gameObject; // enemy タグを持つオブジェクトをターゲットに設定
 
-            Debug.Log("L target");
+            //Debug.Log("L target");
         }
     }
 

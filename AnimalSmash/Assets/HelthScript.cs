@@ -13,6 +13,7 @@ public class HelthScript : MonoBehaviour
     public TextMeshProUGUI GameOver;
     public TextMeshProUGUI GameOverComment;
     public TextMeshProUGUI WaitKey;
+    public GameObject _playerObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,10 @@ public class HelthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //if(playerCount > 0)
+        //{
+        //    Time.timeScale = 0f;
+        //}
     }
 
     public void IsGameover()
@@ -55,6 +59,7 @@ public class HelthScript : MonoBehaviour
         if (playerCount <= 0)
         {
             IsGameover();
+            _playerObj.GetComponent<PlayerScript>().GameClear();
         }
     }
 }

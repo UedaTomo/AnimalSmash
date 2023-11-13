@@ -34,5 +34,9 @@ public class damage : MonoBehaviour
             Debug.Log(_damageLevel);
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("destroy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
