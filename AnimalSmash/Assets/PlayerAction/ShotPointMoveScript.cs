@@ -10,7 +10,7 @@ public class ShotPointMoveScript : MonoBehaviour
         RaycastHit hit;
 
         // レイヤーマスクの設定
-        int layerMask = 1 << 6; // "Floor" レイヤーのみを対象にする
+        int layerMask = 1 << 8; // "Floor" レイヤーのみを対象にする
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

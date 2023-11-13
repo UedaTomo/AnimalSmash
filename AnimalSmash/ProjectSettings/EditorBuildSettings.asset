@@ -4,6 +4,18 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/title.unity
+    guid: 9639129b5867c994dbf946a3cc85d236
+  - enabled: 1
+    path: "Assets/Scenes/\u03B1 shibato.unity"
+    guid: 89336988af29cca42a322818f97a37a5
+  - enabled: 1
+    path: Assets/Scenes/WinResult.unity
+    guid: ee20c29264a1df04a96c9285c25a1970
+  - enabled: 1
+    path: Assets/Scenes/LoseResult.unity
+    guid: 9d9d3345521b8424ab7d5ed6b195d39c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e83b7d2a6b20f97458c9177c7f707ede, type: 2}

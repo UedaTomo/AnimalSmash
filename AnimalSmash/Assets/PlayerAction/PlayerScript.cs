@@ -95,10 +95,4 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
-    public void GameClear()
-    {
-        damy.gameObject.SetActive(true);
-        Instantiate(damy, gameObject.transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
 }

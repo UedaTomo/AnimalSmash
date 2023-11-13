@@ -25,7 +25,7 @@ public class damage : MonoBehaviour
         if (other.CompareTag("Boss"))
         {
             other.GetComponent<BossScript>().HP(_damage, _damageLevel);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         if (other.CompareTag("enemy"))
         {
@@ -36,7 +36,7 @@ public class damage : MonoBehaviour
         }
         if (other.CompareTag("destroy"))
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
