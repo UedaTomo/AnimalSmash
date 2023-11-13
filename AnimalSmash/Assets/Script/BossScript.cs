@@ -52,8 +52,8 @@ public class BossScript : MonoBehaviour
             Vector3 effectPosition = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 1f, enemy.transform.position.z);
             Instantiate(_smash, effectPosition, Quaternion.identity);
             Destroy(enemy);
-            _playerObj.GetComponent<PlayerScript>().GameClear();
         }
+        _playerObj.GetComponent<PlayerScript>().GameClear();
         Vector3 bossEffectPosition = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
         Instantiate(_bossSmash, bossEffectPosition, Quaternion.identity);
         Destroy(gameObject);
