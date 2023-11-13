@@ -43,12 +43,23 @@ public class RightHandedScript : MonoBehaviour
 
     private void Shooting()
     {
-        // マウスからのクリック位置をワールド座標に変換
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        // シーン内から「Aim」という名前のオブジェクトを検索
+        GameObject aimObject = GameObject.Find("Aim");
 
-        if (Physics.Raycast(ray, out hit))
+        if (aimObject != null)
         {
+            // 「Aim」オブジェクトへの方向を計算
+            Vector3 shootDirection = aimObject.transform.position - shotPoint.transform.position;
+            shootDirection.Normalize();
+
+            // Y軸回転を制限
+            float angle = Vector3.SignedAngle(Vector3.forward, shootDirection, Vector3.up);
+            angle = Mathf.Clamp(angle, minAngle, maxAngle); // 角度を制限
+
+            // 制限された角度を元に方向を再計算
+            Quaternion rotation = Quaternion.Euler(0, angle, 0);
+            Vector3 limitedDirection = rotation * Vector3.forward;
+
             // ボールを発射する処理
             GameObject ball = Instantiate(bulletPrefab); // Bullet プレハブを生成
             ball.transform.position = shotPoint.transform.position;
@@ -57,18 +68,6 @@ public class RightHandedScript : MonoBehaviour
             Rigidbody bulletRigidbody = ball.GetComponent<Rigidbody>();
             if (bulletRigidbody != null)
             {
-                // クリックした位置を向く方向を計算
-                Vector3 shootDirection = hit.point - shotPoint.transform.position;
-                shootDirection.Normalize();
-
-                // Y軸回転を制限
-                float angle = Vector3.SignedAngle(Vector3.forward, shootDirection, Vector3.up);
-                angle = Mathf.Clamp(angle, minAngle, maxAngle); // 角度を制限
-
-                // 制限された角度を元に方向を再計算
-                Quaternion rotation = Quaternion.Euler(0, angle, 0);
-                Vector3 limitedDirection = rotation * Vector3.forward;
-
                 // ボールの速度を設定
                 bulletRigidbody.velocity = limitedDirection * bulletSpeed;
             }
