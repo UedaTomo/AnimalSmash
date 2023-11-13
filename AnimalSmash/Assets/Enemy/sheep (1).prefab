@@ -288,9 +288,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:AnimalSmash/Assets/Enemy/sheep (3).prefab
+  - component: {fileID: 7183611660619616261}
+  - component: {fileID: 7604351501826899758}
+  - component: {fileID: -5055147058418778783}
+=======
   - component: {fileID: 491744050568413418}
   - component: {fileID: 3342278064513634063}
   - component: {fileID: 5829775536786177444}
+>>>>>>> c46c9d0e624f2d30a16d5044dd17c443baacb580:AnimalSmash/Assets/Enemy/sheep (1).prefab
   m_Layer: 0
   m_Name: Right_Front_Legs
   m_TagString: Untagged
@@ -566,20 +572,49 @@ Transform:
   - {fileID: 7576685063919930028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD:AnimalSmash/Assets/Enemy/sheep (3).prefab
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7604351501826899758
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564499339610311359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0057815
+  m_Center: {x: -4.682423e-11, y: -0.17837858, z: -0.009690871}
+--- !u!114 &-5055147058418778783
+=======
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1003175560345861537
+>>>>>>> c46c9d0e624f2d30a16d5044dd17c443baacb580:AnimalSmash/Assets/Enemy/sheep (1).prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:AnimalSmash/Assets/Enemy/sheep (3).prefab
+  m_GameObject: {fileID: 7564499339610311359}
+=======
   m_GameObject: {fileID: 3441416206294648044}
+>>>>>>> c46c9d0e624f2d30a16d5044dd17c443baacb580:AnimalSmash/Assets/Enemy/sheep (1).prefab
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c0803c513ab0c04d88732e067c00d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 0.01
+<<<<<<< HEAD:AnimalSmash/Assets/Enemy/sheep (3).prefab
+  move: 0.002
+  Up: -6
+  Down: -3
+  UpDown: 0.1
+--- !u!1 &7821135722177550521
+=======
+  move: 0.005
   Up: -6
   Down: -3
   UpDown: 0.1
@@ -613,6 +648,7 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &4191956655309273431
+>>>>>>> c46c9d0e624f2d30a16d5044dd17c443baacb580:AnimalSmash/Assets/Enemy/sheep (1).prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

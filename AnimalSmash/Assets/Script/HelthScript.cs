@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class HelthScript : MonoBehaviour
 {
     
-    public int playerCount; // écã@êî
+    public int playerCount; // ÔøΩcÔøΩ@ÔøΩÔøΩ
     public int nowHP;
     public int BossHP = BossScript.currentHp;
     public TextMeshProUGUI HP;
@@ -23,7 +23,7 @@ public class HelthScript : MonoBehaviour
     void Start()
     {
         playerCount = 5;
-        HP.text = "Å~ " + playerCount;
+        HP.text = "ÔøΩ~ " + playerCount;
         //VictoryImage = GetComponent<Image>();
         //LoseImage = GetComponent<Image>();
         //GameObject VImage = GameObject.Find("VictoryImage");
@@ -82,7 +82,7 @@ public class HelthScript : MonoBehaviour
             {
                     
                     playerCount -= 1;
-                    HP.text = "Å~ " + playerCount;
+                    HP.text = "ÔøΩ~ " + playerCount;
 
             }
         }
