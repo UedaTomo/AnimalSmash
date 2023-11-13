@@ -16,7 +16,7 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetKey("joystick button 1") || Input.GetKey("joystick button 2") || Input.GetKey("joystick button 3") || Input.GetKey("joystick button 4")|| Input.GetKey(KeyCode.B))
         {
-            SceneManager.LoadScene("ƒ¿ shibato");
+            SceneManager.LoadScene("Scenes/Î± shibato");
         }
     }
 }

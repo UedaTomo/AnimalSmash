@@ -25,7 +25,7 @@ public class HelthScript : MonoBehaviour
     {
         result = false;
         playerCount = 5;
-        HP.text = "Å~" + playerCount;
+        HP.text = "ÔøΩ~" + playerCount;
         //VictoryImage = GetComponent<Image>();
         //LoseImage = GetComponent<Image>();
         //GameObject VImage = GameObject.Find("VictoryImage");
@@ -38,7 +38,7 @@ public class HelthScript : MonoBehaviour
         nowHP = playerCount;
         if (BossHP <= 0)
         {
-            Debug.Log(VictoryImage);
+            // Debug.Log(VictoryImage);
             //Color newColor = VictoryImage.color;
             //newColor.a = 1.0f;
             playerCount = nowHP;
@@ -81,7 +81,7 @@ public class HelthScript : MonoBehaviour
             {
 
                 playerCount -= 1;
-                HP.text = "Å~" + playerCount;
+                HP.text = "ÔøΩ~" + playerCount;
 
             }
         }
