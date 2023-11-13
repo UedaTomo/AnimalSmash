@@ -18,7 +18,7 @@ public class BossScript : MonoBehaviour
     public Transform _bossPoint;
     public int _bossHp = 500;
     public Slider _bossSlider;
-    int currentHp;
+    public static int currentHp;
     public GameObject _smash;
     public GameObject _bossSmash;
     public GameObject _playerObj;
