@@ -3605,7 +3605,6 @@ MonoBehaviour:
   speed: 5
   plane: {fileID: 0}
   stop: 1
-  damy: {fileID: 0}
 --- !u!65 &1563893854
 BoxCollider:
   m_ObjectHideFlags: 0
