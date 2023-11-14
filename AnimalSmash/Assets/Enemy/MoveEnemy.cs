@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
 {
-    public float move = 5.0f;
+    public float move = 0.01f;
     public float Up = -6.0f;
     public float Down = -3.0f;
     public float UpDown = 0.1f;

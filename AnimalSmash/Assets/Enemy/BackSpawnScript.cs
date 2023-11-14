@@ -9,13 +9,13 @@ public class BackSpawnScript : MonoBehaviour
     public float speed = 10f;
     public GameObject Enemy;
     public Transform[] spawnPoint;
-    public float interval = 5f;
+    public int interval = 5;
     public int levelup = 1;
     public int spawnPointNum = 4;
     public int spawnPointWork = 1;
     public float midium_time = 20.0f;
-    public float difficult_time = 40.0f;
-    public float levelup_time = 3.0f;
+    public float difficult_time = 50.0f;
+    public int levelup_time = 2;
 
     private float TIME = 0f;
     private float spawn_time = 0f;

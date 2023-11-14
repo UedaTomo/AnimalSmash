@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/title.unity
     guid: 9639129b5867c994dbf946a3cc85d236
   - enabled: 1
-    path: "Assets/Scenes/\u03B1 shibato.unity"
+    path: Assets/Scenes/main.unity
     guid: 89336988af29cca42a322818f97a37a5
   - enabled: 1
     path: Assets/Scenes/WinResult.unity

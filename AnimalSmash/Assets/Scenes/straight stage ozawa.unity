@@ -1461,8 +1461,12 @@ MonoBehaviour:
   - {fileID: 1019834448}
   - {fileID: 1120004441}
   interval: 5
+  levelup: 1
   spawnPointNum: 4
   spawnPointWork: 2
+  midium_time: 20
+  difficult_time: 50
+  levelup_time: 2
 --- !u!4 &765251935
 Transform:
   m_ObjectHideFlags: 0
@@ -2132,10 +2136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCount: 0
+  nowHP: 0
+  BossHP: 0
   HP: {fileID: 236331870}
-  GameOver: {fileID: 726060840}
-  GameOverComment: {fileID: 1209012091}
   WaitKey: {fileID: 250087550}
+  VictoryImage: {fileID: 0}
+  LoseImage: {fileID: 0}
+  _playerObj: {fileID: 0}
+  result: 0
 --- !u!1 &1594824095
 GameObject:
   m_ObjectHideFlags: 0
