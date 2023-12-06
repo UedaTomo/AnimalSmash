@@ -11,6 +11,9 @@ TagManager:
   - Boss
   - enemy
   - Center
+  - FxTemporaire
+  - bird
+  - rabbit
   layers:
   - Default
   - TransparentFX
