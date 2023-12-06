@@ -10,6 +10,7 @@ TagManager:
   - attackzone
   - Boss
   - enemy
+  - Center
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - Water
   - UI
   - rabbit
-  - bullet
+  - Bullet
   - Floor
-  - 
+  - Enemy
   - 
   - 
   - 
