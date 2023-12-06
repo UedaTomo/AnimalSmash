@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3286281526993876541}
   - component: {fileID: 4614915218125770350}
   - component: {fileID: 4063760728418588957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8568122447882274174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: transform38
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5252117899210982421}
   - component: {fileID: 1104409179284045162}
   - component: {fileID: 8503735432422282299}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mofu36
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 2499013521030601515}
   - component: {fileID: 1238188249614838962}
   - component: {fileID: 3365331512464484285}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_hind_Legs
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 8708309531847467267}
   - component: {fileID: 3902937964128145170}
   - component: {fileID: 2106105071113138871}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Front_Legs
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 4788495082500948252}
   - component: {fileID: 7693564622158958329}
   - component: {fileID: 1459348271691512914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Front_Legs
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4914696461195426294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: transform36
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 1009234643878903422}
   - component: {fileID: 3111839578537439769}
   - component: {fileID: 8682524520639267470}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 2498822893661971839}
   - component: {fileID: 2365339090040683466}
   - component: {fileID: 2492042404825710115}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_hind_Legs
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 1237899834191979126}
   - component: {fileID: 2237205493195253346}
   - component: {fileID: 8371450118318220429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sheep (1)
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 4838451614529293826}
   - component: {fileID: 8562128368365546298}
   - component: {fileID: 8772319412025814978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Teil
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 5725794016884765652}
   - component: {fileID: 4686188543798117118}
   - component: {fileID: 1565887263702546921}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pCube2
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3279441450761374554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: transform39
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5172328305497301449}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: transform37
   m_TagString: enemy
   m_Icon: {fileID: 0}

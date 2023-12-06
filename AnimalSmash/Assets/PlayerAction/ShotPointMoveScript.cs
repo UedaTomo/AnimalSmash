@@ -8,12 +8,9 @@ public class ShotPointMoveScript : MonoBehaviour
     {
         // カメラからマウスがある場所に向かってRayを発射
         RaycastHit hit;
-
-        // レイヤーマスクの設定
-        int layerMask = 1 << 8; // "Floor" レイヤーのみを対象にする
-
+        // layer7と9の"Player"と"Attack"には当たらないためのマスク
+        int layerMask = ~(1 << 7 | 1 << 9);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             // Rayが当たった所にカーソルを移動させる

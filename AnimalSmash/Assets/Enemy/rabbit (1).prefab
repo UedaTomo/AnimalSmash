@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5820434452721554978}
   - component: {fileID: 8176908235147995737}
   - component: {fileID: 282352475222375128}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: rabbit (1)
   m_TagString: enemy
   m_Icon: {fileID: 0}
