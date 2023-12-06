@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class damage : MonoBehaviour
 {
@@ -17,9 +18,15 @@ public class damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.Rotate(new Vector3(-20, 0, 0) * Time.deltaTime);
     }
-
+    public void BasicDamage(bool enemy)
+    {
+        if (enemy == true)
+            _damage = 40;
+        if (enemy == false)
+            _damage = 1;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Boss"))
@@ -31,9 +38,9 @@ public class damage : MonoBehaviour
         {
             _damageLevel *= 2;
             Instantiate(smash, this.transform.position, Quaternion.identity);
-            Debug.Log(_damageLevel);
             Destroy(other.gameObject);
         }
+
         if (other.CompareTag("destroy"))
         {
             Destroy(this.gameObject);
