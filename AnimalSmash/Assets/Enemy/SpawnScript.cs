@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnScript : MonoBehaviour
+public class SpawnScript1 : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("enemy")]

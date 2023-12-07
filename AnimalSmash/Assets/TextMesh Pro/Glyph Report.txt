@@ -1,0 +1,14 @@
+Font: Buildings and under the railway tracks  Style: Regular
+Point Size: 98   SP/PD Ratio: 5.1%
+
+Characters included: 222/224
+Missing characters: 2
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 30033	Hex: 7551	Char [畑]
+ID: 29401	Hex: 72D9	Char [狙]
+
+Characters excluded from packing:
+----------------------------------------
