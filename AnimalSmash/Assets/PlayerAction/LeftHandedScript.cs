@@ -42,28 +42,17 @@ public class LeftHandedScript : MonoBehaviour
 
     private void Shooting()
     {
-        // シーン内から「Aim」という名前のオブジェクトを検索
-        GameObject aimObject = GameObject.Find("Aim");
+        // ボールを発射する処理
+        GameObject ball = Instantiate(bulletPrefab); // Bulletプレハブを生成
+        ball.transform.position = shotPoint.transform.position;
 
-        if (aimObject != null)
+        // ボールの速度を設定
+        Rigidbody bulletRigidbody = ball.GetComponent<Rigidbody>();
+        if (bulletRigidbody != null)
         {
-            // 「Aim」オブジェクトへの方向を計算
-            Vector3 shootDirection = aimObject.transform.position - shotPoint.transform.position;
-            shootDirection.Normalize();
-
-            // ボールを発射する処理
-            GameObject ball = Instantiate(bulletPrefab); // Bullet プレハブを生成
-            ball.transform.position = shotPoint.transform.position;
-
-            // ボールの速度を設定
-            Rigidbody bulletRigidbody = ball.GetComponent<Rigidbody>();
-            if (bulletRigidbody != null)
-            {
-                // ボールの速度を設定
-                bulletRigidbody.velocity = shootDirection * bulletSpeed;
-            }
-
-            // 必要に応じてボールの発射音やエフェクトを再生するなどの処理を追加できます
+            bulletRigidbody.velocity = shotPoint.transform.forward * bulletSpeed;
         }
+
+        // 必要に応じてボールの発射音やエフェクトを再生するなどの処理を追加できる
     }
 }

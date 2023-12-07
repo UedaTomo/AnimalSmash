@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class ShotPointMoveScript : MonoBehaviour
 {
+    [SerializeField] private float sensitivity = 4.0f; // マウスの感度
+    [SerializeField] private float maxRotationAngle = 60f; // 最大回転角度
+    private float rotationY = 0f;
+
     void Update()
     {
-        // カメラからマウスがある場所に向かってRayを発射
-        RaycastHit hit;
-        // layer7と9の"Player"と"Attack"には当たらないためのマスク
-        int layerMask = ~(1 << 7 | 1 << 9);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-        {
-            // Rayが当たった所にカーソルを移動させる
-            transform.position = hit.point;
-        }
+        // マウスの水平方向の移動量を取得
+        float mouseX = Input.GetAxis("Mouse X");
+
+        // 移動量に感度を掛けて調整
+        float horizontalMovement = mouseX * sensitivity;
+
+        // 現在のY軸回転を更新
+        rotationY += horizontalMovement;
+
+        // Y軸回転を制限
+        rotationY = Mathf.Clamp(rotationY, -maxRotationAngle, maxRotationAngle);
+
+        // オブジェクトの回転を更新
+        transform.rotation = Quaternion.Euler(0f, rotationY, 0f);
     }
 }
