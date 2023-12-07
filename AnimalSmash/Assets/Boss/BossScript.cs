@@ -15,36 +15,46 @@ public enum BossState
 }
 public class BossScript : MonoBehaviour
 {
-    public GameObject _bombPrefab;
-    public Transform _bossPoint;
+    [SerializeField]
+    private GameObject _birdPrefab;
+    public Transform _birdPoint1;
+    public Transform _birdPoint2;
     public int _bossHp = 700;
     public Slider _bossSlider;
     public static int currentHp;
     public GameObject _smash;
     public GameObject _bossSmash;
     public GameObject _playerObj;
+    private float time = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Attack();
+        Application.targetFrameRate = 60;
         currentHp = _bossHp;
     }
-    public void HP(int damage,int damageLevel)
+    public void HP(int damage, int damageLevel)
     {
-        currentHp -= damage+damageLevel;
-        Debug.Log("a");
+        currentHp -= damage + damageLevel;
     }
     // Update is called once per frame
     void Update()
     {
-        if(currentHp <= 0)
+        time += Time.deltaTime;
+        if (currentHp <= 0)
         {
             OnDestroy();
             SceneManager.LoadScene("WinResult");
-
         }
         _bossSlider.value = (int)currentHp;
+        //13ïbå„AttackÇåƒÇ‘
+        if (time > 13.0f)
+        {
+            Debug.Log("spawn");
+            time = 0f;
+            Attack();
+        }
+
     }
     private void OnDestroy()
     {
@@ -60,8 +70,14 @@ public class BossScript : MonoBehaviour
         //Instantiate(_bossSmash, bossEffectPosition, Quaternion.identity);
         //Destroy(gameObject);
     }
+    //íπê∂ê¨
     void Attack()
     {
-        //bombPrefab = Instantiate(_bombPrefab, _bossPoint.position, _bossPoint.rotation); //îöíeê∂ê¨
+        float x = Random.Range(_birdPoint1.position.x, _birdPoint2.position.x);
+        float y = _birdPoint1.position.y;
+        float z = Random.Range(_birdPoint1.position.z, _birdPoint2.position.z);
+
+        Instantiate(_birdPrefab, new Vector3(x, y, z), _birdPoint1.rotation);
+        //Instantiate(_birdPrefab, _birdPoint1.position, _birdPoint1.rotation);
     }
 }

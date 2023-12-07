@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class LeftHandedScript : MonoBehaviour
 {
+
     public GameObject shotPoint; // ボール発射ポイント
     public GameObject bulletPrefab; // ボールのプレハブ
+    public GameObject sheepBullet; //打ち返した羊のオブジェクト
+    public GameObject rabbitBullet; //打ち返した兎のオブジェクト
+    public GameObject birdBullet; //打ち返した鳥のオブジェクト
+
     [SerializeField] private float bulletSpeed = 10.0f; // ボールの速度
+    //[SerializeField] private float minAngle = -45.0f; // 最小角度
+    //[SerializeField] private float maxAngle = 45.0f; // 最大角度
 
     private GameObject targetEnemy = null; // 現在のターゲットとなる enemy タグのオブジェクト
-
+    bool basicDamage = false;
     private void Update()
     {
-        // マウスまたはコントローラーのボタンを使用
-        if ((Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1")) && targetEnemy != null)
+        if (Input.GetMouseButtonDown(0) && targetEnemy != null)
         {
             Destroy(targetEnemy); // 現在のターゲットを破棄する
             Shooting();
@@ -27,8 +33,20 @@ public class LeftHandedScript : MonoBehaviour
         if (other.CompareTag("enemy"))
         {
             targetEnemy = other.gameObject; // enemy タグを持つオブジェクトをターゲットに設定
-
-            Debug.Log("L target");
+            basicDamage = false;
+            //bulletPrefab = sheepBullet;
+        }
+        if (other.CompareTag("bird"))
+        {
+            targetEnemy = other.gameObject; // bird タグを持つオブジェクトをターゲットに設定
+            basicDamage = true;
+            //bulletPrefab = birdBullet;
+        }
+        if (other.CompareTag("rabbit"))
+        {
+            targetEnemy = other.gameObject; // rabbit タグを持つオブジェクトをターゲットに設定
+            basicDamage = false;
+            //bulletPrefab = rabbitBullet;
         }
     }
 

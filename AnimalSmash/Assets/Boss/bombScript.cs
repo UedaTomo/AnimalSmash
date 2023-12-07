@@ -4,33 +4,63 @@ using UnityEngine;
 
 public class bombScript : MonoBehaviour
 {
-    [SerializeField] private GameObject _redZone;
-    [SerializeField] private Transform _redPoint;
-    [SerializeField] private Transform _bossAttackPoint;
-    [SerializeField] private Transform _center;
-    [SerializeField] private Transform _bossPoint;
-    public float speed = 6.0f;
-    private float distance;
-    [Range(0.0f, 180.0f)] public float arcAngle = 60.0f;
-    public float baseHeight = 1.0f;
+    public float speed = 0.6f;
+    private float _moveTime = 2.0f;
+    private float _time = 0f;
+    private GameObject _player;
+    public Transform birdHight;     // 移動後高さ
+    Vector3 preposition;            // 移動前位置
+    Vector3 postposition;           // 移動後位置
+    float rate;
+    bool _moving = true;           //上から登場
+    bool _birdStrike = false;       //プレイヤーに向かって突進
+    public GameObject _strikeEffect;
     // Start is called before the first frame update
     void Start()
     {
-        _redZone = Instantiate(_redZone, _redPoint.position, _redPoint.rotation);
+        speed = 0.6f;
+        Transform transform = gameObject.GetComponent<Transform>();
+        preposition = transform.position;
+        postposition = new Vector3(preposition.x, birdHight.position.y, preposition.z);   // 移動後位置
     }
 
     // Update is called once per frame
     void Update()
     {
-        var frompoint = _bossPoint.position;
-        frompoint.y = baseHeight;
 
-        //円の軌道角度の半分のタンジェント
-        var tangentOfHalfAngle = Mathf.Tan(Mathf.Deg2Rad * arcAngle * 0.5f);
-        
-        distance = Vector3.Distance(_bossPoint.position, _bossAttackPoint.position);
-        //float interpolatedValue = (Time.time * speed) / distance;
-        float interpolatedValue = speed * Time.deltaTime;
-        transform.position = Vector3.Slerp(_bossPoint.position, _bossAttackPoint.position, interpolatedValue);
+        if (_moving == true)
+        {
+            // 経過時間を過ぎたときの処理
+            if (_time >= _moveTime)
+            {
+                _moving = false;
+                _player = GameObject.FindWithTag("Player");
+                _birdStrike = true;
+
+                // 一度だけ向きを調整
+                Vector3 direction = (_player.transform.position - transform.position).normalized;
+                transform.up = direction;
+            }
+            rate = Mathf.Clamp01(_time / _moveTime);   // 割合計算
+            gameObject.transform.position = Vector3.Lerp(preposition, postposition, rate);
+        }
+        _time += Time.deltaTime;  // 経過時間の加算
+
+        if (_birdStrike == true)
+        {
+            Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
+            Instantiate(_strikeEffect, effectPosition, Quaternion.identity);
+            if (_time >= 3.0)
+                speed += 0.1f;
+            // プレイヤーの方向に向かって加速しながら突進
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("destroy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
