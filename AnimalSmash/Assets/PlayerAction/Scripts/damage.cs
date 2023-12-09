@@ -48,7 +48,6 @@ public class damage : MonoBehaviour
             _source.PlayOneShot(enemydie); //çƒê∂
             Destroy(other.gameObject);
         }
-
         if (other.CompareTag("destroy"))
         {
             Destroy(this.gameObject);

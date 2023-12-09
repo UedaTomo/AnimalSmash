@@ -600,6 +600,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 496236206}
+    - target: {fileID: 5452116174573870080, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1995
+      objectReference: {fileID: 0}
     - target: {fileID: 5452116174573870083, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -612,6 +616,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 999634471}
+    - target: {fileID: 5452116174813850147, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1995
+      objectReference: {fileID: 0}
     - target: {fileID: 5452116174813850174, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -624,6 +632,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1378461138}
+    - target: {fileID: 5452116175131041106, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1801
+      objectReference: {fileID: 0}
     - target: {fileID: 5452116175131041197, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -636,6 +648,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1505342076}
+    - target: {fileID: 5452116175381654883, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1798
+      objectReference: {fileID: 0}
     - target: {fileID: 5452116175381654910, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -830,12 +846,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a47e674a8dafa0488ed77b2e077dcb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj: {fileID: 0}
   createPrefab: {fileID: 2383691016621940233, guid: a4e9cd705a1ff03479f1011717bff085, type: 3}
   rangeA: {fileID: 438521198}
   rangeB: {fileID: 190416339}
-  interval: 10
+  usagi_interval: 10
   levelup_time: 20
   _interval: 8
+  Enemy: {fileID: 0}
+  spawnPoint: []
+  hituzi_interval: 5
+  hituzi_levelup: 1
+  spawnPointNum: 4
+  spawnPointWork: 1
+  midium_time: 20
+  difficult_time: 50
+  levelup_interval: 2
 --- !u!4 &473062841
 Transform:
   m_ObjectHideFlags: 0
@@ -859,7 +885,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-131468
+  m_Name: pb_Mesh-3284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1673,7 +1699,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-131482
+  m_Name: pb_Mesh-3298
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2405,7 +2431,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-131440
+  m_Name: pb_Mesh-3256
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3122,7 +3148,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-131454
+  m_Name: pb_Mesh-3270
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4166,8 +4192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191786f7790e4804aba394d9c6c4b9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bombPrefab: {fileID: 0}
-  _bossPoint: {fileID: 0}
+  _birdPrefab: {fileID: 0}
+  _birdPoint1: {fileID: 0}
+  _birdPoint2: {fileID: 0}
   _bossHp: 700
   _bossSlider: {fileID: 1457131272}
   _smash: {fileID: 100000, guid: bb508fad3dd88314aa2b95e92272315a, type: 3}
@@ -4479,6 +4506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843a29b31903fc94ea9e4620a4734099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 4
+  maxRotationAngle: 60
 --- !u!136 &1983811130
 CapsuleCollider:
   m_ObjectHideFlags: 0
