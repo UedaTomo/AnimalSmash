@@ -352,7 +352,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7998079474361150936}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -89.6, z: 0}
 --- !u!65 &3863170338889807267
 BoxCollider:
@@ -621,87 +621,6 @@ Transform:
   m_Father: {fileID: 7449904719899611291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5109716824511252590
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1403030213971332291}
-  - component: {fileID: 4927091832760888560}
-  - component: {fileID: 1466978162987865665}
-  - component: {fileID: 3051873970619482595}
-  m_Layer: 0
-  m_Name: DetectionArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1403030213971332291
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5109716824511252590}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.018212214, y: 0.37711623, z: 0.068}
-  m_LocalScale: {x: 0.44444448, y: 0.44444448, z: 0.44444448}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7998079474361150936}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4927091832760888560
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5109716824511252590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.5749366, y: 1.6634891, z: 1.57532}
-  m_Center: {x: -0.040555473, y: 0.027647968, z: 0.2984309}
---- !u!54 &1466978162987865665
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5109716824511252590}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &3051873970619482595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5109716824511252590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ee85099dd147342bbcefe74f30b04b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotPoint: {fileID: 3863170339249412976}
-  bulletPrefab: {fileID: 2737364629601239826, guid: 9528a3f39daa12a41910ecd7924b9b63, type: 3}
-  sheepBullet: {fileID: 7738729788022539546, guid: 847cc8d849103eb43aa69bb1f4056fd2, type: 3}
-  rabbitBullet: {fileID: 2383691016621940233, guid: d036b374a8f723e43b8d525288c5fcec, type: 3}
-  birdBullet: {fileID: 5855463775024606368, guid: c015ffca3a1ca6c4eb3e7bbe3702faee, type: 3}
-  bulletSpeed: 20
 --- !u!1 &5452116174573870109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,7 +2351,6 @@ Transform:
   - {fileID: 8137233581440846309}
   - {fileID: 5452116175131041105}
   - {fileID: 3863170339249412977}
-  - {fileID: 1403030213971332291}
   - {fileID: 3863170338889807268}
   - {fileID: 8473803866561755200}
   m_Father: {fileID: 0}
@@ -2803,7 +2721,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7998079474361150936}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -89.7, z: 0}
 --- !u!65 &8473803866561755207
 BoxCollider:
