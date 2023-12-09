@@ -7,6 +7,7 @@ public class tutorial : MonoBehaviour
 {
     public bool CountDownStart;
     public bool AblePlay;
+    public bool AbleSpawn;
     public TextMeshProUGUI UpText;
     public TextMeshProUGUI RightText;
     public TextMeshProUGUI Player;
@@ -25,6 +26,8 @@ public class tutorial : MonoBehaviour
         ablemove = 0f;
         CountDownStart = false;
         AblePlay = false;
+        AbleSpawn = false;
+
         ableaim = false;
         aimFrag = true;
 
@@ -73,14 +76,15 @@ public class tutorial : MonoBehaviour
         if (ableaim == aimFrag)
         {
             TIME = 0f;
-            aimFrag= false;
+            aimFrag = false;
         }
         if (!aimFrag && TIME >= 2)
         {
+            AbleSpawn = true;
             moveex.localPosition = new Vector3(-471, 171, 0);
             moveex.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
-            UpText.text = "モンスターが来ました！打ち返してみましょう！";
+            UpText.text = "モンスターがきました！"+"打ち返してみましょう！";
             AimEx.SetActive(true);
         }
 

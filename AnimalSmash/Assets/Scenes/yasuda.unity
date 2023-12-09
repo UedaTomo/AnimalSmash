@@ -810,7 +810,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 473062841}
-  - component: {fileID: 473062840}
   m_Layer: 0
   m_Name: UsagiSpawn
   m_TagString: Untagged
@@ -818,24 +817,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &473062840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473062839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a47e674a8dafa0488ed77b2e077dcb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createPrefab: {fileID: 2383691016621940233, guid: a4e9cd705a1ff03479f1011717bff085, type: 3}
-  rangeA: {fileID: 438521198}
-  rangeB: {fileID: 190416339}
-  interval: 10
-  levelup_time: 20
-  _interval: 8
 --- !u!4 &473062841
 Transform:
   m_ObjectHideFlags: 0
@@ -4161,18 +4142,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840188077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 191786f7790e4804aba394d9c6c4b9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bombPrefab: {fileID: 0}
-  _bossPoint: {fileID: 0}
+  _birdPrefab: {fileID: 0}
+  _birdPoint1: {fileID: 0}
+  _birdPoint2: {fileID: 0}
   _bossHp: 700
   _bossSlider: {fileID: 1457131272}
   _smash: {fileID: 100000, guid: bb508fad3dd88314aa2b95e92272315a, type: 3}
   _bossSmash: {fileID: 0}
   _playerObj: {fileID: 959472944}
+  BossAttackOn: 1
 --- !u!65 &1840188080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4207,6 +4190,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9183cf2ae1a961a41baa006077dd8d26, type: 3}
   m_PrefabInstance: {fileID: 1840188076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1840188083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840188077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a47e674a8dafa0488ed77b2e077dcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 0}
+  createPrefab: {fileID: 2383691016621940233, guid: a4e9cd705a1ff03479f1011717bff085, type: 3}
+  rangeA: {fileID: 438521198}
+  rangeB: {fileID: 190416339}
+  usagi_interval: 10
+  levelup_time: 20
+  _interval: 4
+  Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
+  spawnPoint:
+  - {fileID: 539369640}
+  - {fileID: 1912341223}
+  - {fileID: 130156485}
+  - {fileID: 803371334}
+  hituzi_interval: 5
+  hituzi_levelup: 1
+  spawnPointNum: 4
+  spawnPointWork: 1
+  midium_time: 20
+  difficult_time: 50
+  levelup_interval: 2
 --- !u!43 &1904720860
 Mesh:
   m_ObjectHideFlags: 0
@@ -4479,6 +4494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843a29b31903fc94ea9e4620a4734099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 4
+  maxRotationAngle: 60
 --- !u!136 &1983811130
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4567,7 +4584,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062905307}
-  - component: {fileID: 2062905306}
   m_Layer: 0
   m_Name: SheepSpawn
   m_TagString: Untagged
@@ -4575,32 +4591,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2062905306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062905305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764683179d3f0de448e66b5e258a4b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
-  spawnPoint:
-  - {fileID: 539369640}
-  - {fileID: 1912341223}
-  - {fileID: 130156485}
-  - {fileID: 803371334}
-  interval: 5
-  levelup: 1
-  spawnPointNum: 4
-  spawnPointWork: 1
-  midium_time: 20
-  difficult_time: 40
-  levelup_time: 1
 --- !u!4 &2062905307
 Transform:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ public class MoveEnemy : MonoBehaviour
 
         //this.transform.position = new Vector3(this.transform.position.x, Mathf.PingPong(Time.time, 10), move * Time.deltaTime);
 
-        Vector3 position = new Vector3(0, 0, move);
+        Vector3 position = new Vector3(0, Down, move);
         transform.Translate(position);
     }
 
