@@ -12,7 +12,7 @@ public class SelectStageScript : MonoBehaviour
     Button stage3;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         stage1 = GameObject.Find("/Canvas/Stage1").GetComponent<Button>();
         stage2 = GameObject.Find("/Canvas/Stage2").GetComponent<Button>();
@@ -28,17 +28,17 @@ public class SelectStageScript : MonoBehaviour
         
     }
 
-    void SelectStage1()
+    public void SelectStage1()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("S1shibato");
     }
 
-    void SelectStage2() 
+    public void SelectStage2() 
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("S2shibato");
     }
 
-    void SelectStage3()
+    public void SelectStage3()
     {
         //SceneManager.LoadScene("");
     }
