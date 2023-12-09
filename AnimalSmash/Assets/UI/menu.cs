@@ -42,9 +42,9 @@ public class menu : MonoBehaviour
 #endif
     }
 
-    public void Tutorial()
+    public void Tutrial()
     {
         //チュートリアルシーンへ移動
-        //SceneManager.LoadScene("yasuda1");
+        SceneManager.LoadScene("yasuda1");
     }
 }
