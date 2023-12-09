@@ -17,41 +17,65 @@ public class PlayerScript : MonoBehaviour
     private bool Invincible; //無敵時間
     public GameObject damy;
     public GameObject stan;
+    public Animator playeranim;
+    public bool isMove;
     
     // Start is called before the first frame update
     void Start()
     {
         isTouch = false;
         Invincible = false;
+        isMove = false;
+
+        playeranim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Transform playertransform = this.transform;
+        playeranim.SetBool("walk", isMove);
+
         if (!isTouch)
         {
+            isMove = false;
+
             // Wキー（前方移動）
             if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
             {
-                transform.position += speed * transform.forward * Time.deltaTime;
+                this.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.position += speed * -transform.forward * Time.deltaTime;
+                isMove = true;
             }
 
             // Sキー（後方移動）
             if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
             {
-                transform.position -= speed * transform.forward * Time.deltaTime;
+                this.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.position += speed * -transform.forward * Time.deltaTime;
+                isMove = true;
             }
 
             // Dキー（右移動）
             if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
             {
-                transform.position += speed * transform.right * Time.deltaTime;
+                //transform.position -= speed * transform.right * Time.deltaTime;
+                //Vector3 move = new Vector3(speed * Time.deltaTime,0f, 0f);
+                //this.transform.Translate(move);
+                //this.transform.localPosition.x += speed * Time.deltaTime;
+                //Vector3 Right = new Vector3(speed * Time.deltaTime, 0f, 0f);
+                //this.transform.position += Right;
+                this.transform.localRotation = Quaternion.Euler(0, 270, 0);
+                transform.position += speed * -transform.forward * Time.deltaTime;
+                isMove = true;
             }
 
             // Aキー（左移動）
             if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
             {
-                transform.position -= speed * transform.right * Time.deltaTime;
+                this.transform.localRotation = Quaternion.Euler(0, 90, 0);
+                transform.position += speed * -transform.forward * Time.deltaTime;
+                isMove = true;
             }
 
         }

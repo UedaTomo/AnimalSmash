@@ -11,9 +11,12 @@ public class tutorial : MonoBehaviour
     public TextMeshProUGUI RightText;
     public TextMeshProUGUI Player;
     public GameObject moveEx;
+    public GameObject AimEx;
 
     private float TIME;//始まってからの時間
     private float ablemove;
+    private bool ableaim;
+    private bool aimFrag;
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +25,21 @@ public class tutorial : MonoBehaviour
         ablemove = 0f;
         CountDownStart = false;
         AblePlay = false;
+        ableaim = false;
+        aimFrag = true;
 
         UpText.text = "";
         RightText.text = "";
         Player.text="";
         moveEx.SetActive(false);
+        AimEx.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Transform moveex = moveEx.transform;
+
         TIME += Time.deltaTime;
 
         //最初の6秒はアニメーション
@@ -44,7 +52,7 @@ public class tutorial : MonoBehaviour
         {
             Player.enabled = false;
             UpText.text = "移動してみよう";
-            RightText.text = "移動方法";
+            //RightText.text = "移動方法";
             moveEx.SetActive(true);
             AblePlay = true;
         }
@@ -57,9 +65,23 @@ public class tutorial : MonoBehaviour
                 ablemove++;
             }
         }
-        if(ablemove>10)
+        if (ablemove > 10)
         {
             UpText.text = "nice!";
+            ableaim = true;
+        }
+        if (ableaim == aimFrag)
+        {
+            TIME = 0f;
+            aimFrag= false;
+        }
+        if (!aimFrag && TIME >= 2)
+        {
+            moveex.localPosition = new Vector3(-471, 171, 0);
+            moveex.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+
+            UpText.text = "モンスターが来ました！打ち返してみましょう！";
+            AimEx.SetActive(true);
         }
 
     }
