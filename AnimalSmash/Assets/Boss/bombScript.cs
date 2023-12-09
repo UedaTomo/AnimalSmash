@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class bombScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class bombScript : MonoBehaviour
     private float _moveTime = 2.0f;
     private float _time = 0f;
     private GameObject _player;
+    public GameObject birdbody;
     public Transform birdHight;     // 移動後高さ
     Vector3 preposition;            // 移動前位置
     Vector3 postposition;           // 移動後位置
@@ -15,6 +17,10 @@ public class bombScript : MonoBehaviour
     bool _moving = true;           //上から登場
     bool _birdStrike = false;       //プレイヤーに向かって突進
     public GameObject _strikeEffect;
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip b1; //羽ばたく音
+    [SerializeField] private AudioClip b2; //風切り
+    [SerializeField] private AudioClip b3; //ゴゴゴ
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +28,7 @@ public class bombScript : MonoBehaviour
         Transform transform = gameObject.GetComponent<Transform>();
         preposition = transform.position;
         postposition = new Vector3(preposition.x, birdHight.position.y, preposition.z);   // 移動後位置
+        _source.PlayOneShot(b1); //再生
     }
 
     // Update is called once per frame
@@ -40,6 +47,11 @@ public class bombScript : MonoBehaviour
                 // 一度だけ向きを調整
                 Vector3 direction = (_player.transform.position - transform.position).normalized;
                 transform.up = direction;
+
+                _source.PlayOneShot(b2); //再生
+                _source.loop = !_source.loop;
+                _source.PlayOneShot(b3); //再生
+                birdbody.transform.eulerAngles = new Vector3(90.179f, 430.501f, 250.048f);
             }
             rate = Mathf.Clamp01(_time / _moveTime);   // 割合計算
             gameObject.transform.position = Vector3.Lerp(preposition, postposition, rate);
