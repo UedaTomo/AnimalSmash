@@ -1,0 +1,12 @@
+Font: Buildings and under the railway tracks  Style: Regular
+Point Size: 96   SP/PD Ratio: 5.2%
+
+Characters included: 230/230
+Missing characters: 0
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+
+Characters excluded from packing:
+----------------------------------------
