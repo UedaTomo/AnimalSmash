@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public enum BossState
 {
@@ -26,16 +27,23 @@ public class BossScript : MonoBehaviour
     public GameObject _bossSmash;
     public GameObject _playerObj;
     private float time = 0f;
+    private TextMeshProUGUI _conboText;
+    private Animator birdanim;
 
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
         currentHp = _bossHp;
+        GameObject obj = GameObject.Find("Conbo");
+        _conboText = obj.GetComponent<TextMeshProUGUI>();
+        GameObject BossBear = GameObject.Find("BossBear");
+        birdanim = BossBear.GetComponent<Animator>();
     }
-    public void HP(int damage, int damageLevel)
+    public void HP(int _conbo,int _damage, int _damageLevel)
     {
-        currentHp -= damage + damageLevel;
+        currentHp -= _damage + _damageLevel;
+        _conboText.text = _conbo + "ÇÍÇÒÇ≥\n" + (_damage + _damageLevel) + "É_ÉÅÅ[ÉW";
     }
     // Update is called once per frame
     void Update()
@@ -43,16 +51,21 @@ public class BossScript : MonoBehaviour
         time += Time.deltaTime;
         if (currentHp <= 0)
         {
+
             OnDestroy();
             SceneManager.LoadScene("WinResult");
         }
         _bossSlider.value = (int)currentHp;
+        if(time > 5.5)
+        {
+            birdanim.SetBool("birdstrike", true);
+        }
         //13ïbå„AttackÇåƒÇ‘
         if (time > 13.0f)
         {
-            Debug.Log("spawn");
             time = 0f;
             Attack();
+            birdanim.SetBool("birdstrike", false);
         }
 
     }

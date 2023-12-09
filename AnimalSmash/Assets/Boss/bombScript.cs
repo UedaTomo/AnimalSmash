@@ -15,6 +15,10 @@ public class bombScript : MonoBehaviour
     bool _moving = true;           //ã‚©‚ç“oê
     bool _birdStrike = false;       //ƒvƒŒƒCƒ„[‚ÉŒü‚©‚Á‚Ä“Ëi
     public GameObject _strikeEffect;
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip b1; //‰H‚Î‚½‚­‰¹
+    [SerializeField] private AudioClip b2; //•—Ø‚è
+    [SerializeField] private AudioClip b3; //ƒSƒSƒS
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class bombScript : MonoBehaviour
         Transform transform = gameObject.GetComponent<Transform>();
         preposition = transform.position;
         postposition = new Vector3(preposition.x, birdHight.position.y, preposition.z);   // ˆÚ“®ŒãˆÊ’u
+        _source.PlayOneShot(b1); //Ä¶
     }
 
     // Update is called once per frame
@@ -40,6 +45,10 @@ public class bombScript : MonoBehaviour
                 // ˆê“x‚¾‚¯Œü‚«‚ğ’²®
                 Vector3 direction = (_player.transform.position - transform.position).normalized;
                 transform.up = direction;
+                _source.PlayOneShot(b2); //Ä¶
+                _source.loop = !_source.loop;
+                _source.PlayOneShot(b3); //Ä¶
+
             }
             rate = Mathf.Clamp01(_time / _moveTime);   // Š„‡ŒvZ
             gameObject.transform.position = Vector3.Lerp(preposition, postposition, rate);

@@ -14,7 +14,6 @@ public class LeftHandedScript : MonoBehaviour
     [SerializeField] private float bulletSpeed = 10.0f; // ボールの速度
 
     private GameObject targetEnemy = null; // 現在のターゲットとなる enemy タグのオブジェクト
-    bool basicDamage = false;
     private void Update()
     {
         if (Input.GetButtonDown("Shot")) // マウスクリックまたはコントローラーのRトリガーボタンが押されたら
@@ -33,20 +32,17 @@ public class LeftHandedScript : MonoBehaviour
         if (other.CompareTag("enemy"))
         {
             targetEnemy = other.gameObject; // enemy タグを持つオブジェクトをターゲットに設定
-            basicDamage = false;
-            //bulletPrefab = sheepBullet;
+            bulletPrefab = sheepBullet;
         }
         if (other.CompareTag("bird"))
         {
             targetEnemy = other.gameObject; // bird タグを持つオブジェクトをターゲットに設定
-            basicDamage = true;
-            //bulletPrefab = birdBullet;
+            bulletPrefab = birdBullet;
         }
         if (other.CompareTag("rabbit"))
         {
             targetEnemy = other.gameObject; // rabbit タグを持つオブジェクトをターゲットに設定
-            basicDamage = false;
-            //bulletPrefab = rabbitBullet;
+            bulletPrefab = rabbitBullet;
         }
     }
 
