@@ -15,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     private float inv_time = 0f;
     private bool isTouch; //敵に当たったか当たってないか
     private bool Invincible; //無敵時間
+    private bool front;
+
     public GameObject damy;
     public GameObject stan;
     public Animator playeranim;
@@ -39,6 +41,7 @@ public class PlayerScript : MonoBehaviour
         if (!isTouch)
         {
             isMove = false;
+            front = true;
 
             // Wキー（前方移動）
             if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
@@ -46,6 +49,7 @@ public class PlayerScript : MonoBehaviour
                 this.transform.localRotation = Quaternion.Euler(0, 180, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
                 isMove = true;
+                front = false;
             }
 
             // Sキー（後方移動）
@@ -54,20 +58,16 @@ public class PlayerScript : MonoBehaviour
                 this.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
                 isMove = true;
+                front = false;
             }
 
             // Dキー（右移動）
             if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
             {
-                //transform.position -= speed * transform.right * Time.deltaTime;
-                //Vector3 move = new Vector3(speed * Time.deltaTime,0f, 0f);
-                //this.transform.Translate(move);
-                //this.transform.localPosition.x += speed * Time.deltaTime;
-                //Vector3 Right = new Vector3(speed * Time.deltaTime, 0f, 0f);
-                //this.transform.position += Right;
                 this.transform.localRotation = Quaternion.Euler(0, 270, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
                 isMove = true;
+                front = false;
             }
 
             // Aキー（左移動）
@@ -76,8 +76,13 @@ public class PlayerScript : MonoBehaviour
                 this.transform.localRotation = Quaternion.Euler(0, 90, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
                 isMove = true;
+                front = false;
             }
 
+            if(front)
+            {
+                this.transform.localRotation = Quaternion.Euler(0, 180, 0);
+            }
         }
 
         if (isTouch)

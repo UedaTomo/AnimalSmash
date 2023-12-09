@@ -655,6 +655,7 @@ GameObject:
   - component: {fileID: 1237899834191979126}
   - component: {fileID: 2237205493195253346}
   - component: {fileID: 8371450118318220429}
+  - component: {fileID: 2808973449409411215}
   m_Layer: 9
   m_Name: sheep (1)
   m_TagString: enemy
@@ -722,10 +723,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0803c513ab0c04d88732e067c00d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 0.03
+  move: 0.02
   Up: -6
   Down: -3
   UpDown: 0.1
+--- !u!95 &2808973449409411215
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738729788022539546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d453a6a6a17fa84d89db764f14164ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8004510827039545116
 GameObject:
   m_ObjectHideFlags: 0
