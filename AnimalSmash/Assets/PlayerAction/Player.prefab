@@ -698,6 +698,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPoint: {fileID: 3863170339249412976}
   bulletPrefab: {fileID: 2737364629601239826, guid: 9528a3f39daa12a41910ecd7924b9b63, type: 3}
+  sheepBullet: {fileID: 7738729788022539546, guid: 847cc8d849103eb43aa69bb1f4056fd2, type: 3}
+  rabbitBullet: {fileID: 2383691016621940233, guid: d036b374a8f723e43b8d525288c5fcec, type: 3}
+  birdBullet: {fileID: 5855463775024606368, guid: c015ffca3a1ca6c4eb3e7bbe3702faee, type: 3}
   bulletSpeed: 20
 --- !u!1 &5452116174573870109
 GameObject:

@@ -4733,8 +4733,9 @@ GameObject:
   - component: {fileID: 198157547220164012}
   - component: {fileID: 199622501077141480}
   - component: {fileID: 114187966190455476}
+  - component: {fileID: -4988895919809272690}
   m_Layer: 0
-  m_Name: CFX2_SparksHit_B Sphere
+  m_Name: SparksHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4771,7 +4772,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9475,3 +9476,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &-4988895919809272690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995403933065894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c527c304a189177459b3356c24da1ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroy: 0.5
