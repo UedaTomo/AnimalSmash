@@ -28,7 +28,8 @@ public class BossScript : MonoBehaviour
     public GameObject _playerObj;
     private float time = 0f;
     private TextMeshProUGUI _conboText;
-    private Animator birdanim;
+    private Animator birdanim;           //Anim
+    public bool BossAttackOn = true;      //BossÇ™çUåÇÇ∑ÇÈÇ©Ç«Ç§Ç©
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class BossScript : MonoBehaviour
         GameObject BossBear = GameObject.Find("BossBear");
         birdanim = BossBear.GetComponent<Animator>();
     }
-    public void HP(int _conbo,int _damage, int _damageLevel)
+    public void HP(int _conbo, int _damage, int _damageLevel)
     {
         currentHp -= _damage + _damageLevel;
         _conboText.text = _conbo + "ÇÍÇÒÇ≥\n" + (_damage + _damageLevel) + "É_ÉÅÅ[ÉW";
@@ -55,19 +56,21 @@ public class BossScript : MonoBehaviour
             OnDestroy();
             SceneManager.LoadScene("WinResult");
         }
+        if (BossAttackOn)
+        {
+            if (time > 5.5)
+            {
+                birdanim.SetBool("birdstrike", true);
+            }
+            //13ïbå„AttackÇåƒÇ‘
+            if (time > 13.0f)
+            {
+                time = 0f;
+                Attack();
+                birdanim.SetBool("birdstrike", false);
+            }
+        }
         _bossSlider.value = (int)currentHp;
-        if(time > 5.5)
-        {
-            birdanim.SetBool("birdstrike", true);
-        }
-        //13ïbå„AttackÇåƒÇ‘
-        if (time > 13.0f)
-        {
-            time = 0f;
-            Attack();
-            birdanim.SetBool("birdstrike", false);
-        }
-
     }
     private void OnDestroy()
     {
