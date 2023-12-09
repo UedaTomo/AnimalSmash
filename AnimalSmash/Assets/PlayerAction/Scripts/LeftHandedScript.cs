@@ -18,11 +18,11 @@ public class LeftHandedScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Shot")) // マウスクリックまたはコントローラーのRトリガーボタンが押されたら
         {
+
             if (targetEnemy != null)
             {
                 Destroy(targetEnemy); // 現在のターゲットを破棄する
                 Shooting();
-                Debug.Log("Shot");
             }
         }
     }

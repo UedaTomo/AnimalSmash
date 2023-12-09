@@ -206,6 +206,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &17334345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3863170338889807271, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+  m_PrefabInstance: {fileID: 1013697854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &17334349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17334345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ee85099dd147342bbcefe74f30b04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPoint: {fileID: 1041842669}
+  bulletPrefab: {fileID: 2737364629601239826, guid: 9528a3f39daa12a41910ecd7924b9b63, type: 3}
+  sheepBullet: {fileID: 7738729788022539546, guid: 847cc8d849103eb43aa69bb1f4056fd2, type: 3}
+  rabbitBullet: {fileID: 2383691016621940233, guid: d036b374a8f723e43b8d525288c5fcec, type: 3}
+  birdBullet: {fileID: 5855463775024606368, guid: c015ffca3a1ca6c4eb3e7bbe3702faee, type: 3}
+  bulletSpeed: 20
 --- !u!1001 &47944040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2467,6 +2490,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3522110628967640866, guid: bb01361f880dedb48a3f88dc3e97d74f, type: 3}
   m_PrefabInstance: {fileID: 1119009475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &740100955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8473803866561755203, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+  m_PrefabInstance: {fileID: 1013697854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &740100959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740100955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80058d9b52b31a4bae1f8116738a368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPoint: {fileID: 1041842669}
+  bulletPrefab: {fileID: 2737364629601239826, guid: 9528a3f39daa12a41910ecd7924b9b63, type: 3}
+  sheepBullet: {fileID: 7738729788022539546, guid: 847cc8d849103eb43aa69bb1f4056fd2, type: 3}
+  rabbitBullet: {fileID: 2383691016621940233, guid: d036b374a8f723e43b8d525288c5fcec, type: 3}
+  birdBullet: {fileID: 5855463775024606368, guid: c015ffca3a1ca6c4eb3e7bbe3702faee, type: 3}
+  bulletSpeed: 20
 --- !u!4 &763612629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c18762b8b0df5224ebd7f1988c4db2a6, type: 3}
@@ -3524,7 +3570,7 @@ PrefabInstance:
       objectReference: {fileID: 1463735906}
     - target: {fileID: 5452116174573870080, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_VersionIndex
-      value: 2055
+      value: 2061
       objectReference: {fileID: 0}
     - target: {fileID: 5452116174573870083, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
@@ -3540,7 +3586,7 @@ PrefabInstance:
       objectReference: {fileID: 862230352}
     - target: {fileID: 5452116174813850147, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_VersionIndex
-      value: 2055
+      value: 2061
       objectReference: {fileID: 0}
     - target: {fileID: 5452116174813850174, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
@@ -3556,7 +3602,7 @@ PrefabInstance:
       objectReference: {fileID: 274427398}
     - target: {fileID: 5452116175131041106, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_VersionIndex
-      value: 1861
+      value: 1867
       objectReference: {fileID: 0}
     - target: {fileID: 5452116175131041197, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
@@ -3580,7 +3626,7 @@ PrefabInstance:
       objectReference: {fileID: 1924878162}
     - target: {fileID: 5452116175381654883, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_VersionIndex
-      value: 1858
+      value: 1864
       objectReference: {fileID: 0}
     - target: {fileID: 5452116175381654910, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
       propertyPath: m_Mesh
@@ -3974,6 +4020,11 @@ Rigidbody:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1583b8f76e54bf64d833df95ee37c7dc, type: 3}
   m_PrefabInstance: {fileID: 986280752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1041842669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3863170339249412976, guid: 74114bd34c49bd24fbc8704a214efd90, type: 3}
+  m_PrefabInstance: {fileID: 1013697854}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1084215108
 PrefabInstance:
