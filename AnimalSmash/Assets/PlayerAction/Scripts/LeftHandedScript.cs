@@ -12,19 +12,19 @@ public class LeftHandedScript : MonoBehaviour
     public GameObject birdBullet; //打ち返した鳥のオブジェクト
 
     [SerializeField] private float bulletSpeed = 10.0f; // ボールの速度
-    //[SerializeField] private float minAngle = -45.0f; // 最小角度
-    //[SerializeField] private float maxAngle = 45.0f; // 最大角度
 
     private GameObject targetEnemy = null; // 現在のターゲットとなる enemy タグのオブジェクト
     bool basicDamage = false;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && targetEnemy != null)
+        if (Input.GetButtonDown("Shot")) // マウスクリックまたはコントローラーのRトリガーボタンが押されたら
         {
-            Destroy(targetEnemy); // 現在のターゲットを破棄する
-            Shooting();
-
-            Debug.Log("L shot");
+            if (targetEnemy != null)
+            {
+                Destroy(targetEnemy); // 現在のターゲットを破棄する
+                Shooting();
+                Debug.Log("Shot");
+            }
         }
     }
 
