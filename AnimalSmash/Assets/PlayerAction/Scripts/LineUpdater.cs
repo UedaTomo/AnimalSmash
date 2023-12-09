@@ -1,5 +1,4 @@
 using UnityEngine;
-// using UnityEngine.InputSystem;
 public class LineUpdater : MonoBehaviour
 {
     [Header("ラインレンダラー")]
@@ -12,8 +11,6 @@ public class LineUpdater : MonoBehaviour
     [SerializeField] private int refrectionCount;
     [Header("レイヤーマスク")]
     [SerializeField] private LayerMask layerMask;
-    [Header("回転速度")]
-    [SerializeField] private float rotationSpeed;
 
     //LineRendererに指定する座標のリストを作成するクラス
     private RefrectionLinePoints refrectionLinePoints;
@@ -26,7 +23,6 @@ public class LineUpdater : MonoBehaviour
     void Update()
     {
         RefrectionLine();
-        //LookPosition();
     }
 
     void RefrectionLine()
@@ -38,23 +34,4 @@ public class LineUpdater : MonoBehaviour
         //ラインレンダラーに座標のリストを指定
         lineRenderer.SetPositions(poses);
     }
-
-    //void LookPosition()
-    //{
-        // マウスの移動量を取得
-        //float mouseX = Input.GetAxis("Mouse X");
-
-        // マウスの移動量を使ってオブジェクトを回転させる
-        //transform.Rotate(Vector3.up, mouseX * rotationSpeed * Time.deltaTime, Space.World);
-
-
-        //Input Sysytemを使用している場合はコメントアウトを解除して使ってください(上のusing部分も)
-
-        // //マウスの移動量を取得(InputSystem)
-        // Vector3 mouseDelta = Mouse.current.delta.ReadValue();
-
-        // // マウスの移動量を使ってオブジェクトを回転させる
-        // transform.Rotate(Vector3.up, mouseDelta.x * rotationSpeed * Time.deltaTime, Space.World);
-    //}
-
 }
