@@ -30,7 +30,6 @@ public class tutorialBoss: MonoBehaviour
     private TextMeshProUGUI _conboText;
     private Animator birdanim;           //Anim
     public bool BossAttackOn = true;      //Bossが攻撃するかどうか
-    public float HitNum;
 
     public float HitNum = 0f;
     // Start is called before the first frame update
