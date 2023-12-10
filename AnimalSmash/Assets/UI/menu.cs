@@ -50,7 +50,7 @@ public class menu : MonoBehaviour
     {
         //StartCoroutine(ApproachingSheep_T());
         //チュートリアルシーンへ移動
-        SceneManager.LoadScene("yasuda1");
+        SceneManager.LoadScene("tutorial");
     }
 
     private IEnumerator ApproachingSheep_S()

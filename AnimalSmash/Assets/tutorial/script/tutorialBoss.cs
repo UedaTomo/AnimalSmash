@@ -30,6 +30,7 @@ public class tutorialBoss: MonoBehaviour
     private TextMeshProUGUI _conboText;
     private Animator birdanim;           //Anim
     public bool BossAttackOn = true;      //BossÇ™çUåÇÇ∑ÇÈÇ©Ç«Ç§Ç©
+    public float HitNum;
 
     // Start is called before the first frame update
     void Start()
@@ -73,10 +74,11 @@ public class tutorialBoss: MonoBehaviour
         _bossSlider.value = (int)currentHp;
     }
     private void OnDestroy()
-    {
+    { 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
         foreach (GameObject enemy in enemies)
         {
+            HitNum++;
             Vector3 effectPosition = new Vector3(enemy.transform.position.x, enemy.transform.position.y + 1f, enemy.transform.position.z);
             //Instantiate(_smash, effectPosition, Quaternion.identity);
             Destroy(enemy);
@@ -85,7 +87,9 @@ public class tutorialBoss: MonoBehaviour
         Vector3 bossEffectPosition = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
         //Instantiate(_bossSmash, bossEffectPosition, Quaternion.identity);
         //Destroy(gameObject);
+
     }
+
     //íπê∂ê¨
    /* void Attack()
     {

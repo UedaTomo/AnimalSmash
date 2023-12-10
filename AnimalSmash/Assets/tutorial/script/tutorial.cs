@@ -94,7 +94,7 @@ public class tutorial : MonoBehaviour
             UpText.text = "モンスターがきました！\n打ち返してみましょう！";
             AimEx.SetActive(true);
         }
-        if (Tutorialdamage.HitNum >= 3)
+        if (Tutorialboss.HitNum >= 3)
         {
             UpText.text = "good!\n";
 
