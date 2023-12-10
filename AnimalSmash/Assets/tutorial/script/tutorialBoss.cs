@@ -31,6 +31,7 @@ public class tutorialBoss: MonoBehaviour
     private Animator birdanim;           //Anim
     public bool BossAttackOn = true;      //BossÇ™çUåÇÇ∑ÇÈÇ©Ç«Ç§Ç©
 
+    public float HitNum = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,8 +73,17 @@ public class tutorialBoss: MonoBehaviour
         }*/
         _bossSlider.value = (int)currentHp;
     }
-    private void OnDestroy()
+
+    void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Bullet"))
+        {
+            HitNum += 1;
+            Debug.Log("a");
+        }
+    }
+        private void OnDestroy()
+    { 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
         foreach (GameObject enemy in enemies)
         {

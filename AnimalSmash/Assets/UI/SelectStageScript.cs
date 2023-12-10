@@ -46,7 +46,7 @@ public class SelectStageScript : MonoBehaviour
         StartCoroutine(ApproachingSheep_S2());
     }
 
-    public�@void SelectStage3()
+    public void SelectStage3()
     {
         //SceneManager.LoadScene("");
     }

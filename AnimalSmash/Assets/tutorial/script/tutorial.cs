@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class tutorial : MonoBehaviour
 {
@@ -10,11 +13,13 @@ public class tutorial : MonoBehaviour
     public bool AbleSpawn;
     public TextMeshProUGUI UpText;
     public TextMeshProUGUI RightText;
+    public TextMeshProUGUI Esc;
     public GameObject moveEx;
     public GameObject AimEx;
     public GameObject Player;
 
     private float TIME;//始まってからの時間
+    private float time;
     private float ablemove;
     private bool ableaim;
     private bool aimFrag;
@@ -27,6 +32,7 @@ public class tutorial : MonoBehaviour
     void Start()
     {
         TIME = 0f;
+        time = 0f;
         ablemove = 0f;
         CountDownStart = false;
         AblePlay = false;
@@ -48,6 +54,11 @@ public class tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("menu");
+        }
+
         Transform moveex = moveEx.transform;
 
         TIME += Time.deltaTime;
@@ -94,10 +105,16 @@ public class tutorial : MonoBehaviour
             UpText.text = "モンスターがきました！\n打ち返してみましょう！";
             AimEx.SetActive(true);
         }
-        if (Tutorialdamage.HitNum >= 3)
+        if (Tutorialboss.HitNum >= 3.0f)
         {
+            time += Time.deltaTime;
             UpText.text = "good!\n";
+        }
 
+        if (time >= 2)
+        {
+            Esc.text = "";
+            UpText.text = "ではむらを守りにいきましょう！\nメニューにもどるにはEscをおしてください";
         }
 
     }
