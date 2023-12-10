@@ -10,9 +10,16 @@ public class menu : MonoBehaviour
     Button StageSelectButton;
     Button TutrialButton;
     Button ExitButton;
+    [SerializeField] private Image sheep_Image;
+    public RectTransform SheepSize;
+    int i = 0;
 
+    private bool isSceneChange;
     public void Start()
     {
+        isSceneChange = false;//シーン切り替えは初期でfalse
+        SheepSize = GameObject.Find("/Canvas/Image").GetComponent<RectTransform>();
+
         StageSelectButton = GameObject.Find("/Canvas/StageSelectButton").GetComponent<Button>();
         TutrialButton = GameObject.Find("/Canvas/TutrialButton").GetComponent<Button>();
         ExitButton = GameObject.Find("/Canvas/ExitButton").GetComponent<Button>();
@@ -21,12 +28,9 @@ public class menu : MonoBehaviour
         StageSelectButton.Select();
     }
 
-    private void Update()
-    {
-        
-    }
     public void SelectStage()
     {
+        //StartCoroutine(ApproachingSheep_S());
         //ステージセレクトシーンへ移動
         SceneManager.LoadScene("stageselect");
     }
@@ -44,7 +48,38 @@ public class menu : MonoBehaviour
 
     public void Tutrial()
     {
+        //StartCoroutine(ApproachingSheep_T());
         //チュートリアルシーンへ移動
+        SceneManager.LoadScene("yasuda1");
+    }
+
+    private IEnumerator ApproachingSheep_S()
+    {
+        while (!isSceneChange)
+        {
+            i += 100;
+            SheepSize.sizeDelta = new Vector2(i, i);
+            if (i >= 1000)
+            {
+                isSceneChange = true;
+            }
+                yield return new WaitForSeconds(0.1f); 
+        }
+        SceneManager.LoadScene("stageselect");
+    }
+
+    private IEnumerator ApproachingSheep_T()
+    {
+        while (!isSceneChange)
+        {
+            i += 100;
+            SheepSize.sizeDelta = new Vector2(i, i);
+            if (i >= 1000)
+            {
+                isSceneChange = true;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
         SceneManager.LoadScene("yasuda1");
     }
 }
