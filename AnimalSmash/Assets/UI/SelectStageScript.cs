@@ -36,13 +36,15 @@ public class SelectStageScript : MonoBehaviour
 
     public void SelectStage1()
     {
-        SceneManager.LoadScene("S1shibato");
+
+        //SceneManager.LoadScene("S1shibato");
         StartCoroutine(ApproachingSheep_S1());
     }
 
     public void SelectStage2() 
     {
-        SceneManager.LoadScene("S2shibato");
+
+        //SceneManager.LoadScene("S2shibato");
         StartCoroutine(ApproachingSheep_S2());
     }
 
@@ -55,29 +57,29 @@ public class SelectStageScript : MonoBehaviour
     {
         while (!isSceneChange)
         {
-            i += 100;
+            i += 150;
             SheepSize.sizeDelta = new Vector2(i, i);
-            if (i >= 1000)
+            if (i >= 2000)
             {
                 isSceneChange = true;
             }
             yield return new WaitForSeconds(0.1f);
         }
-        //SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("S1shibato");
     }
 
     private IEnumerator ApproachingSheep_S2()
     {
         while (!isSceneChange)
         {
-            i += 100;
+            i += 150;
             SheepSize.sizeDelta = new Vector2(i, i);
-            if (i >= 1000)
+            if (i >= 2000)
             {
                 isSceneChange = true;
             }
             yield return new WaitForSeconds(0.1f);
         }
-        //SceneManager.LoadScene("Stage2");
+        SceneManager.LoadScene("S2shibato");
     }
 }

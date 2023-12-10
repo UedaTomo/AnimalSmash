@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/title.unity
     guid: 9639129b5867c994dbf946a3cc85d236
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/main.unity
     guid: 89336988af29cca42a322818f97a37a5
   - enabled: 1
@@ -29,8 +29,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/S2shibato.unity
     guid: be37dad90e8b7b94ebbf1fde235313b5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/yasuda1.unity
     guid: 4cf1400b30d47f04e96c8e0063afc974
+  - enabled: 1
+    path: Assets/Scenes/tutorial.unity
+    guid: 3a29bebf929237d4f9be915000cbcd13
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e83b7d2a6b20f97458c9177c7f707ede, type: 2}
