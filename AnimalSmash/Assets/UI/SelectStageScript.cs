@@ -36,17 +36,17 @@ public class SelectStageScript : MonoBehaviour
 
     public void SelectStage1()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("S1shibato");
         StartCoroutine(ApproachingSheep_S1());
     }
 
     public void SelectStage2() 
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("S2shibato");
         StartCoroutine(ApproachingSheep_S2());
     }
 
-    public�@void SelectStage3()
+    public void SelectStage3()
     {
         //SceneManager.LoadScene("");
     }
