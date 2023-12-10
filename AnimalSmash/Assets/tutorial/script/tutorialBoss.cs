@@ -11,8 +11,8 @@ using TMPro;
 
 /*public enum BossState
 {
-    WAIT,         //ë“ã@
-    ATTACK,       //çUåÇ
+    WAIT,         //ÂæÖÊ©ü
+    ATTACK,       //ÊîªÊíÉ
 }*/
 public class tutorialBoss: MonoBehaviour
 {
@@ -29,9 +29,10 @@ public class tutorialBoss: MonoBehaviour
     private float time = 0f;
     private TextMeshProUGUI _conboText;
     private Animator birdanim;           //Anim
-    public bool BossAttackOn = true;      //BossÇ™çUåÇÇ∑ÇÈÇ©Ç«Ç§Ç©
+    public bool BossAttackOn = true;      //Boss„ÅåÊîªÊíÉ„Åô„Çã„Åã„Å©„ÅÜ„Åã
     public float HitNum;
 
+    public float HitNum = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +46,7 @@ public class tutorialBoss: MonoBehaviour
     public void HP(int _conbo, int _damage, int _damageLevel)
     {
         currentHp -= _damage + _damageLevel;
-        //_conboText.text = _conbo + "ÇÍÇÒÇ≥\n" + (_damage + _damageLevel) + "É_ÉÅÅ[ÉW";
+        //_conboText.text = _conbo + "„Çå„Çì„Åï\n" + (_damage + _damageLevel) + "„ÉÄ„É°„Éº„Ç∏";
     }
     // Update is called once per frame
     void Update()
@@ -63,7 +64,7 @@ public class tutorialBoss: MonoBehaviour
             {
                 birdanim.SetBool("birdstrike", true);
             }
-            //13ïbå„AttackÇåƒÇ‘
+            //13ÁßíÂæåAttack„ÇíÂëº„Å∂
             if (time > 13.0f)
             {
                 time = 0f;
@@ -73,7 +74,15 @@ public class tutorialBoss: MonoBehaviour
         }*/
         _bossSlider.value = (int)currentHp;
     }
-    private void OnDestroy()
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            HitNum += 1;
+            Debug.Log("a");
+        }
+    }
+        private void OnDestroy()
     { 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
         foreach (GameObject enemy in enemies)
@@ -90,7 +99,7 @@ public class tutorialBoss: MonoBehaviour
 
     }
 
-    //íπê∂ê¨
+    //È≥•ÁîüÊàê
    /* void Attack()
     {
         float x = Random.Range(_birdPoint1.position.x, _birdPoint2.position.x);

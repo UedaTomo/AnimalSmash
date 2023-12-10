@@ -14,7 +14,7 @@ public class tutorialSpawn: MonoBehaviour
     public GameObject tuto;
     tutorial Tutorial;
 
-    private float spawn_time = 0f;
+    private float spawn_time = 5.0f;
     private int[] randomPosition = new int[3];
     private int[] numbers = new int[4];
 
