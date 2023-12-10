@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.57770085, g: 0.6152049, b: 0.60846514, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: cd49892a3d458c4468be1cdabfe43cfb, type: 2}
   m_LightingSettings: {fileID: 1640017823}
 --- !u!196 &4
 NavMeshSettings:
@@ -2445,6 +2445,10 @@ PrefabInstance:
       value: Boss_koya
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1583b8f76e54bf64d833df95ee37c7dc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1583b8f76e54bf64d833df95ee37c7dc, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2805,7 +2809,7 @@ GameObject:
   - component: {fileID: 718746142}
   - component: {fileID: 718746141}
   - component: {fileID: 718746140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall2
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -3724,7 +3728,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &972493052
 MonoBehaviour:
@@ -6029,7 +6033,7 @@ GameObject:
   - component: {fileID: 1582875641}
   - component: {fileID: 1582875640}
   - component: {fileID: 1582875639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall
   m_TagString: wall
   m_Icon: {fileID: 0}
