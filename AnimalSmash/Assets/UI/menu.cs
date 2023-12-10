@@ -46,11 +46,11 @@ public class menu : MonoBehaviour
 #endif
     }
 
-    public void Tutorial()
+    public void Tutrial()
     {
         //StartCoroutine(ApproachingSheep_T());
         //チュートリアルシーンへ移動
-        //SceneManager.LoadScene("yasuda1");
+        SceneManager.LoadScene("yasuda1");
     }
 
     private IEnumerator ApproachingSheep_S()

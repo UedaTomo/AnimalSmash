@@ -16,9 +16,9 @@ public class SelectStageScript : MonoBehaviour
 
     private bool isSceneChange;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        isSceneChange = false;//ƒV[ƒ“Ø‚è‘Ö‚¦‚Í‰Šú‚Åfalse
+        isSceneChange = false;//ï¿½Vï¿½[ï¿½ï¿½ï¿½Ø‚ï¿½Ö‚ï¿½ï¿½Íï¿½ï¿½ï¿½ï¿½ï¿½false
         SheepSize = GameObject.Find("/Canvas/Image").GetComponent<RectTransform>();
         stage1 = GameObject.Find("/Canvas/Stage1").GetComponent<Button>();
         stage2 = GameObject.Find("/Canvas/Stage2").GetComponent<Button>();
@@ -46,7 +46,7 @@ public class SelectStageScript : MonoBehaviour
         StartCoroutine(ApproachingSheep_S2());
     }
 
-    public@void SelectStage3()
+    publicï¿½@void SelectStage3()
     {
         //SceneManager.LoadScene("");
     }

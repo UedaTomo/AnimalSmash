@@ -7,7 +7,7 @@ public class SpawnScript : MonoBehaviour
     //ã§í 
     private bool start;
     private bool Frag;
-    CountDownScript countdownscript;
+    CountDown countdownscript;
     public GameObject obj;
 
     //ÉEÉTÉM
@@ -54,8 +54,8 @@ public class SpawnScript : MonoBehaviour
         start = false;
         Frag = false;
 
-        obj = GameObject.Find("tutorial");
-        countdownscript = obj.GetComponent<CountDownScript>();
+        obj = GameObject.Find("Canvas");
+        countdownscript = obj.GetComponent<CountDown>();
     }
 
     // Update is called once per frame
