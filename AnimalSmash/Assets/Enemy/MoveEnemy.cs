@@ -18,19 +18,6 @@ public class MoveEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(this.transform.position.y < Up)
-        {
-            Vector3 position = new Vector3(0, UpDown, move);
-            transform.Translate(position);
-        }
-        else
-        {
-            Vector3 position = new Vector3(0, -UpDown, move);
-            transform.Translate(position);
-        }*/
-
-        //this.transform.position = new Vector3(this.transform.position.x, Mathf.PingPong(Time.time, 10), move * Time.deltaTime);
-
         Vector3 position = new Vector3(0, Down, move);
         transform.Translate(position);
     }
