@@ -18,7 +18,7 @@ public class tutorial : MonoBehaviour
     public GameObject AimEx;
     public GameObject Player;
 
-    private float TIME;//n‚Ü‚Á‚Ä‚©‚ç‚ÌŠÔ
+    private float TIME;//å§‹ã¾ã£ã¦ã‹ã‚‰ã®æ™‚é–“
     private float time;
     private float ablemove;
     private bool ableaim;
@@ -63,23 +63,23 @@ public class tutorial : MonoBehaviour
 
         TIME += Time.deltaTime;
 
-        //Å‰‚Ì6•b‚ÍƒAƒjƒ[ƒVƒ‡ƒ“
+        //æœ€åˆã®6ç§’ã¯ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
 
-        if (!ableaim && TIME <= 6 && TIME <= 7)//ƒvƒŒƒCƒ„[‚Ìà–¾
+        if (!ableaim && TIME <= 6 && TIME <= 7)//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®èª¬æ˜
         {
             Player.SetActive(true);
-            UpText.text = "‚±‚ê‚ª‚ ‚È‚½‚Å‚·";
+            UpText.text = "ã“ã‚ŒãŒã‚ãªãŸã§ã™";
         }
-        if (!ableaim && TIME >= 8 && TIME <= 9)//ˆÚ“®à–¾
+        if (!ableaim && TIME >= 8 && TIME <= 9)//ç§»å‹•èª¬æ˜
         {
             Player.SetActive(false);
-            UpText.text = "ˆÚ“®‚µ‚Ä‚İ‚æ‚¤";
+            UpText.text = "ç§»å‹•ã—ã¦ã¿ã‚ˆã†";
             moveEx.SetActive(true);
             AblePlay = true;
         }
         if (!ableaim && TIME >= 10)
         {
-            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0 || //ˆÚ“®‚µ‚½‚©”»’è
+            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0 || //ç§»å‹•ã—ãŸã‹åˆ¤å®š
                 Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) ||
                 Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -102,7 +102,7 @@ public class tutorial : MonoBehaviour
             moveex.localPosition = new Vector3(-471, 171, 0);
             moveex.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
-            UpText.text = "ƒ‚ƒ“ƒXƒ^[‚ª‚«‚Ü‚µ‚½I\n‘Å‚¿•Ô‚µ‚Ä‚İ‚Ü‚µ‚å‚¤I";
+            UpText.text = "ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒãã¾ã—ãŸï¼\næ‰“ã¡è¿”ã—ã¦ã¿ã¾ã—ã‚‡ã†ï¼";
             AimEx.SetActive(true);
         }
         if (Tutorialboss.HitNum >= 3.0f)
@@ -114,7 +114,7 @@ public class tutorial : MonoBehaviour
         if (time >= 2)
         {
             Esc.text = "";
-            UpText.text = "‚Å‚Í‚Ş‚ç‚ğç‚è‚É‚¢‚«‚Ü‚µ‚å‚¤I\nƒƒjƒ…[‚É‚à‚Ç‚é‚É‚ÍEsc‚ğ‚¨‚µ‚Ä‚­‚¾‚³‚¢";
+            UpText.text = "ã§ã¯ã‚€ã‚‰ã‚’å®ˆã‚Šã«ã„ãã¾ã—ã‚‡ã†ï¼\nãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ã‚‚ã©ã‚‹ã«ã¯Escã‚’ãŠã—ã¦ãã ã•ã„";
         }
 
     }
