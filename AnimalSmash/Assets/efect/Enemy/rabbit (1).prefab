@@ -131,3 +131,4 @@ MonoBehaviour:
   Up: -6
   Down: 0
   UpDown: 0.1
+  obj: {fileID: 7690587384694363280, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
