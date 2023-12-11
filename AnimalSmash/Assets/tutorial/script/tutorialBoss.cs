@@ -78,7 +78,6 @@ public class tutorialBoss: MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             HitNum += 1;
-            Debug.Log("a");
         }
     }
         private void OnDestroy()
