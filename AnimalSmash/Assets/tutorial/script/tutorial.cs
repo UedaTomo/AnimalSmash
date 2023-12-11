@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class tutorial : MonoBehaviour
 {
@@ -10,11 +13,13 @@ public class tutorial : MonoBehaviour
     public bool AbleSpawn;
     public TextMeshProUGUI UpText;
     public TextMeshProUGUI RightText;
+    public TextMeshProUGUI Esc;
     public GameObject moveEx;
     public GameObject AimEx;
     public GameObject Player;
 
-    private float TIME;//n‚Ü‚Á‚Ä‚©‚ç‚ÌŠÔ
+    private float TIME;//å§‹ã¾ã£ã¦ã‹ã‚‰ã®æ™‚é–“
+    private float time;
     private float ablemove;
     private bool ableaim;
     private bool aimFrag;
@@ -27,6 +32,7 @@ public class tutorial : MonoBehaviour
     void Start()
     {
         TIME = 0f;
+        time = 0f;
         ablemove = 0f;
         CountDownStart = false;
         AblePlay = false;
@@ -48,27 +54,32 @@ public class tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("menu");
+        }
+
         Transform moveex = moveEx.transform;
 
         TIME += Time.deltaTime;
 
-        //Å‰‚Ì6•b‚ÍƒAƒjƒ[ƒVƒ‡ƒ“
+        //æœ€åˆã®6ç§’ã¯ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
 
-        if (!ableaim && TIME <= 6 && TIME <= 7)//ƒvƒŒƒCƒ„[‚Ìà–¾
+        if (!ableaim && TIME <= 6 && TIME <= 7)//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®èª¬æ˜
         {
             Player.SetActive(true);
-            UpText.text = "‚±‚ê‚ª‚ ‚È‚½‚Å‚·";
+            UpText.text = "ã“ã‚ŒãŒã‚ãªãŸã§ã™";
         }
-        if (!ableaim && TIME >= 8 && TIME <= 9)//ˆÚ“®à–¾
+        if (!ableaim && TIME >= 8 && TIME <= 9)//ç§»å‹•èª¬æ˜
         {
             Player.SetActive(false);
-            UpText.text = "ˆÚ“®‚µ‚Ä‚İ‚æ‚¤";
+            UpText.text = "ç§»å‹•ã—ã¦ã¿ã‚ˆã†";
             moveEx.SetActive(true);
             AblePlay = true;
         }
         if (!ableaim && TIME >= 10)
         {
-            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0 || //ˆÚ“®‚µ‚½‚©”»’è
+            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0 || //ç§»å‹•ã—ãŸã‹åˆ¤å®š
                 Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) ||
                 Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -91,13 +102,19 @@ public class tutorial : MonoBehaviour
             moveex.localPosition = new Vector3(-471, 171, 0);
             moveex.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
-            UpText.text = "ƒ‚ƒ“ƒXƒ^[‚ª‚«‚Ü‚µ‚½I\n‘Å‚¿•Ô‚µ‚Ä‚İ‚Ü‚µ‚å‚¤I";
+            UpText.text = "ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒãã¾ã—ãŸï¼\næ‰“ã¡è¿”ã—ã¦ã¿ã¾ã—ã‚‡ã†ï¼";
             AimEx.SetActive(true);
         }
-        if (Tutorialboss.HitNum >= 3)
+        if (Tutorialboss.HitNum >= 3.0f)
         {
+            time += Time.deltaTime;
             UpText.text = "good!\n";
+        }
 
+        if (time >= 2)
+        {
+            Esc.text = "";
+            UpText.text = "ã§ã¯ã‚€ã‚‰ã‚’å®ˆã‚Šã«ã„ãã¾ã—ã‚‡ã†ï¼\nãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ã‚‚ã©ã‚‹ã«ã¯Escã‚’ãŠã—ã¦ãã ã•ã„";
         }
 
     }
