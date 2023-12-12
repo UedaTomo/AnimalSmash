@@ -63,7 +63,7 @@ public class bombScript : MonoBehaviour
             Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
             Instantiate(_strikeEffect, effectPosition, Quaternion.identity);
             if (_time >= 3.0)
-                speed += 0.1f;
+                speed += 0.275f;
             // プレイヤーの方向に向かって加速しながら突進
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
