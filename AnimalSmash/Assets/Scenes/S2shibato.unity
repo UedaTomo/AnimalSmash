@@ -2208,7 +2208,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370028
+  m_Name: pb_Mesh-1970
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3000
+  m_MaxValue: 1500
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2742,6 +2742,7 @@ RectTransform:
   - {fileID: 946670634}
   - {fileID: 2048062812}
   - {fileID: 1776269074}
+  - {fileID: 745689928}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2763,6 +2764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 2048062813}
+  advice: {fileID: 745689927}
   start: 0
 --- !u!1 &665166744
 GameObject:
@@ -3233,13 +3235,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3522110628967640866, guid: bb01361f880dedb48a3f88dc3e97d74f, type: 3}
   m_PrefabInstance: {fileID: 1119009475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &729216018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2038011796357808400, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
+  m_PrefabInstance: {fileID: 1559082464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &737366014
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370056
+  m_Name: pb_Mesh-1998
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3425,10 +3432,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 673588430}
   - {fileID: 1174918291}
   m_Father: {fileID: 653746849}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4602,7 +4608,7 @@ MonoBehaviour:
   _birdPrefab: {fileID: 5855463775024606368, guid: 62f05328b3f4a2b4db71d29484af1c77, type: 3}
   _birdPoint1: {fileID: 2094451575}
   _birdPoint2: {fileID: 2096845408}
-  _bossHp: 3000
+  _bossHp: 1500
   _bossSlider: {fileID: 608501945}
   _smash: {fileID: 0}
   _bossSmash: {fileID: 0}
@@ -5353,7 +5359,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 745689928}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6607,7 +6613,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370042
+  m_Name: pb_Mesh-1984
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7014,6 +7020,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 590343369}
+    - target: {fileID: 3386936273628777689, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
+      propertyPath: damy
+      value: 
+      objectReference: {fileID: 729216018}
     - target: {fileID: 4365576470502292431, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: pausePanel
       value: 
@@ -8688,7 +8698,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370070
+  m_Name: pb_Mesh-2012
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402e2db43ab6f34ca5aeacf4bc22688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
+  speed: 3
   birdbody: {fileID: 6148059647187367321}
   birdHight: {fileID: 8887868923411479324, guid: 2a2a3492634a5664dacde4a7fe59e572, type: 3}
   _strikeEffect: {fileID: 100004, guid: b0b9f215fae164b4fb544969dafd0ada, type: 3}
