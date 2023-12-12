@@ -43,7 +43,13 @@ public class damage : MonoBehaviour
         if (other.CompareTag("enemy"))
         {
             _conbo++;
-            _damageLevel *= 2;
+
+            if(_conbo>= 7)
+            {
+                _damageLevel += 5;
+            }
+            else
+                _damageLevel *= 2;
             Instantiate(smash, this.transform.position, Quaternion.identity);
             _source.PlayOneShot(enemydie); //çƒê∂
             Destroy(other.gameObject);

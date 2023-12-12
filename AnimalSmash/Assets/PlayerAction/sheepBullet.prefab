@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab78d242c71a28944ac7783d80b4525d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
+  _damage: 2
   smash: {fileID: 1995403933065894, guid: 4dfe506ad243fbb4cbede7d8388e89bd, type: 3}
   _bossHit: {fileID: 100000, guid: a4b43d26176de2846a50c56fe847e163, type: 3}
   _source: {fileID: -3404377537244451826}
