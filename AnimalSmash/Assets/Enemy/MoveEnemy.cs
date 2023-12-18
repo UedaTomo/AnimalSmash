@@ -26,7 +26,6 @@ public class MoveEnemy : MonoBehaviour
         {
             Vector3 position = new Vector3(0, Down, move);
             transform.Translate(position);
-            Debug.Log("spawn");
         }
     }
 
