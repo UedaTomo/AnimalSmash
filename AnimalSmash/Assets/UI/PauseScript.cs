@@ -29,7 +29,7 @@ public class PauseScript : MonoBehaviour
     {
         if (Input.GetKey("joystick button 7") || Input.GetKey(KeyCode.Escape))
         {
-            Debug.Log("ok");
+            //Debug.Log("ok");
             enemy_pause = true;
             pausePanel.SetActive(true);
             resumeButton.Select();
@@ -48,11 +48,11 @@ public class PauseScript : MonoBehaviour
     public void Resume()
     {
         enemy_pause = false;
-        Debug.Log("false ok");
+        //Debug.Log("false ok");
         Time.timeScale = 1;  // çƒäJ
-        Debug.Log("time ok");
+        //Debug.Log("time ok");
         pausePanel.SetActive(false);
-        Debug.Log("restart ok");
+        //Debug.Log("restart ok");
     }
 
     public void BackSelect()

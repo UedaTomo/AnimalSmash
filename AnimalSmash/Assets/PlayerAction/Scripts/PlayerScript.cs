@@ -6,6 +6,8 @@ using System;
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] private Renderer _target; // 点滅させる対象
+    [SerializeField] private float _cycle = 1;// 点滅周期[s]
     [SerializeField] float speed = 3f;
     [SerializeField] Material plane;
     public float stop = 0.5f;
@@ -89,7 +91,6 @@ public class PlayerScript : MonoBehaviour
         {
             touch_time += Time.deltaTime;
 
-            //StartCoroutine("blink");
 
             if (touch_time >= stop)
             {
@@ -104,9 +105,19 @@ public class PlayerScript : MonoBehaviour
         {
             inv_time += Time.deltaTime;
 
+            // 周期cycleで繰り返す値の取得
+            // 0～cycleの範囲の値が得られる
+            var repeatValue = Mathf.Repeat((float)inv_time, _cycle);
+
+            // 内部時刻timeにおける明滅状態を反映
+            _target.enabled = repeatValue >= _cycle * 0.5f;
+
+            //Debug.Log("あたった！");
+
             if (inv_time >= invicible_time)
             {
                 Invincible = false;
+                _target.enabled = true;
                 inv_time = 0f;
             }
         }
@@ -114,7 +125,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("enemy")|| other.gameObject.CompareTag("rabbit")|| other.gameObject.CompareTag("bird"))
         {
             if (!Invincible)
             {
