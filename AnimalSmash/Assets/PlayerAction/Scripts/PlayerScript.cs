@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
     [SerializeField] Material plane;
+
     public float stop = 0.5f;
     public float invicible_time = 2.0f;
     private float alpha_sin;
@@ -15,13 +16,14 @@ public class PlayerScript : MonoBehaviour
     private float inv_time = 0f;
     private bool isTouch; //敵に当たったか当たってないか
     private bool Invincible; //無敵時間
-    private bool front;
 
     public GameObject damy;
     public GameObject stan;
+
     public Animator playeranim;
     public bool isMove;
-    
+    private bool front;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,7 @@ public class PlayerScript : MonoBehaviour
             front = true;
 
             // Wキー（前方移動）
-            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
+            if (Input.GetAxis("Vertical") < 0)
             {
                 this.transform.localRotation = Quaternion.Euler(0, 180, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
@@ -53,7 +55,7 @@ public class PlayerScript : MonoBehaviour
             }
 
             // Sキー（後方移動）
-            if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
+            if (Input.GetAxis("Vertical") > 0)
             {
                 this.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
@@ -61,19 +63,19 @@ public class PlayerScript : MonoBehaviour
                 front = false;
             }
 
-            // Dキー（右移動）
-            if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
+            // Aキー（左移動）
+            if (Input.GetAxis("Horizontal") < 0)
             {
-                this.transform.localRotation = Quaternion.Euler(0, 270, 0);
+                this.transform.localRotation = Quaternion.Euler(0, 90, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
                 isMove = true;
                 front = false;
             }
 
-            // Aキー（左移動）
-            if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
+            // Dキー（右移動）
+            if (Input.GetAxis("Horizontal") > 0)
             {
-                this.transform.localRotation = Quaternion.Euler(0, 90, 0);
+                this.transform.localRotation = Quaternion.Euler(0, 270, 0);
                 transform.position += speed * -transform.forward * Time.deltaTime;
                 isMove = true;
                 front = false;
