@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private float _cycle = 1;// 点滅周期[s]
     [SerializeField] float speed = 3f;
     [SerializeField] Material plane;
+
     public float stop = 0.5f;
     public float invicible_time = 2.0f;
     private float alpha_sin;
@@ -17,13 +18,14 @@ public class PlayerScript : MonoBehaviour
     private float inv_time = 0f;
     private bool isTouch; //敵に当たったか当たってないか
     private bool Invincible; //無敵時間
-    private bool front;
 
     public GameObject damy;
     public GameObject stan;
+
     public Animator playeranim;
     public bool isMove;
-    
+    private bool front;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,43 +47,29 @@ public class PlayerScript : MonoBehaviour
             isMove = false;
             front = true;
 
-            // Wキー（前方移動）
-            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
+            //キー入力を取得
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            //移動方向の計算
+            Vector3 moveDirection=new Vector3(horizontalInput,0f, verticalInput).normalized;
+
+            //移動方向が変わる場合のみ回転を計算
+            if (moveDirection.magnitude >= 0.1f)
             {
-                this.transform.localRotation = Quaternion.Euler(0, 180, 0);
-                transform.position += speed * -transform.forward * Time.deltaTime;
+                //移動
+                Vector3 moveVector = moveDirection * speed * Time.deltaTime;
+                transform.Translate(moveVector, Space.World);
+
+                //プレイヤーの正面を移動方向に向ける
+                Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 0.1f);
+
                 isMove = true;
                 front = false;
             }
 
-            // Sキー（後方移動）
-            if (Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0)
-            {
-                this.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                transform.position += speed * -transform.forward * Time.deltaTime;
-                isMove = true;
-                front = false;
-            }
-
-            // Dキー（右移動）
-            if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
-            {
-                this.transform.localRotation = Quaternion.Euler(0, 270, 0);
-                transform.position += speed * -transform.forward * Time.deltaTime;
-                isMove = true;
-                front = false;
-            }
-
-            // Aキー（左移動）
-            if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
-            {
-                this.transform.localRotation = Quaternion.Euler(0, 90, 0);
-                transform.position += speed * -transform.forward * Time.deltaTime;
-                isMove = true;
-                front = false;
-            }
-
-            if(front)
+            if (front)
             {
                 this.transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
