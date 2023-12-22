@@ -9,7 +9,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Renderer _target; // 点滅させる対象
     [SerializeField] private float _cycle = 1;// 点滅周期[s]
     [SerializeField] float speed = 3f;
-    [SerializeField] Material plane;
 
     public float stop = 0.5f;
     public float invicible_time = 2.0f;
@@ -19,7 +18,6 @@ public class PlayerScript : MonoBehaviour
     private bool isTouch; //敵に当たったか当たってないか
     private bool Invincible; //無敵時間
 
-    public GameObject damy;
     public GameObject stan;
 
     public Animator playeranim;
