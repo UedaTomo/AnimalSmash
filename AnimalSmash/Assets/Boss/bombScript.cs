@@ -21,6 +21,8 @@ public class bombScript : MonoBehaviour
     [SerializeField] private AudioClip b1; //羽ばたく音
     [SerializeField] private AudioClip b2; //風切り
     [SerializeField] private AudioClip b3; //ゴゴゴ
+    private GameObject target; // 追尾対象のオブジェクト
+    public bool Left = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,12 @@ public class bombScript : MonoBehaviour
         preposition = transform.position;
         postposition = new Vector3(preposition.x, birdHight.position.y, preposition.z);   // 移動後位置
         _source.PlayOneShot(b1); //再生
+        if (Left)
+        {
+            target = GameObject.Find("BirdStrikePoint1");
+        }
+        else
+            target = GameObject.Find("BirdStrikePoint2");
     }
 
     // Update is called once per frame
@@ -45,7 +53,7 @@ public class bombScript : MonoBehaviour
                 _birdStrike = true;
 
                 // 一度だけ向きを調整
-                Vector3 direction = (_player.transform.position - transform.position).normalized;
+                Vector3 direction = (target.transform.position - transform.position).normalized;
                 transform.up = direction;
 
                 _source.PlayOneShot(b2); //再生
@@ -63,7 +71,7 @@ public class bombScript : MonoBehaviour
             Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
             Instantiate(_strikeEffect, effectPosition, Quaternion.identity);
             if (_time >= 3.0)
-                speed += 0.275f;
+                speed += 0.18f;
             // プレイヤーの方向に向かって加速しながら突進
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }

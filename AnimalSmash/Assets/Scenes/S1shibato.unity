@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7ff89aab05a0d2b41b25820e809320d3, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 442397be0ed3ade4b9288f9f39477bd8, type: 2}
 --- !u!1 &26096008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5722
+  m_Name: pb_Mesh-48840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1278,7 +1278,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5708
+  m_Name: pb_Mesh-48826
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2284,6 +2284,7 @@ RectTransform:
   - {fileID: 1498672624}
   - {fileID: 633298245}
   - {fileID: 1774276455}
+  - {fileID: 1337403896}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3467,7 +3468,7 @@ RectTransform:
   - {fileID: 92930201}
   - {fileID: 2010189562}
   m_Father: {fileID: 750058559}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3767,7 +3768,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5694
+  m_Name: pb_Mesh-48812
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4457,6 +4458,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2042425058}
+    - target: {fileID: 3386936273628777689, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
+      propertyPath: unaffectedChild
+      value: 
+      objectReference: {fileID: 2064338931}
     - target: {fileID: 4365576470502292431, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: pausePanel
       value: 
@@ -5063,6 +5068,8 @@ MonoBehaviour:
   usagi_interval: 10
   levelup_time: 20
   _interval: 4
+  usagi: {fileID: 0}
+  Powerup_usagi: {fileID: 0}
   Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
   spawnPoint:
   - {fileID: 255707235}
@@ -6041,7 +6048,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5680
+  m_Name: pb_Mesh-48798
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6264,6 +6271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a56562de6c32549b37c84e337338fe, type: 3}
+--- !u!4 &2064338931 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7384569769104163334, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
+  m_PrefabInstance: {fileID: 1554910036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2113259238
 GameObject:
   m_ObjectHideFlags: 0
