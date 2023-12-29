@@ -34,10 +34,18 @@ public class SpawnScript : MonoBehaviour
     private int SpawnNum = 1;
     private bool usagi_levelup;
 
-    //ƒqƒcƒW
+    //ƒqƒcƒW(’P‘Ì)
+    public float hituzi_spawn_interval = 5.0f;
+
+    private int SpawnNumber = 1;
+    private float hituzi_spawn_TIME = 0f;
+    private float hituzi_levelup_TIME = 0f;
+
+    //ƒqƒcƒW(’c‘Ì)
+    public GameObject Enemys;
     public GameObject Enemy;
     public Transform[] spawnPoint;
-    public int hituzi_interval = 5;
+    public float Flock_hituzi_interval = 3.0f;
     public int hituzi_levelup = 1;
     public int spawnPointNum = 4;
     public int spawnPointWork = 1;
@@ -45,10 +53,12 @@ public class SpawnScript : MonoBehaviour
     public float difficult_time = 50.0f;
     public int levelup_interval = 2;
 
-    private float hituzi_levelup_TIME = 0f;
-    private float hituzi_spawn_TIME = 0f;
+    //private float hituzi_levelup_TIME = 0f;
+    private float Flock_hituzi_spawn_TIME = 0f;
     private int[] randomPosition = new int[3];
     private int[] numbers = new int[4];
+    private int recode = 5;
+    private int RumdomSpawn;
 
 
     // Start is called before the first frame update
@@ -71,7 +81,7 @@ public class SpawnScript : MonoBehaviour
             {
                 createPrefab.GetComponent<MeshRenderer>().material = usagi;
                 UsagiSpawn();
-                SheepSpawn();
+                FlockSheepSpawn();
                 start = true;
             }
 
@@ -79,8 +89,10 @@ public class SpawnScript : MonoBehaviour
             usagi_levelup_TIME += Time.deltaTime;
             usagi_spawn_TIME += Time.deltaTime;
 
-            hituzi_levelup_TIME += Time.deltaTime;
             hituzi_spawn_TIME += Time.deltaTime;
+            hituzi_levelup_TIME += Time.deltaTime;
+
+            Flock_hituzi_spawn_TIME += Time.deltaTime;
 
             if (usagi_interval > lowest_interval)
             {
@@ -120,24 +132,44 @@ public class SpawnScript : MonoBehaviour
                 usagi_spawn_TIME = 0f;
             }
 
-            if (spawnPointWork == 1 && hituzi_levelup_TIME >= midium_time)
+            /*if (spawnPointWork == 1 && hituzi_levelup_TIME >= midium_time)
             {
                 spawnPointWork += hituzi_levelup;
-                hituzi_interval -= levelup_interval;
+                Flock_hituzi_interval -= levelup_interval;
             }
             if (spawnPointWork == 2 && hituzi_levelup_TIME >= difficult_time)
             {
                 spawnPointWork += hituzi_levelup;
-                //hituzi_interval -= levelup_time;
+                //Flock_hituzi_interval -= levelup_time;
+            }*/
+
+            if (hituzi_levelup_TIME >= midium_time)
+            {
+                hituzi_spawn_interval = 3.0f;
+            }
+            if (hituzi_levelup_TIME >= difficult_time)
+            {
+
             }
 
-            if (hituzi_spawn_TIME > hituzi_interval)
+            if (hituzi_spawn_TIME > hituzi_spawn_interval)
             {
                 SheepSpawn();
 
                 hituzi_spawn_TIME = 0f;
             }
+
+
+            if (Flock_hituzi_spawn_TIME > Flock_hituzi_interval)
+            {
+                FlockSheepSpawn();
+
+                Flock_hituzi_spawn_TIME = 0f;
+            }
+            
         }
+
+
     }
 
     private void UsagiSpawn()
@@ -151,9 +183,18 @@ public class SpawnScript : MonoBehaviour
 
     private void SheepSpawn()
     {
-        for (int i = 0; i < spawnPointNum; i++)
+            float x = Random.Range(rangeA.position.x, rangeB.position.x);
+            float y = 3.86f;
+            float z = Random.Range(rangeA.position.z, rangeB.position.z);
+
+            Instantiate(Enemy, new Vector3(x, y, z), Enemy.transform.rotation);
+    }
+
+    private void FlockSheepSpawn()
+    {
+        /*for (int i = 0; i < spawnPointNum; i++)
         {
-            numbers[i] = i;
+            numbers[i] = i; 
         }
         for (int i = 0; i < spawnPointNum; i++)
         {
@@ -169,9 +210,9 @@ public class SpawnScript : MonoBehaviour
 
         for (int i = 0; i < spawnPointWork; i++)
         {
-            GameObject newEnemy = Instantiate(Enemy);
-            GameObject newEnemy1 = Instantiate(Enemy);
-            GameObject newEnemy2 = Instantiate(Enemy);
+            GameObject newEnemy = Instantiate(Enemys);
+            GameObject newEnemy1 = Instantiate(Enemys);
+            GameObject newEnemy2 = Instantiate(Enemys);
             Vector3 pos = spawnPoint[randomPosition[i]].position;
 
             newEnemy.transform.position = spawnPoint[randomPosition[i]].position;
@@ -181,6 +222,27 @@ public class SpawnScript : MonoBehaviour
 
             Vector3 right = new Vector3(0.7f, 0, 1.0f);
             newEnemy2.transform.position = pos + right;
-        }
+        }*/
+
+        do
+        {
+            RumdomSpawn = Random.Range(0, spawnPointNum);
+
+        } while (RumdomSpawn ==recode);
+
+        GameObject newEnemy = Instantiate(Enemys);
+        GameObject newEnemy1 = Instantiate(Enemys);
+        GameObject newEnemy2 = Instantiate(Enemys);
+        Vector3 pos = spawnPoint[RumdomSpawn].position;
+
+        newEnemy.transform.position = spawnPoint[RumdomSpawn].position;
+
+        Vector3 left = new Vector3(-0.7f, 0, 1.0f);
+        newEnemy1.transform.position = pos + left;
+
+        Vector3 right = new Vector3(0.7f, 0, 1.0f);
+        newEnemy2.transform.position = pos + right;
+
+        recode = RumdomSpawn;
     }
 }

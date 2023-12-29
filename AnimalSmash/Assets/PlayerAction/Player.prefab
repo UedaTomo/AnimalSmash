@@ -2814,7 +2814,12 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'LeftUpleg'\n\tTransform 'Spine2'\n\tTransform
+    'Spine'\n\tTransform 'LeftUpleg'\n\tTransform 'Spine2'\n\tTransform 'Spine'\n\tTransform
+    'LeftUpleg'\n\tTransform 'Spine2'\n\tTransform 'Spine'\n\tFrom animation clip
+    'Stop'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -2885,13 +2890,12 @@ MonoBehaviour:
   _target: {fileID: 1218420517495627320}
   _cycle: 1
   speed: 5
-  plane: {fileID: 0}
   stop: 0.5
   invicible_time: 2
-  damy: {fileID: 0}
   stan: {fileID: 1545806602296978, guid: 2b3a8a36cebb13a42b60333a0bf9c8d3, type: 3}
   playeranim: {fileID: 0}
   isMove: 0
+  unaffectedChild: {fileID: 0}
 --- !u!120 &4866452566876537084
 LineRenderer:
   m_ObjectHideFlags: 0
