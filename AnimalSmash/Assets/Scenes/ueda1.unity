@@ -205,7 +205,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2624
+  m_Name: pb_Mesh-200082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -980,7 +980,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2638
+  m_Name: pb_Mesh-200096
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1211,7 +1211,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2610
+  m_Name: pb_Mesh-200068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2295,7 +2295,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2596
+  m_Name: pb_Mesh-200028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3527,7 +3527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3535,7 +3535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3547,7 +3547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4311,12 +4311,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb12db194875db145a77be3a16bd1663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj: {fileID: 0}
   createPrefab: {fileID: 2383691016621940233, guid: a4e9cd705a1ff03479f1011717bff085, type: 3}
   rangeA: {fileID: 1342025095}
   rangeB: {fileID: 520879935}
-  interval: 10
+  usagi_interval: 10
   levelup_time: 20
   _interval: 8
+  usagi: {fileID: 2100000, guid: 096deec2b3bbfa342bd1b37c87a195d8, type: 2}
+  Powerup_usagi: {fileID: 2100000, guid: e809d69b8e35dad489d27441dc42ff32, type: 2}
+  Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
+  spawnPoint: []
+  hituzi_interval: 5
+  hituzi_levelup: 1
+  spawnPointNum: 4
+  spawnPointWork: 1
+  midium_time: 20
+  difficult_time: 50
+  levelup_interval: 2
 --- !u!1001 &2053709165
 PrefabInstance:
   m_ObjectHideFlags: 0
