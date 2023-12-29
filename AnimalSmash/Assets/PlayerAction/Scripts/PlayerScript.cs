@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
                 unaffectedChild.position = newPosition;
 
                 //プレイヤーの正面を移動方向に向ける
-                Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+                Quaternion toRotation = Quaternion.LookRotation(-moveDirection, Vector3.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 0.1f);
 
                 isMove = true;
