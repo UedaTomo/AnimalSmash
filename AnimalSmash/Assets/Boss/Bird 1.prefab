@@ -304,6 +304,7 @@ MonoBehaviour:
   b1: {fileID: 8300000, guid: 163e9db6d99350c4caabe01a7eef36ae, type: 3}
   b2: {fileID: 8300000, guid: e710ca59641c07449a4c2ac0c8168f8f, type: 3}
   b3: {fileID: 8300000, guid: 8f14b1e4f0de6494b84bcffe838e66ae, type: 3}
+  b4: {fileID: 8300000, guid: 6c1e9b7110b90d840b6260997e9b8985, type: 3}
   Left: 1
 --- !u!82 &-4363504225794468385
 AudioSource:

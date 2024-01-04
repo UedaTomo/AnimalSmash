@@ -4726,6 +4726,7 @@ MonoBehaviour:
   _playerObj: {fileID: 0}
   BossAttackOn: 1
   zone: {fileID: 1719689992}
+  _birdStrike: 20
 --- !u!65 &1040548558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4779,15 +4780,17 @@ MonoBehaviour:
   usagi_interval: 10
   levelup_time: 20
   _interval: 4
-  usagi: {fileID: 0}
-  Powerup_usagi: {fileID: 0}
+  usagi: {fileID: 2100000, guid: 096deec2b3bbfa342bd1b37c87a195d8, type: 2}
+  Powerup_usagi: {fileID: 2100000, guid: e809d69b8e35dad489d27441dc42ff32, type: 2}
+  hituzi_spawn_interval: 5
+  Enemys: {fileID: 3667101947015295638, guid: f4578f8ee886b8b44a8f180b80c84d13, type: 3}
   Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
   spawnPoint:
   - {fileID: 918203215}
   - {fileID: 1857985104}
   - {fileID: 377290751}
   - {fileID: 240700045}
-  hituzi_interval: 5
+  Flock_hituzi_interval: 5
   hituzi_levelup: 1
   spawnPointNum: 4
   spawnPointWork: 1

@@ -37,6 +37,11 @@ public class BossScript : MonoBehaviour
     private Animator birdanim;           //Anim
     public bool BossAttackOn = true;      //Boss‚ªUŒ‚‚·‚é‚©‚Ç‚¤‚©
     [SerializeField] private Transform zone;
+    [Header("’¹•p“x")]
+    [SerializeField] private float _birdStrike = 20.0f;
+    [SerializeField] private AudioSource _source;
+    [Header("–Â‚«º")]
+    [SerializeField] private AudioClip bear; 
 
 
     // Start is called before the first frame update
@@ -66,16 +71,17 @@ public class BossScript : MonoBehaviour
         }
         if (BossAttackOn)
         {
-            if (time > 5.5)
+            if (time > _birdStrike-7.5f)
             {
                 birdanim.SetBool("birdstrike", true);
             }
             //13•bŒãAttack‚ðŒÄ‚Ô
-            if (time > 13.0f)
+            if (time > _birdStrike)
             {
                 time = 0f;
                 Attack();
                 birdanim.SetBool("birdstrike", false);
+                _source.PlayOneShot(bear);
             }
         }
         _bossSlider.value = (int)currentHp;
