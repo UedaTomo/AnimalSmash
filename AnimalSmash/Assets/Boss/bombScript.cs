@@ -21,6 +21,8 @@ public class bombScript : MonoBehaviour
     [SerializeField] private AudioClip b1; //‰H‚Î‚½‚­‰¹
     [SerializeField] private AudioClip b2; //•—Ø‚è
     [SerializeField] private AudioClip b3; //ƒSƒSƒS
+    [SerializeField] private AudioClip b4; //‚©‚ŸO
+
     private GameObject target; // ’Ç”ö‘ÎÛ‚ÌƒIƒuƒWƒFƒNƒg
     public bool Left = false;
     // Start is called before the first frame update
@@ -57,6 +59,7 @@ public class bombScript : MonoBehaviour
                 transform.up = direction;
 
                 _source.PlayOneShot(b2); //Ä¶
+                _source.PlayOneShot(b4);
                 _source.loop = !_source.loop;
                 _source.PlayOneShot(b3); //Ä¶
                 birdbody.transform.eulerAngles = new Vector3(90.179f, 430.501f, 250.048f);

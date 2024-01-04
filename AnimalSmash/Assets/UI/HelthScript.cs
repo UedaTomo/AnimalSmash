@@ -107,6 +107,18 @@ public class HelthScript : MonoBehaviour
 
             }
         }
+        if (other.CompareTag("Flock"))
+        {
+            Destroy(other.gameObject);
+            if (playerCount > 0)
+            {
+
+                playerCount -= 1;
+                HP.text = " x " + playerCount;
+
+            }
+        }
+
 
         if (playerCount <= 0)
         {
