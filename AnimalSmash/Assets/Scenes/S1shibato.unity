@@ -5787,6 +5787,8 @@ MonoBehaviour:
   - {fileID: 2105904844}
   - {fileID: 2081033006}
   Flock_hituzi_interval: 5
+  hituzi_interval_1: 6
+  hituzi_interval_2: 7
   hituzi_levelup: 1
   spawnPointNum: 4
   spawnPointWork: 1
@@ -5819,6 +5821,8 @@ MonoBehaviour:
   BossAttackOn: 0
   zone: {fileID: 78886823}
   _birdStrike: 20
+  _source: {fileID: 0}
+  bear: {fileID: 0}
 --- !u!65 &1815667779
 BoxCollider:
   m_ObjectHideFlags: 0

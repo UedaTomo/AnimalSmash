@@ -2284,7 +2284,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77528
+  m_Name: pb_Mesh-198068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3322,7 +3322,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77554
+  m_Name: pb_Mesh-198120
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4727,6 +4727,8 @@ MonoBehaviour:
   BossAttackOn: 1
   zone: {fileID: 1719689992}
   _birdStrike: 20
+  _source: {fileID: 0}
+  bear: {fileID: 0}
 --- !u!65 &1040548558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4778,7 +4780,7 @@ MonoBehaviour:
   rangeA: {fileID: 1184351652}
   rangeB: {fileID: 1950191650}
   usagi_interval: 10
-  levelup_time: 20
+  levelup_time: 10
   _interval: 4
   usagi: {fileID: 2100000, guid: 096deec2b3bbfa342bd1b37c87a195d8, type: 2}
   Powerup_usagi: {fileID: 2100000, guid: e809d69b8e35dad489d27441dc42ff32, type: 2}
@@ -4791,6 +4793,8 @@ MonoBehaviour:
   - {fileID: 377290751}
   - {fileID: 240700045}
   Flock_hituzi_interval: 5
+  hituzi_interval_1: 6
+  hituzi_interval_2: 7
   hituzi_levelup: 1
   spawnPointNum: 4
   spawnPointWork: 1
@@ -5476,7 +5480,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 745689928}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6730,7 +6734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77540
+  m_Name: pb_Mesh-198106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8895,7 +8899,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-77568
+  m_Name: pb_Mesh-198134
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

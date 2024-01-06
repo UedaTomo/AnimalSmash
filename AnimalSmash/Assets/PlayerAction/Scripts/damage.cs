@@ -11,12 +11,14 @@ public class damage : MonoBehaviour
     public int _damage = 1; 
     private int _conbo = 0; //ÉRÉìÉ{êî
     public static int _maxcombo = 0;
+    public bool bird = false;
     private Rigidbody rb;
     [SerializeField] private GameObject smash;
     [SerializeField] private GameObject _bossHit;
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip koyabreak; //åöï®Ç™è≠ÇµïˆÇÍÇÈ
     [SerializeField] private AudioClip enemydie;
+    public GameObject _strikeEffect;
     public float rotationSpeed = 5.0f; // âÒì]ÇÃë¨Ç≥
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,11 @@ public class damage : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
+        if (bird==true)
+        {
+            Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
+            Instantiate(_strikeEffect, effectPosition, Quaternion.identity);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
