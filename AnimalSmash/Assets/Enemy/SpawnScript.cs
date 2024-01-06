@@ -23,12 +23,12 @@ public class SpawnScript : MonoBehaviour
     private Transform rangeB;
 
     public float usagi_interval = 10.0f;
-    public float levelup_time = 20.0f;//20秒経ったらレベルアップ
-    public float _interval = 4.0f; //レベルアップ時に現在のインターバルから引く
+    public float levelup_time = 15.0f;//15秒経ったらレベルアップ
+    public float _interval = 2.0f; //レベルアップ時に現在のインターバルから引く
     public Material usagi;
     public Material Powerup_usagi;
 
-    private float lowest_interval = 2.0f;
+    private float lowest_interval = 1.0f;
     private float usagi_spawn_TIME = 0f;
     private float usagi_levelup_TIME = 0f;
     private int SpawnNum = 1;
@@ -100,7 +100,8 @@ public class SpawnScript : MonoBehaviour
 
             Flock_hituzi_spawn_TIME += Time.deltaTime;
 
-            if (usagi_interval > lowest_interval)
+            //ウサギレベルアップ
+            /*if (usagi_interval > lowest_interval)
             {
                 if (usagi_levelup_TIME > levelup_time)
                 {
@@ -113,8 +114,25 @@ public class SpawnScript : MonoBehaviour
                     usagi_interval -= _interval;
                     usagi_levelup = false;
                 }
+            }*/
+
+            //ヒツジレベルアップ
+            if (hituzi_spawn_interval > lowest_interval)
+            {
+                if (usagi_levelup_TIME > levelup_time)
+                {
+                    usagi_levelup = true;
+                    usagi_levelup_TIME = 0f;
+                }
+
+                if (usagi_levelup)
+                {
+                    hituzi_spawn_interval -= _interval;
+                    usagi_levelup = false;
+                }
             }
 
+            //ウサギspawn
             if (usagi_spawn_TIME > usagi_interval)
             {
                 int random = Random.Range(0, 8);
@@ -158,6 +176,7 @@ public class SpawnScript : MonoBehaviour
 
             }
 
+            //ヒツジ（個体）spawn
             if (hituzi_spawn_TIME > hituzi_spawn_interval)
             {
                 SheepSpawn();
@@ -179,7 +198,7 @@ public class SpawnScript : MonoBehaviour
                 hituzi_spawn_TIME_2 = 0f;
             }
 
-
+            //ヒツジ（団体）spawn
             if (Flock_hituzi_spawn_TIME > Flock_hituzi_interval)
             {
                 FlockSheepSpawn();
