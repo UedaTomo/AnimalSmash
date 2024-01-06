@@ -10,6 +10,7 @@ public class damage : MonoBehaviour
     private int _damageLevel = 1;
     public int _damage = 1; 
     private int _conbo = 0; //ÉRÉìÉ{êî
+    public static int _maxcombo = 0;
     private Rigidbody rb;
     [SerializeField] private GameObject smash;
     [SerializeField] private GameObject _bossHit;
@@ -47,6 +48,11 @@ public class damage : MonoBehaviour
             Instantiate(smash, this.transform.position, Quaternion.identity);
             _source.PlayOneShot(enemydie); //çƒê∂
             Destroy(other.gameObject);
+
+            if(_maxcombo < _conbo)
+            {
+                _maxcombo = _conbo;
+            }
         }
         if (other.CompareTag("destroy"))
         {
