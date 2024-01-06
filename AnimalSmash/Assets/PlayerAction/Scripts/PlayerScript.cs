@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour
     public bool isMove;
     public static float resultseconds = 0f;//タイマー関係
     public static int resultminutes = 0;
+    private bool front;
+    public Transform unaffectedChild;
 
     // Start is called before the first frame update
     void Start()
