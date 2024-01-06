@@ -45,9 +45,11 @@ public class SpawnScript : MonoBehaviour
     public GameObject Enemys;
     public GameObject Enemy;
     public Transform[] spawnPoint;
-    public float Flock_hituzi_interval = 3.0f;
+    public float Flock_hituzi_interval;
+    public float hituzi_interval_1;
+    public float hituzi_interval_2;
     public int hituzi_levelup = 1;
-    public int spawnPointNum = 4;
+    public int spawnPointNum = 5; //スポーンポイントの数
     public int spawnPointWork = 1;
     public float midium_time = 20.0f;
     public float difficult_time = 50.0f;
@@ -55,9 +57,11 @@ public class SpawnScript : MonoBehaviour
 
     //private float hituzi_levelup_TIME = 0f;
     private float Flock_hituzi_spawn_TIME = 0f;
+    private float hituzi_spawn_TIME_1 = 0f;
+    private float hituzi_spawn_TIME_2 = 0f;
     private int[] randomPosition = new int[3];
     private int[] numbers = new int[4];
-    private int recode = 5;
+    private int recode = 6; //前に団体ウサギがスポーンしたところ
     private int RumdomSpawn;
 
 
@@ -90,6 +94,8 @@ public class SpawnScript : MonoBehaviour
             usagi_spawn_TIME += Time.deltaTime;
 
             hituzi_spawn_TIME += Time.deltaTime;
+            hituzi_spawn_TIME_1 += Time.deltaTime;
+            hituzi_spawn_TIME_2 += Time.deltaTime;
             hituzi_levelup_TIME += Time.deltaTime;
 
             Flock_hituzi_spawn_TIME += Time.deltaTime;
@@ -158,6 +164,20 @@ public class SpawnScript : MonoBehaviour
 
                 hituzi_spawn_TIME = 0f;
             }
+            if (hituzi_spawn_TIME_1 > hituzi_interval_1)
+            {
+                SheepSpawn();
+
+                hituzi_spawn_TIME_1 = 0f;
+            }
+            if (hituzi_spawn_TIME_2 > hituzi_interval_2)
+            {
+                SheepSpawn();
+
+                hituzi_spawn_TIME = 0f;
+                hituzi_spawn_TIME_1 = 0f;
+                hituzi_spawn_TIME_2 = 0f;
+            }
 
 
             if (Flock_hituzi_spawn_TIME > Flock_hituzi_interval)
@@ -166,7 +186,7 @@ public class SpawnScript : MonoBehaviour
 
                 Flock_hituzi_spawn_TIME = 0f;
             }
-            
+
         }
 
 
@@ -223,26 +243,25 @@ public class SpawnScript : MonoBehaviour
             Vector3 right = new Vector3(0.7f, 0, 1.0f);
             newEnemy2.transform.position = pos + right;
         }*/
+            do
+            {
+                RumdomSpawn = Random.Range(0, spawnPointNum);
 
-        do
-        {
-            RumdomSpawn = Random.Range(0, spawnPointNum);
+            } while (RumdomSpawn == recode);
 
-        } while (RumdomSpawn ==recode);
+            GameObject newEnemy = Instantiate(Enemys);
+            GameObject newEnemy1 = Instantiate(Enemys);
+            GameObject newEnemy2 = Instantiate(Enemys);
+            Vector3 pos = spawnPoint[RumdomSpawn].position;
 
-        GameObject newEnemy = Instantiate(Enemys);
-        GameObject newEnemy1 = Instantiate(Enemys);
-        GameObject newEnemy2 = Instantiate(Enemys);
-        Vector3 pos = spawnPoint[RumdomSpawn].position;
+            newEnemy.transform.position = spawnPoint[RumdomSpawn].position;
 
-        newEnemy.transform.position = spawnPoint[RumdomSpawn].position;
+            Vector3 left = new Vector3(-0.7f, 0, 1.0f);
+            newEnemy1.transform.position = pos + left;
 
-        Vector3 left = new Vector3(-0.7f, 0, 1.0f);
-        newEnemy1.transform.position = pos + left;
+            Vector3 right = new Vector3(0.7f, 0, 1.0f);
+            newEnemy2.transform.position = pos + right;
 
-        Vector3 right = new Vector3(0.7f, 0, 1.0f);
-        newEnemy2.transform.position = pos + right;
-
-        recode = RumdomSpawn;
+            recode = RumdomSpawn;
     }
 }
