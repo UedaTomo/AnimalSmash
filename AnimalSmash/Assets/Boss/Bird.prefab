@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: -5930021615693236966}
   - component: {fileID: 107965160341239677}
   - component: {fileID: -4363504225794468385}
+  - component: {fileID: 2941444557966923544}
   m_Layer: 0
   m_Name: Bird
   m_TagString: bird
@@ -296,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402e2db43ab6f34ca5aeacf4bc22688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
+  speed: 3
   birdbody: {fileID: 6148059647187367321}
   birdHight: {fileID: 8887868923411479324, guid: 2a2a3492634a5664dacde4a7fe59e572, type: 3}
   _strikeEffect: {fileID: 100004, guid: b0b9f215fae164b4fb544969dafd0ada, type: 3}
@@ -304,6 +305,8 @@ MonoBehaviour:
   b1: {fileID: 8300000, guid: 163e9db6d99350c4caabe01a7eef36ae, type: 3}
   b2: {fileID: 8300000, guid: e710ca59641c07449a4c2ac0c8168f8f, type: 3}
   b3: {fileID: 8300000, guid: 8f14b1e4f0de6494b84bcffe838e66ae, type: 3}
+  b4: {fileID: 8300000, guid: 6c1e9b7110b90d840b6260997e9b8985, type: 3}
+  Left: 0
 --- !u!82 &-4363504225794468385
 AudioSource:
   m_ObjectHideFlags: 0
@@ -400,6 +403,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2941444557966923544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5855463775024606368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a25f63b39392d4a833a4bb39b1cd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 0}
 --- !u!1 &6148059647187367321
 GameObject:
   m_ObjectHideFlags: 0

@@ -109,9 +109,9 @@ Material:
     - _Parallax: 0.02
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 0.90909094
+    - _ScaleRatioA: 0.9
     - _ScaleRatioB: 0.73125
-    - _ScaleRatioC: 0.7386364
+    - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
     m_TabWidth: 24
   m_GlyphTable:
   - m_Index: 2104
+
     m_Metrics:
       m_Width: 52
       m_Height: 22
@@ -271,6 +272,14 @@ MonoBehaviour:
     m_Unicode: 8595
     m_GlyphIndex: 2105
     m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 8595
+    m_GlyphIndex: 2105
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 9633
+    m_GlyphIndex: 2179
+    m_Scale: 1
   m_AtlasTextures:
   - {fileID: 28268798066460806}
   m_AtlasTextureIndex: 0
@@ -299,17 +308,17 @@ MonoBehaviour:
     m_Width: 329
     m_Height: 511
   - m_X: 0
-    m_Y: 111
+    m_Y: 139
     m_Width: 511
+    m_Height: 372
+  - m_X: 0
+    m_Y: 111
+    m_Width: 40
     m_Height: 400
-  - m_X: 40
-    m_Y: 70
-    m_Width: 471
-    m_Height: 441
-  - m_X: 40
-    m_Y: 41
-    m_Width: 102
-    m_Height: 470
+  - m_X: 111
+    m_Y: 69
+    m_Width: 400
+    m_Height: 442
   m_fontInfo:
     Name: Liberation Sans
     PointSize: 86

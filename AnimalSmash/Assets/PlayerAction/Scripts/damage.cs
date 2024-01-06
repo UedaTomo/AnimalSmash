@@ -41,10 +41,16 @@ public class damage : MonoBehaviour
             other.GetComponent<BossScript>().HP(_conbo,_damage, _damageLevel);
             Destroy(this.gameObject);
         }
-        if (other.CompareTag("enemy"))
+        if (other.CompareTag("enemy")|| other.CompareTag("Flock"))
         {
             _conbo++;
-            _damageLevel *= 2;
+
+            if(_conbo>= 7)
+            {
+                _damageLevel += 5;
+            }
+            else
+                _damageLevel *= 2;
             Instantiate(smash, this.transform.position, Quaternion.identity);
             _source.PlayOneShot(enemydie); //çƒê∂
             Destroy(other.gameObject);

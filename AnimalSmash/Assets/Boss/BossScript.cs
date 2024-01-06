@@ -18,6 +18,12 @@ public class BossScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject _birdPrefab;
+    [SerializeField]
+    private GameObject _birdPrefab1;
+    [SerializeField]
+    private GameObject _redZone;
+    [SerializeField]
+    private GameObject _redZone1;
     public Transform _birdPoint1;
     public Transform _birdPoint2;
     public int _bossHp = 700;
@@ -30,6 +36,13 @@ public class BossScript : MonoBehaviour
     private TextMeshProUGUI _conboText;
     private Animator birdanim;           //Anim
     public bool BossAttackOn = true;      //BossÇ™çUåÇÇ∑ÇÈÇ©Ç«Ç§Ç©
+    [SerializeField] private Transform zone;
+    [Header("íπïpìx")]
+    [SerializeField] private float _birdStrike = 20.0f;
+    [SerializeField] private AudioSource _source;
+    [Header("ñ¬Ç´ê∫")]
+    [SerializeField] private AudioClip bear; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,16 +71,17 @@ public class BossScript : MonoBehaviour
         }
         if (BossAttackOn)
         {
-            if (time > 5.5)
+            if (time > _birdStrike-7.5f)
             {
                 birdanim.SetBool("birdstrike", true);
             }
             //13ïbå„AttackÇåƒÇ‘
-            if (time > 13.0f)
+            if (time > _birdStrike)
             {
                 time = 0f;
                 Attack();
                 birdanim.SetBool("birdstrike", false);
+                _source.PlayOneShot(bear);
             }
         }
         _bossSlider.value = (int)currentHp;
@@ -86,6 +100,10 @@ public class BossScript : MonoBehaviour
         //Instantiate(_bossSmash, bossEffectPosition, Quaternion.identity);
         //Destroy(gameObject);
     }
+    void target(bool left)
+    {
+
+    }
     //íπê∂ê¨
     void Attack()
     {
@@ -93,7 +111,19 @@ public class BossScript : MonoBehaviour
         float y = _birdPoint1.position.y;
         float z = Random.Range(_birdPoint1.position.z, _birdPoint2.position.z);
 
-        Instantiate(_birdPrefab, new Vector3(x, y, z), _birdPoint1.rotation);
+
+
+        if (zone.GetComponent<BirdStrikeZoneScript>().Left == true)
+        {
+            Instantiate(_birdPrefab1, new Vector3(x, y, z), _birdPoint1.rotation);
+            Instantiate(_redZone, _redZone.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(_birdPrefab, new Vector3(x, y, z), _birdPoint1.rotation);
+            Instantiate(_redZone1, _redZone1.transform.position, Quaternion.identity);
+        }
+
         //Instantiate(_birdPrefab, _birdPoint1.position, _birdPoint1.rotation);
     }
 }
