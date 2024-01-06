@@ -4,20 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class result : MonoBehaviour
 {
     //bool endtrigger = false;
+    public TextMeshProUGUI combo;
+    public TextMeshProUGUI time;
     Button Reselect;
     Button Exit;
+    int MaxCombo = damage._maxcombo;
+    int minutes = PlayerScript.resultminutes;
+    float seconds = PlayerScript.resultseconds;
 
     void Start()
     {
         Reselect = GameObject.Find("/Canvas/ReSelectButton").GetComponent<Button>();
         Exit = GameObject.Find("/Canvas/ExitButton").GetComponent<Button>();
         //StartCoroutine("resultgame");
-
+        combo.text = "" + (int)MaxCombo;
+        time.text = minutes.ToString("00") + ":" + ((int)seconds).ToString("00");
         Reselect.Select();
     }
 

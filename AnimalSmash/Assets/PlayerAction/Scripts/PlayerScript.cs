@@ -22,12 +22,13 @@ public class PlayerScript : MonoBehaviour
 
     public Animator playeranim;
     public bool isMove;
-    private bool front;
-    public Transform unaffectedChild;
+    public static float resultseconds = 0f;//タイマー関係
+    public static int resultminutes = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+       
         isTouch = false;
         Invincible = false;
         isMove = false;
@@ -41,6 +42,13 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        resultseconds += Time.deltaTime;
+        if (resultseconds >= 60f)
+        {
+            resultminutes++;
+            resultseconds = resultseconds - 60;
+        }
+
         //Transform playertransform = this.transform;
         playeranim.SetBool("walk", isMove);
 
