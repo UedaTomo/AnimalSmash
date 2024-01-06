@@ -55,7 +55,7 @@ public class bombScript : MonoBehaviour
                 _birdStrike = true;
 
                 // ˆê“x‚¾‚¯Œü‚«‚ğ’²®
-                Vector3 direction = (target.transform.position - transform.position).normalized;
+                Vector3 direction = (_player.transform.position - transform.position).normalized;
                 transform.up = direction;
 
                 _source.PlayOneShot(b2); //Ä¶
