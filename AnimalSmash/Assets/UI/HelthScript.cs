@@ -102,7 +102,7 @@ public class HelthScript : MonoBehaviour
             if (playerCount > 0)
             {
 
-                playerCount -= 2;
+                playerCount -= 1;
                 HP.text = " x " + playerCount;
 
             }
