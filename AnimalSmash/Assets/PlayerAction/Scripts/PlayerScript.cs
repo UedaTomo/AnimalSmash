@@ -31,11 +31,12 @@ public class PlayerScript : MonoBehaviour
         isTouch = false;
         Invincible = false;
         isMove = false;
+        playeranim = GetComponent<Animator>();
         if (unaffectedChild != null)
         {
             unaffectedChild.SetParent(null);
         }
-        playeranim = GetComponent<Animator>();
+        //playeranim = GetComponent<Animator>();
     }
 
     // Update is called once per frame

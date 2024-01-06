@@ -2208,7 +2208,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370028
+  m_Name: pb_Mesh-50366
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3241,7 +3241,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370056
+  m_Name: pb_Mesh-50420
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4601,6 +4601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _birdPrefab: {fileID: 5855463775024606368, guid: 62f05328b3f4a2b4db71d29484af1c77, type: 3}
+  _birdPrefab1: {fileID: 0}
+  _redZone: {fileID: 0}
+  _redZone1: {fileID: 0}
   _birdPoint1: {fileID: 2094451575}
   _birdPoint2: {fileID: 2096845408}
   _bossHp: 3000
@@ -4609,6 +4612,10 @@ MonoBehaviour:
   _bossSmash: {fileID: 0}
   _playerObj: {fileID: 0}
   BossAttackOn: 1
+  zone: {fileID: 0}
+  _birdStrike: 20
+  _source: {fileID: 0}
+  bear: {fileID: 0}
 --- !u!65 &1040548558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4662,13 +4669,17 @@ MonoBehaviour:
   usagi_interval: 10
   levelup_time: 20
   _interval: 4
+  usagi: {fileID: 0}
+  Powerup_usagi: {fileID: 0}
+  hituzi_spawn_interval: 5
+  Enemys: {fileID: 0}
   Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
   spawnPoint:
   - {fileID: 918203215}
   - {fileID: 1857985104}
   - {fileID: 377290751}
   - {fileID: 240700045}
-  hituzi_interval: 5
+  Flock_hituzi_interval: 3
   hituzi_levelup: 1
   spawnPointNum: 4
   spawnPointWork: 1
@@ -6608,7 +6619,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370042
+  m_Name: pb_Mesh-50406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7049,7 +7060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7057,7 +7068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalRotation.z
@@ -7069,7 +7080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7057603331178270250, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8689,7 +8700,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-370070
+  m_Name: pb_Mesh-50434
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
