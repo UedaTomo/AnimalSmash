@@ -4715,8 +4715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _birdPrefab: {fileID: 5855463775024606368, guid: 62f05328b3f4a2b4db71d29484af1c77, type: 3}
   _birdPrefab1: {fileID: 5855463775024606368, guid: a0ec41f4852739e4a83d5116d2144dda, type: 3}
-  _redZone: {fileID: 5779371269729699386, guid: 7016a93c73e618a4e8789e6b080d38f9, type: 3}
-  _redZone1: {fileID: 7525826294429884564, guid: 788256156ddd56b46a2c5861bcb59a5c, type: 3}
+  _redZone: {fileID: 0}
+  _redZone1: {fileID: 0}
   _birdPoint1: {fileID: 2094451575}
   _birdPoint2: {fileID: 2096845408}
   _bossHp: 1500
@@ -4726,7 +4726,7 @@ MonoBehaviour:
   _playerObj: {fileID: 0}
   BossAttackOn: 1
   zone: {fileID: 1719689992}
-  _birdStrike: 20
+  _birdStrike: 10
   _source: {fileID: 0}
   bear: {fileID: 0}
 --- !u!65 &1040548558
@@ -4780,11 +4780,14 @@ MonoBehaviour:
   rangeA: {fileID: 1184351652}
   rangeB: {fileID: 1950191650}
   usagi_interval: 10
-  levelup_time: 10
+  usagi_levelup_time: 15
   _interval: 4
   usagi: {fileID: 2100000, guid: 096deec2b3bbfa342bd1b37c87a195d8, type: 2}
   Powerup_usagi: {fileID: 2100000, guid: e809d69b8e35dad489d27441dc42ff32, type: 2}
   hituzi_spawn_interval: 5
+  hituzi_interval_1: 6
+  hituzi_interval_2: 7
+  hituzi_levelup_time: 10
   Enemys: {fileID: 3667101947015295638, guid: f4578f8ee886b8b44a8f180b80c84d13, type: 3}
   Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
   spawnPoint:
@@ -4793,9 +4796,7 @@ MonoBehaviour:
   - {fileID: 377290751}
   - {fileID: 240700045}
   Flock_hituzi_interval: 5
-  hituzi_interval_1: 6
-  hituzi_interval_2: 7
-  hituzi_levelup: 1
+  Flock_hituzi_levelup: 1
   spawnPointNum: 4
   spawnPointWork: 1
   midium_time: 20
@@ -9580,7 +9581,7 @@ GameObject:
   - component: {fileID: 1961096681}
   m_Layer: 10
   m_Name: bulletDestroy
-  m_TagString: destroy
+  m_TagString: bulletDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
