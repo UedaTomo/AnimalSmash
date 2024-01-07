@@ -43,6 +43,11 @@ public class BossScript : MonoBehaviour
     [Header("ñ¬Ç´ê∫")]
     [SerializeField] private AudioClip bear;
 
+    //ÉäÉUÉãÉgââèo
+    /*public Animator Boss_koya;
+    public bool win;
+    public bool lose;*/
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +58,9 @@ public class BossScript : MonoBehaviour
         _conboText = obj.GetComponent<TextMeshProUGUI>();
         GameObject BossBear = GameObject.Find("BossBear");
         birdanim = BossBear.GetComponent<Animator>();
+
+        /*win = false;
+        lose = false;*/
     }
     public void HP(int _conbo, int _damage, int _damageLevel)
     {
@@ -62,10 +70,13 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*Boss_koya.SetBool("win", win);
+        Boss_koya.SetBool("lose", lose);*/
+
         time += Time.deltaTime;
         if (currentHp <= 0)
         {
-
+            //win = true;
             OnDestroy();
             SceneManager.LoadScene("WinResult");
         }
