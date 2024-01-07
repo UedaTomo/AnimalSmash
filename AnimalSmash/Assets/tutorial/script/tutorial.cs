@@ -56,7 +56,7 @@ public class tutorial : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("menu");
+            SceneManager.LoadScene("stageselect");
         }
 
         Transform moveex = moveEx.transform;
