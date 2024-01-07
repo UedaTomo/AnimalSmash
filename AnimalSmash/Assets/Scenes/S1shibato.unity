@@ -1048,7 +1048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244.9, y: 190.5}
+  m_AnchoredPosition: {x: -260.6, y: -199.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227877862
@@ -3516,7 +3516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.2, y: 194.5}
+  m_AnchoredPosition: {x: -371.2, y: -194.3}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332331334
@@ -5774,11 +5774,14 @@ MonoBehaviour:
   rangeA: {fileID: 947079567}
   rangeB: {fileID: 1305255280}
   usagi_interval: 10
-  levelup_time: 20
+  usagi_levelup_time: 15
   _interval: 4
   usagi: {fileID: 2100000, guid: 096deec2b3bbfa342bd1b37c87a195d8, type: 2}
   Powerup_usagi: {fileID: 2100000, guid: e809d69b8e35dad489d27441dc42ff32, type: 2}
   hituzi_spawn_interval: 5
+  hituzi_interval_1: 6
+  hituzi_interval_2: 7
+  hituzi_levelup_time: 10
   Enemys: {fileID: 3667101947015295638, guid: f4578f8ee886b8b44a8f180b80c84d13, type: 3}
   Enemy: {fileID: 7738729788022539546, guid: 2f533fed4940b5e49998b59f65b76a08, type: 3}
   spawnPoint:
@@ -5787,9 +5790,7 @@ MonoBehaviour:
   - {fileID: 2105904844}
   - {fileID: 2081033006}
   Flock_hituzi_interval: 5
-  hituzi_interval_1: 6
-  hituzi_interval_2: 7
-  hituzi_levelup: 1
+  Flock_hituzi_levelup: 1
   spawnPointNum: 4
   spawnPointWork: 1
   midium_time: 20

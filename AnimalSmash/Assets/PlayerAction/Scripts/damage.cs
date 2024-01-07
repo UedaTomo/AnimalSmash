@@ -26,6 +26,7 @@ public class damage : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         rb.angularVelocity = new Vector3(-rotationSpeed, 0, 0); // ’Ç‰Á
+        _maxcombo = 0;
     }
 
     // Update is called once per frame

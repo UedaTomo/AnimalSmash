@@ -36,7 +36,6 @@ public class PauseScript : MonoBehaviour
             Time.timeScale = 0;  // ŽžŠÔ’âŽ~
             //Pause();
         }
-        Debug.Log(enemy_pause);
 
     }
 
