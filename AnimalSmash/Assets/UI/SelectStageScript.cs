@@ -55,12 +55,12 @@ public class SelectStageScript : MonoBehaviour
 
     public void SelectStage3()
     {
-        //SceneManager.LoadScene("");
+        StartCoroutine(ApproachingSheep_S3());
     }
 
     public void BackMenu()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("title");
     }
 
     private IEnumerator ApproachingSheep_S1()
@@ -91,5 +91,20 @@ public class SelectStageScript : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         SceneManager.LoadScene("S2shibato");
+    }
+
+    private IEnumerator ApproachingSheep_S3()
+    {
+        while (!isSceneChange)
+        {
+            i += 150;
+            RabbitSize.sizeDelta = new Vector2(i, i);
+            if (i >= 2000)
+            {
+                isSceneChange = true;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+        SceneManager.LoadScene("tutorial");
     }
 }
