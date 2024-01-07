@@ -18,6 +18,8 @@ public class result : MonoBehaviour
     int minutes = PlayerScript.resultminutes;
     float seconds = PlayerScript.resultseconds;
 
+    private static bool clear = false;
+
     void Start()
     {
         Reselect = GameObject.Find("/Canvas/ReSelectButton").GetComponent<Button>();
@@ -50,6 +52,7 @@ public class result : MonoBehaviour
     {
         //ステージセレクトシーンへ移動
         SceneManager.LoadScene("stageselect");
+        damage._maxcombo = 0;
     }
 
 
