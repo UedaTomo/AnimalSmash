@@ -67,7 +67,7 @@ public class damage : MonoBehaviour
                 _maxcombo = _conbo;
             }
         }
-        if (other.CompareTag("destroy"))
+        if (other.CompareTag("bulletDestroy"))
         {
             Destroy(this.gameObject);
         }
