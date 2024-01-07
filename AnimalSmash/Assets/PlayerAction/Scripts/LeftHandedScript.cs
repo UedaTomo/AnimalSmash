@@ -29,7 +29,8 @@ public class LeftHandedScript : MonoBehaviour
             }
             if (FlockShot)
             {
-                Shooting();
+                _source.PlayOneShot(FlockSE);
+                FlockShot = false;
             }
         }
     }
@@ -67,13 +68,7 @@ public class LeftHandedScript : MonoBehaviour
 
     private void Shooting()
     {
-        if (FlockShot)
-        {
-            _source.PlayOneShot(FlockSE);
-            FlockShot = false;
-        }
-        else
-        {
+
         // ボールを発射する処理
         GameObject ball = Instantiate(bulletPrefab); // Bulletプレハブを生成
         ball.transform.position = shotPoint.transform.position;
@@ -86,7 +81,5 @@ public class LeftHandedScript : MonoBehaviour
         }
 
         // 必要に応じてボールの発射音やエフェクトを再生するなどの処理を追加できる
-        }
-
     }
 }
