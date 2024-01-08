@@ -53,6 +53,8 @@ public class result : MonoBehaviour
         //ステージセレクトシーンへ移動
         SceneManager.LoadScene("stageselect");
         damage._maxcombo = 0;
+        PlayerScript.resultminutes = 0;
+        PlayerScript.resultseconds = 0;
     }
 
 
