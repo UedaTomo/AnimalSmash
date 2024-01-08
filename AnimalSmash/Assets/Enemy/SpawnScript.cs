@@ -44,15 +44,10 @@ public class SpawnScript : MonoBehaviour
     private float hituzi_lowest_interval = 0f;
     private float hituzi_spawn_TIME = 0f;
     private float hituzi_levelup_TIME = 0f;
-
     private float hituzi_second = 0f;
-
     private int SpawnNumber = 1;
-
     private int count;
-
     private bool hituzi_levelup;
-
     private bool start_spawn;
 
     //ƒqƒcƒW(’c‘Ì)
@@ -236,8 +231,8 @@ public class SpawnScript : MonoBehaviour
                     {
                         SheepSpawn();
 
-                        hituzi_second = 0f;
                         count++;
+                        hituzi_second = 0f;
                     }
                     if (count >= 2)
                     {
