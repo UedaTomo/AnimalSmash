@@ -132,3 +132,5 @@ MonoBehaviour:
   Down: 0
   UpDown: 0.1
   obj: {fileID: 7690587384694363280, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
+  result: {fileID: 3260518510782265322, guid: 303ec60eb72d2c54d925433dfadad38f, type: 3}
+  particle: {fileID: 19800000, guid: bb508fad3dd88314aa2b95e92272315a, type: 3}

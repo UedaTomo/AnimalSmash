@@ -26,7 +26,7 @@ public class SelectStageScript : MonoBehaviour
         RabbitSize = GameObject.Find("/Canvas/RabbitImage").GetComponent<RectTransform>();
         stage1 = GameObject.Find("/Canvas/Stage1").GetComponent<Button>();
         stage2 = GameObject.Find("/Canvas/Stage2").GetComponent<Button>();
-        stage3 = GameObject.Find("/Canvas/Stage3").GetComponent<Button>();
+        stage3 = GameObject.Find("/Canvas/tutorial").GetComponent<Button>();
         Back  = GameObject.Find("/Canvas/BackMenuButton").GetComponent<Button>();
         //Debug.Log("select ok");
         stage1.Select();
