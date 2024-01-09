@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3286281526993876541}
   - component: {fileID: 4614915218125770350}
   - component: {fileID: 4063760728418588957}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Body
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,9 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8568122447882274174}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: transform38
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,9 +125,9 @@ GameObject:
   - component: {fileID: 5252117899210982421}
   - component: {fileID: 1104409179284045162}
   - component: {fileID: 8503735432422282299}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: mofu36
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,9 +208,9 @@ GameObject:
   - component: {fileID: 2499013521030601515}
   - component: {fileID: 1238188249614838962}
   - component: {fileID: 3365331512464484285}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Left_hind_Legs
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,9 +291,9 @@ GameObject:
   - component: {fileID: 8708309531847467267}
   - component: {fileID: 3902937964128145170}
   - component: {fileID: 2106105071113138871}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Left_Front_Legs
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,9 +374,9 @@ GameObject:
   - component: {fileID: 4788495082500948252}
   - component: {fileID: 7693564622158958329}
   - component: {fileID: 1459348271691512914}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Right_Front_Legs
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,9 +455,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4914696461195426294}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: transform36
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,9 +488,9 @@ GameObject:
   - component: {fileID: 1009234643878903422}
   - component: {fileID: 3111839578537439769}
   - component: {fileID: 8682524520639267470}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Head
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,9 +571,9 @@ GameObject:
   - component: {fileID: 2498822893661971839}
   - component: {fileID: 2365339090040683466}
   - component: {fileID: 2492042404825710115}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Right_hind_Legs
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,11 +654,11 @@ GameObject:
   - component: {fileID: 6930667165118963616}
   - component: {fileID: 1237899834191979126}
   - component: {fileID: 2237205493195253346}
-  - component: {fileID: -3404377537244451826}
-  - component: {fileID: 16429689215989782}
-  m_Layer: 7
-  m_Name: tutorialsheepBullet
-  m_TagString: Bullet
+  - component: {fileID: 2808973449409411215}
+  - component: {fileID: 7713194496636643748}
+  m_Layer: 9
+  m_Name: tutorialsheep
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -711,103 +711,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4435194, y: 2.5741038, z: 2.8316898}
   m_Center: {x: -0.022703402, y: -0.03653677, z: 0.038915277}
---- !u!82 &-3404377537244451826
-AudioSource:
+--- !u!95 &2808973449409411215
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7738729788022539546}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4bc1327120ba103449183cff388a635d, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.239
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &16429689215989782
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d453a6a6a17fa84d89db764f14164ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7713194496636643748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -816,18 +741,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7738729788022539546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f86a4333571634aa875845f54733cb, type: 3}
+  m_Script: {fileID: 11500000, guid: c9a43d28d6ee95f469771cff6034365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
-  bird: 0
-  smash: {fileID: 1995403933065894, guid: 4dfe506ad243fbb4cbede7d8388e89bd, type: 3}
-  _bossHit: {fileID: 6497379366374231547, guid: 2b04c7c4d97a94b42ab0c234a6ccd848, type: 3}
-  _source: {fileID: -3404377537244451826}
-  koyabreak: {fileID: 8300000, guid: a51fa3de74773034ea2ebe241cb7f865, type: 3}
-  enemydie: {fileID: 8300000, guid: b6f9aa4fd1dab7d43b1650eb47a50f7b, type: 3}
-  _strikeEffect: {fileID: 0}
-  rotationSpeed: 5
+  move: 0.05
+  Up: -6
+  Down: 0
+  UpDown: 0.1
+  obj: {fileID: 7690587384694363280, guid: 5f507161997d3574dbe066cdd5df8fde, type: 3}
 --- !u!1 &8004510827039545116
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,9 +760,9 @@ GameObject:
   - component: {fileID: 4838451614529293826}
   - component: {fileID: 8562128368365546298}
   - component: {fileID: 8772319412025814978}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Teil
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -922,9 +843,9 @@ GameObject:
   - component: {fileID: 5725794016884765652}
   - component: {fileID: 4686188543798117118}
   - component: {fileID: 1565887263702546921}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: pCube2
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,9 +925,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3279441450761374554}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: transform39
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1043,9 +964,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5172328305497301449}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: transform37
-  m_TagString: Bullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

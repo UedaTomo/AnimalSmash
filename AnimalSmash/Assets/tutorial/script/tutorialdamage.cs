@@ -5,32 +5,39 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
 
-public class tutorialdamage: MonoBehaviour
+public class tutorialdamage : MonoBehaviour
 {
     private int _damageLevel = 1;
     public int _damage = 1;
     private int _conbo = 0; //ÉRÉìÉ{êî
+    public static int _maxcombo = 0;
+    public bool bird = false;
     private Rigidbody rb;
     [SerializeField] private GameObject smash;
     [SerializeField] private GameObject _bossHit;
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip koyabreak; //åöï®Ç™è≠ÇµïˆÇÍÇÈ
     [SerializeField] private AudioClip enemydie;
+    public GameObject _strikeEffect;
     public float rotationSpeed = 5.0f; // âÒì]ÇÃë¨Ç≥
-
-    public float HitNum = 0f;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
         rb.angularVelocity = new Vector3(-rotationSpeed, 0, 0); // í«â¡
+        _maxcombo = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
+        if (bird == true)
+        {
+            Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
+            Instantiate(_strikeEffect, effectPosition, Quaternion.identity);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -39,19 +46,29 @@ public class tutorialdamage: MonoBehaviour
             Vector3 effectPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - 5);
             Instantiate(_bossHit, effectPosition, Quaternion.identity);
             _source.PlayOneShot(koyabreak); //çƒê∂
-            other.GetComponent<tutorialBoss>().HP(_conbo, _damage, _damageLevel);
+            //other.GetComponent<tutorialBoss>().HP(_conbo, _damage, _damageLevel);
             Destroy(this.gameObject);
-            HitNum++;
         }
-        if (other.CompareTag("enemy"))
+        if (other.CompareTag("enemy") || other.CompareTag("Flock"))
         {
-            _conbo++;
-            _damageLevel *= 2;
+            //_conbo++;
+
+            /*if (_conbo >= 7)
+            {
+                _damageLevel += 5;
+            }
+            else
+                _damageLevel *= 2;
             Instantiate(smash, this.transform.position, Quaternion.identity);
             _source.PlayOneShot(enemydie); //çƒê∂
             Destroy(other.gameObject);
+
+            if (_maxcombo < _conbo)
+            {
+                _maxcombo = _conbo;
+            }*/
         }
-        if (other.CompareTag("destroy"))
+        if (other.CompareTag("bulletDestroy"))
         {
             Destroy(this.gameObject);
         }

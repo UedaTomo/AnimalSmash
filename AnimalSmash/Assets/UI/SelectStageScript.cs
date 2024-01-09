@@ -67,11 +67,14 @@ public class SelectStageScript : MonoBehaviour
     {
         while (!isSceneChange)
         {
+            Debug.Log(isSceneChange);
             i += 150;
             SheepSize.sizeDelta = new Vector2(i, i);
             if (i >= 2000)
             {
+                Debug.Log("true");
                 isSceneChange = true;
+                i = 0;
             }
             yield return new WaitForSeconds(0.1f);
         }
@@ -87,6 +90,7 @@ public class SelectStageScript : MonoBehaviour
             if (i >= 2000)
             {
                 isSceneChange = true;
+                i = 0;
             }
             yield return new WaitForSeconds(0.1f);
         }
@@ -102,6 +106,7 @@ public class SelectStageScript : MonoBehaviour
             if (i >= 2000)
             {
                 isSceneChange = true;
+                i = 0;
             }
             yield return new WaitForSeconds(0.1f);
         }

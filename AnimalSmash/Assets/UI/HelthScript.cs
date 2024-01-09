@@ -18,12 +18,13 @@ public class HelthScript : MonoBehaviour
     public Image LoseImage;
     public GameObject _playerObj;
     public bool result;
-
+    public bool Lose;
 
     // Start is called before the first frame update
     void Start()
     {
         result = false;
+        Lose = false;
         playerCount = 5;
         HP.text = " x " + playerCount;
         //VictoryImage = GetComponent<Image>();
@@ -62,7 +63,7 @@ public class HelthScript : MonoBehaviour
         //Color newColor = LoseImage.color;
         //newColor.a = 1.0f;
         //LoseImage.color = newColor;
-        Debug.Log("ok");
+        //Debug.Log("ok");
         //LoseImage.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
         WaitKey.text = "<Push B to Title>";
     }
@@ -117,7 +118,8 @@ public class HelthScript : MonoBehaviour
 
         if (playerCount <= 0)
         {
-            SceneManager.LoadScene("LoseResult");
+            Lose = true;
+            //SceneManager.LoadScene("LoseResult");
             //IsGameover();
             //_playerObj.GetComponent<PlayerScript>().GameClear();
         }
