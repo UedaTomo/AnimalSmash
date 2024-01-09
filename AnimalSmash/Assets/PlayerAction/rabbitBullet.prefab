@@ -129,11 +129,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 2
+  bird: 0
   smash: {fileID: 1995403933065894, guid: 4dfe506ad243fbb4cbede7d8388e89bd, type: 3}
-  _bossHit: {fileID: 100000, guid: a4b43d26176de2846a50c56fe847e163, type: 3}
+  _bossHit: {fileID: 6497379366374231547, guid: 2b04c7c4d97a94b42ab0c234a6ccd848, type: 3}
   _source: {fileID: -6934953848647476509}
   koyabreak: {fileID: 8300000, guid: a51fa3de74773034ea2ebe241cb7f865, type: 3}
   enemydie: {fileID: 8300000, guid: b6f9aa4fd1dab7d43b1650eb47a50f7b, type: 3}
+  _strikeEffect: {fileID: 0}
   rotationSpeed: 5
 --- !u!82 &-6934953848647476509
 AudioSource:

@@ -22,6 +22,8 @@ public class bombScript : MonoBehaviour
     [SerializeField] private AudioClip b2; //風切り
     [SerializeField] private AudioClip b3; //ゴゴゴ
     [SerializeField] private AudioClip b4; //かぁ＾
+    [SerializeField]
+    private GameObject _redZone;
 
     private GameObject target; // 追尾対象のオブジェクト
     public bool Left = false;
@@ -55,7 +57,8 @@ public class bombScript : MonoBehaviour
                 _birdStrike = true;
 
                 // 一度だけ向きを調整
-                Vector3 direction = (target.transform.position - transform.position).normalized;
+                Vector3 direction = (_player.transform.position - transform.position).normalized;
+                Instantiate(_redZone, _player.transform.position, Quaternion.identity);
                 transform.up = direction;
 
                 _source.PlayOneShot(b2); //再生
@@ -77,13 +80,6 @@ public class bombScript : MonoBehaviour
                 speed += 0.18f;
             // プレイヤーの方向に向かって加速しながら突進
             transform.Translate(Vector3.up * speed * Time.deltaTime);
-        }
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("destroy"))
-        {
-            Destroy(gameObject);
         }
     }
 }

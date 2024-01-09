@@ -9,6 +9,9 @@ public class RightHandedScript : MonoBehaviour
     public GameObject sheepBullet; //打ち返した羊のオブジェクト
     public GameObject rabbitBullet; //打ち返した兎のオブジェクト
     public GameObject birdBullet; //打ち返した鳥のオブジェクト
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip FlockSE;
+    bool FlockShot = false;
 
     [SerializeField] private float bulletSpeed = 10.0f; // ボールの速度
 
@@ -22,6 +25,10 @@ public class RightHandedScript : MonoBehaviour
             {
                 Destroy(targetEnemy); // 現在のターゲットを破棄する
                 Shooting();
+            }
+            if(FlockShot)
+            {
+                Shooting() ;
             }
         }
     }
@@ -43,6 +50,10 @@ public class RightHandedScript : MonoBehaviour
             targetEnemy = other.gameObject; // rabbit タグを持つオブジェクトをターゲットに設定
             bulletPrefab = rabbitBullet;
         }
+        if (other.CompareTag("Flock"))
+        {
+            FlockShot = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -55,6 +66,13 @@ public class RightHandedScript : MonoBehaviour
 
     private void Shooting()
     {
+        if(FlockShot)
+        {
+            _source.PlayOneShot(FlockSE);
+            FlockShot = false;
+        }
+        else
+        {
         // ボールを発射する処理
         GameObject ball = Instantiate(bulletPrefab); // Bulletプレハブを生成
         ball.transform.position = shotPoint.transform.position;
@@ -67,5 +85,7 @@ public class RightHandedScript : MonoBehaviour
         }
 
         // 必要に応じてボールの発射音やエフェクトを再生するなどの処理を追加できる
+        }
+
     }
 }

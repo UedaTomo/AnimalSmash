@@ -15,6 +15,7 @@ TagManager:
   - bird
   - rabbit
   - Flock
+  - bulletDestroy
   layers:
   - Default
   - TransparentFX

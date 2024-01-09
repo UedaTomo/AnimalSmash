@@ -41,8 +41,10 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _birdStrike = 20.0f;
     [SerializeField] private AudioSource _source;
     [Header("ñ¬Ç´ê∫")]
-    [SerializeField] private AudioClip bear; 
+    [SerializeField] private AudioClip bear;
 
+    //ÉäÉUÉãÉgââèo
+    public bool Clear;
 
     // Start is called before the first frame update
     void Start()
@@ -62,16 +64,15 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
         if (currentHp <= 0)
         {
-
-            OnDestroy();
-            SceneManager.LoadScene("WinResult");
+            Clear = true;
+            //OnDestroy();
+            //SceneManager.LoadScene("WinResult");
         }
         if (BossAttackOn)
         {
-            if (time > _birdStrike-7.5f)
+            if (time > _birdStrike - 7.5f)
             {
                 birdanim.SetBool("birdstrike", true);
             }
@@ -110,20 +111,27 @@ public class BossScript : MonoBehaviour
         float x = Random.Range(_birdPoint1.position.x, _birdPoint2.position.x);
         float y = _birdPoint1.position.y;
         float z = Random.Range(_birdPoint1.position.z, _birdPoint2.position.z);
-
+        Vector3 posi = GameObject.Find("Player").transform.position;
 
 
         if (zone.GetComponent<BirdStrikeZoneScript>().Left == true)
         {
             Instantiate(_birdPrefab1, new Vector3(x, y, z), _birdPoint1.rotation);
-            Instantiate(_redZone, _redZone.transform.position, Quaternion.identity);
+            Instantiate(_redZone, posi, Quaternion.identity);
         }
         else
         {
             Instantiate(_birdPrefab, new Vector3(x, y, z), _birdPoint1.rotation);
-            Instantiate(_redZone1, _redZone1.transform.position, Quaternion.identity);
+            Instantiate(_redZone1, posi, Quaternion.identity);
         }
 
         //Instantiate(_birdPrefab, _birdPoint1.position, _birdPoint1.rotation);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("destroy"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

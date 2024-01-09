@@ -65,11 +65,6 @@ public class HelthScript : MonoBehaviour
         Debug.Log("ok");
         //LoseImage.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
         WaitKey.text = "<Push B to Title>";
-
-        if (Input.GetKey("joystick button 1") || Input.GetKey("joystick button 2") || Input.GetKey("joystick button 3") || Input.GetKey("joystick button 4") || (Input.GetKeyDown(KeyCode.Space)))
-        {
-            SceneManager.LoadScene("title");
-        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -102,7 +97,7 @@ public class HelthScript : MonoBehaviour
             if (playerCount > 0)
             {
 
-                playerCount -= 2;
+                playerCount -= 1;
                 HP.text = " x " + playerCount;
 
             }

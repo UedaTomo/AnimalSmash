@@ -39,6 +39,7 @@ public class PlayerScript : MonoBehaviour
             unaffectedChild.SetParent(null);
         }
         playeranim = GetComponent<Animator>();
+        resultseconds = 0f;
     }
 
     // Update is called once per frame

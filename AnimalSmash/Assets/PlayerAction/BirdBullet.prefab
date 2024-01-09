@@ -198,8 +198,8 @@ Transform:
   m_GameObject: {fileID: 5855463775024606368}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0015622793, y: 0.0015622793, z: 0.0015622793}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7230115061682985931}
   - {fileID: 3248213069756909996}
@@ -297,12 +297,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab78d242c71a28944ac7783d80b4525d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
+  _damage: 100
+  bird: 1
   smash: {fileID: 1995403933065894, guid: 4dfe506ad243fbb4cbede7d8388e89bd, type: 3}
-  _bossHit: {fileID: 100000, guid: a4b43d26176de2846a50c56fe847e163, type: 3}
+  _bossHit: {fileID: 1892078723244562, guid: 73e6b93f28cb852428f16e65612bd0ab, type: 3}
   _source: {fileID: 8470516876771346448}
   koyabreak: {fileID: 8300000, guid: a51fa3de74773034ea2ebe241cb7f865, type: 3}
   enemydie: {fileID: 8300000, guid: b6f9aa4fd1dab7d43b1650eb47a50f7b, type: 3}
+  _strikeEffect: {fileID: 100004, guid: b0b9f215fae164b4fb544969dafd0ada, type: 3}
   rotationSpeed: 5
 --- !u!82 &8470516876771346448
 AudioSource:
