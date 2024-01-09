@@ -10,20 +10,25 @@ using TMPro;
 public class ResultScript : MonoBehaviour
 {
     BossScript bossscript;
+    HelthScript helthscript;
+
     public GameObject obj;
+    public GameObject obj1;
     public Animator Boss_koya;
     public Animator camera;
-    public Animator win_image;
+    public Animator monster;
+    //public Animator win_image;
     public bool FIN;
     public bool win;
     public bool lose;
     public bool finish;
     public bool clear;
     public bool camera_move;
+    public bool LOSE;
     public AudioClip breaksound;
     public AudioClip shotsound;
     public GameObject clear_image;
-    public TextMeshProUGUI Text;
+    //public TextMeshProUGUI Text;
     AudioSource AS;
     AudioSource AS_1;
 
@@ -43,17 +48,20 @@ public class ResultScript : MonoBehaviour
         finish = false;
         clear = false;
         camera_move = false;
+        LOSE = false;
+
         clear_TIME = 0f;
 
         obj = GameObject.Find("Boss_koya");
         bossscript = obj.GetComponent<BossScript>();
+        obj1 = GameObject.Find("destroyCanvas");
+        helthscript = obj1.GetComponent<HelthScript>();
 
         AS = GetComponent<AudioSource>();
         AS_1 = GetComponent<AudioSource>();
 
-        clear_image.SetActive(false);
-
-        Text.text = "";
+        //clear_image.SetActive(false);
+        //Text.text = "";
     }
 
     // Update is called once per frame
@@ -63,7 +71,8 @@ public class ResultScript : MonoBehaviour
         Boss_koya.SetBool("win", win);
         Boss_koya.SetBool("lose", lose);
         Boss_koya.SetBool("finish", finish);
-        win_image.SetBool("clear", clear);
+        monster.SetBool("finish", LOSE);
+        //win_image.SetBool("clear", clear);
 
         if (bossscript.Clear)
         {
@@ -95,20 +104,31 @@ public class ResultScript : MonoBehaviour
             {
                 AS.Pause();
                 //win = false;
-                clear_image.SetActive(true);
+                //clear_image.SetActive(true);
                 clear = true;
             }
             if(clear_TIME>4.0f)
             {
-                Text.text = "Aをおしてスコアをみる";
+                //Text.text = "Aをおしてスコアをみる";
                 //clear_image.SetActive(true);
+                SceneManager.LoadScene("WinResult");
 
             }
         }
+        if(helthscript.Lose)
+        {
+            LOSE = true;
+            clear_TIME += Time.deltaTime;
 
-        if (clear && Input.GetKey(KeyCode.A))
+            if (clear_TIME > 2.0f)
+            {
+                SceneManager.LoadScene("LoseResult");
+            }
+        }
+
+        /*if (clear && Input.GetKey(KeyCode.A))
         {
             SceneManager.LoadScene("WinResult");
-        }
+        }*/
     }
 }

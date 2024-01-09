@@ -54,7 +54,7 @@ public class tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SceneManager.LoadScene("stageselect");
         }
@@ -68,7 +68,7 @@ public class tutorial : MonoBehaviour
         if (!ableaim && TIME <= 6 && TIME <= 7)//プレイヤーの説明
         {
             Player.SetActive(true);
-            UpText.text = "これがあなたです";
+            UpText.text = "がめんのみかた";
         }
         if (!ableaim && TIME >= 8 && TIME <= 9)//移動説明
         {
@@ -114,7 +114,8 @@ public class tutorial : MonoBehaviour
         if (time >= 2)
         {
             Esc.text = "";
-            UpText.text = "ではむらを守りにいきましょう！\nメニューにもどるにはEscをおしてください";
+            UpText.text = "ではむらを守りにいきましょう！\nメニューにもどるにはQをおしてください";
+
         }
 
     }

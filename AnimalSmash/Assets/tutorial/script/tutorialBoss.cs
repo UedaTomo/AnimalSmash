@@ -82,7 +82,7 @@ public class tutorialBoss: MonoBehaviour
     }
         private void OnDestroy()
     { 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (GameObject enemy in enemies)
         {
             HitNum++;
