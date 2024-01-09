@@ -64,6 +64,7 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
         if (currentHp <= 0)
         {
             Clear = true;
@@ -117,12 +118,10 @@ public class BossScript : MonoBehaviour
         if (zone.GetComponent<BirdStrikeZoneScript>().Left == true)
         {
             Instantiate(_birdPrefab1, new Vector3(x, y, z), _birdPoint1.rotation);
-            Instantiate(_redZone, posi, Quaternion.identity);
         }
         else
         {
             Instantiate(_birdPrefab, new Vector3(x, y, z), _birdPoint1.rotation);
-            Instantiate(_redZone1, posi, Quaternion.identity);
         }
 
         //Instantiate(_birdPrefab, _birdPoint1.position, _birdPoint1.rotation);
